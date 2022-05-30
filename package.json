@@ -1,0 +1,22 @@
+{
+    "name": "feinschliff-studio.github.io",
+    "version": "1.0.0",
+    "displayName": "Feinschliff Studio",
+    "maintainers": [{
+        "name": "Moritz Friedrich",
+        "email": "m@9dev.de"
+    }],
+    "description": "Website of Feinschliff.Studio",
+    "main": "index.js",
+    "repository": "https://github.com/feinschliff-studio/feinschliff-studio.github.io.git",
+    "author": "Moritz Friedrich <tech@feinschliff.studio>",
+    "license": "Apache-2.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "vite": "^2.9.9"
+    }
+}
