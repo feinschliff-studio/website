@@ -16,7 +16,6 @@ export class MapMarker extends CustomElement {
     }
 
     private ready(map: google.maps.Map, element: GeoMap): void {
-        console.log('Received map:ready', map, element)
         this.map = map;
         this.marker = new google.maps.Marker({
             position: element.center,

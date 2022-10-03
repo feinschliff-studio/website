@@ -1,11 +1,34 @@
-div {
+a {
     position: relative;
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
     transform: translate(0, -200%);
-    transition: opacity 0.3s;
+    transition: opacity 300ms;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(
+                calc(-50% + (var(--scroll-indicator-size) * -0.25))
+            )
+            translateY(calc(var(--scroll-indicator-size) * -0.25));
+        width: calc(var(--scroll-indicator-size) * 3);
+        height: calc(var(--scroll-indicator-size) * 3);
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 50%;
+        z-index: 0;
+        transition: opacity 300ms;
+        opacity: 0;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
 
     & > span {
         position: relative;
@@ -17,6 +40,7 @@ div {
         transform: rotate(-45deg);
         animation: scroll-indicator-fade 1.5s infinite;
         box-sizing: border-box;
+        z-index: 3;
     }
 }
 

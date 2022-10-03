@@ -5,31 +5,19 @@ import { createElement as h } from '.';
 export class ScrollIndicator extends CustomElement {
     protected render(shadow: ShadowRoot): void | Promise<void> {
         shadow.appendChild(
-            h('div', {}, [
-                h('span', {
+            h(
+                'a',
+                {
+                    href: this.href,
                     style: {
                         '--scroll-indicator-size': this.indicatorSize,
                         '--scroll-indicator-effect-multiplier':
                             this.indicatorEffectMultiplier,
                     },
-                }),
-            ]),
+                },
+                [h('span')],
+            ),
         );
-        return;
-        const element = document.createElement('div');
-        const inner = document.createElement('span');
-        element.appendChild(inner);
-        element.classList.add('scroll-indicator');
-        element.style.setProperty(
-            '--scroll-indicator-size',
-            this.indicatorSize,
-        );
-        element.style.setProperty(
-            '--scroll-indicator-effect-multiplier',
-            this.indicatorEffectMultiplier,
-        );
-
-        shadow.appendChild(element);
     }
 
     protected styles(): string | Promise<string> {
@@ -42,6 +30,10 @@ export class ScrollIndicator extends CustomElement {
 
     get indicatorSize(): string {
         return this.getAttribute('indicator-size') || '24px';
+    }
+
+    get href(): string | undefined {
+        return this.getAttribute('href');
     }
 
     get indicatorEffectMultiplier(): string {

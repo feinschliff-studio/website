@@ -14,7 +14,6 @@ export class MapPopup extends CustomElement {
     }
 
     private ready(map: google.maps.Map, marker: google.maps.Marker): void {
-        console.log('Received map:marker-ready')
         this.popup = new google.maps.InfoWindow({
             content: this.htmlContent,
             maxWidth: this.maxWidth,
