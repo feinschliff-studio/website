@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "types": [
+            "src/env.d.ts"
+        ],
+        "module": "ESNext",
+        "moduleResolution": "node"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "functions/**/*"
+    ]
+}

@@ -14,21 +14,80 @@
 </head>
 
 <body>
-  <h1>feinschliff.studio</h1>
+  <article class="content">
+    <header class="content__section content__section--header">
+      <div class="section__hero">
+        <h1 class="hero__title">feinschliff.studio</h1>
 
-  <p>Termine nach Vereinbarung</p>
+        <p class="hero__subtitle">Termine nach Vereinbarung</p>
+      </div>
+
+      <scroll-indicator indicator-size="24px"></scroll-indicator>
+    </header>
+
+    <section class="content__section">
+      <p>
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+      </p>
+    </section>
+
+    <footer class="content__section content__section--footer content__section--fill">
+      <geo-map map-width="100%" map-height="50vh" class="map__container"
+        map-center="<%- localBusinessSchema.geo.latitude %>,<%- localBusinessSchema.geo.longitude %>" map-zoom="17"
+        map-id="<%- geoMapId %>">
+        <map-marker>
+          <map-popup y-offset="-5">
+            <span class="map-popup__map-popup-title">
+              <%- localBusinessSchema.name %>
+            </span>
+            <address class="map-popup__map-popup-address">
+              <span>
+                <%- localBusinessSchema.address.streetAddress %>
+              </span>
+              <br>
+              <span>
+                <%- localBusinessSchema.address.postalCode %>
+              </span>
+              <span>
+                <%- localBusinessSchema.address.addressLocality %>
+              </span>
+            </address>
+          </map-popup>
+        </map-marker>
+      </geo-map>
+
+      <nav class="footer-links">
+        <span class="footer-links__footer-link">
+          <a href="">Kontakt</a>
+        </span>
+        <span class="footer-links__footer-link">
+          <a href="">Datenschutz</a>
+        </span>
+        <span class="footer-links__footer-link">
+          <a href="">Impressum</a>
+        </span>
+      </nav>
+    </footer>
+  </article>
 </body>
 
 <script type="module" src="./main.ts"></script>
+
+<% if (googleTagEnabled) { %>
 <script async src="https://www.googletagmanager.com/gtag/js?id=<%- googleTagId %>"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  const gtag = () => dataLayer.push( arguments );
+  const gtag = ( ...args ) => dataLayer.push( args );
 
   gtag( 'js', new Date() );
   gtag( 'config', '<%- googleTagId %>', {
     anonymize_ip: true
   } );
+</script>
+<% } %>
+
+<script type="application/ld+json">
+  <%- JSON.stringify(localBusinessSchema) %>
 </script>
 
 </html>

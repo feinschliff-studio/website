@@ -1,45 +1,4 @@
-:root {
-    --font-family-sans: 'Jost', sans-serif;
-
-    --color-primary: 202, 194, 188;
-    --color-white: 250, 250, 250;
-}
-
-html {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: rgb(var(--color-primary));
-    font-family: var(--font-family-sans);
-}
-
-body {
-    padding: 2rem;
-    margin-left: unset;
-    margin-top: calc(100% / 5);
-    color: rgb(var(--color-white));
-    font-size: 2.4rem;
-
-    & h1 {
-        margin: 0;
-        font-size: 6vmax;
-        font-weight: 100;
-        text-shadow: -1px 1px rgba(0, 0, 0, 0.05), 0 1px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    & p {
-        margin: 0;
-    }
-}
-
-@media screen and (min-width: 800px) {
-    html {
-        justify-content: flex-start;
-    }
-
-    body {
-        padding: 0;
-        margin-left: calc(100% / 5);
-    }
-}
+@import './styles/config.pcss';
+@import './styles/base.pcss';
+@import './styles/tags.pcss';
+@import './styles/content.pcss';
