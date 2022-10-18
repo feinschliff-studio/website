@@ -40,9 +40,10 @@ export default defineConfig(async ({ mode }) => {
 
             rollupOptions: {
                 input: {
-                    main: resolve(__dirname + '/index.html'),
-                    privacy: resolve(__dirname + '/legal/privacy.html'),
-                    imprint: resolve(__dirname + '/legal/imprint.html'),
+                    main: resolve(__dirname + '/pages/index.html'),
+                    contact: resolve(__dirname + '/pages/contact.html'),
+                    privacy: resolve(__dirname + '/pages/privacy.html'),
+                    imprint: resolve(__dirname + '/pages/imprint.html'),
                 },
             },
         },
