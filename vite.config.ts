@@ -85,17 +85,17 @@ export default defineConfig(async ({ mode }) => {
                     },
                     {
                         entry: 'src/main.ts',
-                        filename: 'contact.html',
+                        filename: 'pages/contact.html',
                         template: 'pages/contact.html',
                     },
                     {
                         entry: 'src/main.ts',
-                        filename: 'privacy.html',
+                        filename: 'pages/privacy.html',
                         template: 'pages/privacy.html',
                     },
                     {
                         entry: 'src/main.ts',
-                        filename: 'imprint.html',
+                        filename: 'pages/imprint.html',
                         template: 'pages/imprint.html',
                     },
                 ],
