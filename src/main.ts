@@ -5,6 +5,7 @@ import { MapPopup } from './components/MapPopup';
 import { ScrollIndicator } from './components/ScrollIndicator';
 import './components'
 import './style.pcss';
+import { setup as configureTextAreaElements } from './modules/text-area';
 
 /*
 const elements: CustomElementInterface<CustomElement>[] = [
@@ -15,3 +16,5 @@ const elements: CustomElementInterface<CustomElement>[] = [
 ];
 elements.forEach(element => element.register(customElements));
 */
+
+configureTextAreaElements();

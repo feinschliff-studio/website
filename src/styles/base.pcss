@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: rgb(var(--color-secondary));
+    color: rgb(var(--color-text));
+}
+
 html,
 body {
     margin: 0;
@@ -10,7 +15,8 @@ body {
 
 html {
     min-height: 100%;
-    font-family: var(--font-family-sans);
+    font-family: var(--font-family-copy);
+    font-weight: 300;
     font-size: 1.4rem;
     scroll-behavior: smooth;
 }
@@ -21,4 +27,8 @@ body {
     min-height: 100vh;
     background: rgb(var(--color-primary));
     color: rgb(var(--color-text));
+}
+
+strong {
+    font-weight: 500;
 }

@@ -6,6 +6,7 @@
     "@id": "https://feinschliff.studio",
     "url": "https://feinschliff.studio",
     "telephone": "+497681494944",
+    "email": "verena@feinschliff.studio",
     "priceRange": "$$",
     "address": {
         "@type": "PostalAddress",
@@ -28,7 +29,7 @@
             "Thursday",
             "Friday"
         ],
-        "opens": "08:00",
+        "opens": "09:00",
         "closes": "17:00"
     }
 }

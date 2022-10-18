@@ -2,6 +2,7 @@ import { readFile } from 'fs/promises';
 import { defineConfig, loadEnv } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 import { LocalBusiness, Thing } from 'schema-dts';
+import { resolve } from 'path'
 
 export default defineConfig(async ({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
@@ -36,25 +37,67 @@ export default defineConfig(async ({ mode }) => {
             manifest: true,
             emptyOutDir: true,
             reportCompressedSize: true,
+
+            rollupOptions: {
+                input: {
+                    main: resolve(__dirname + '/index.html'),
+                    privacy: resolve(__dirname + '/legal/privacy.html'),
+                    imprint: resolve(__dirname + '/legal/imprint.html'),
+                },
+            },
         },
 
         define: {
             schema,
+            vars: {
+                primaryColor: 'rgb(202, 194, 188)',
+                localBusinessSchema: schema,
+                geoMapId: env.VITE_GEO_MAP_ID,
+                googleTagId: env.VITE_GOOGLE_TAG_ID,
+                googleTagEnabled: flagEnabled(
+                    env.VITE_GOOGLE_TAG_ENABLED?.toLowerCase(),
+                ),
+                footerLinks: [
+                    {
+                        href: '/pages/contact.html',
+                        label: 'Kontakt',
+                    },
+                    {
+                        href: '/pages/privacy.html',
+                        label: 'Datenschutz',
+                    },
+                    {
+                        href: '/pages/imprint.html',
+                        label: 'Impressum',
+                    },
+                ],
+            },
         },
 
         plugins: [
             createHtmlPlugin({
-                inject: {
-                    data: {
-                        googleTagEnabled: flagEnabled(
-                            env.VITE_GOOGLE_TAG_ENABLED?.toLowerCase(),
-                        ),
-                        googleTagId: env.VITE_GOOGLE_TAG_ID,
-                        primaryColor: 'rgb(202, 194, 188)',
-                        localBusinessSchema: schema,
-                        geoMapId: env.VITE_GEO_MAP_ID,
+                pages: [
+                    {
+                        entry: 'src/main.ts',
+                        filename: 'index.html',
+                        template: 'pages/index.html',
                     },
-                },
+                    {
+                        entry: 'src/main.ts',
+                        filename: 'contact.html',
+                        template: 'pages/contact.html',
+                    },
+                    {
+                        entry: 'src/main.ts',
+                        filename: 'privacy.html',
+                        template: 'pages/privacy.html',
+                    },
+                    {
+                        entry: 'src/main.ts',
+                        filename: 'imprint.html',
+                        template: 'pages/imprint.html',
+                    },
+                ],
             }),
         ],
     };
