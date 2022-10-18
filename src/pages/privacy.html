@@ -2,7 +2,7 @@
 <html lang="de">
 
 <head>
-    <title>Studio Feinschliff</title>
+    <title>Datenschutzerklärung | Studio Feinschliff</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="<%- vars.primaryColor %>">
@@ -293,7 +293,7 @@
             const gtag = ( ...args ) => dataLayer.push( args );
 
             gtag( 'js', new Date() );
-            gtag( 'config', '<%- googleTagId %>', {
+            gtag( 'config', '<%- vars.googleTagId %>', {
                 anonymize_ip: true
             } );
         </script>

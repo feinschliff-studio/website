@@ -126,7 +126,7 @@
       const gtag = ( ...args ) => dataLayer.push( args );
 
       gtag( 'js', new Date() );
-      gtag( 'config', '<%- googleTagId %>', {
+      gtag( 'config', '<%- vars.googleTagId %>', {
         anonymize_ip: true
       } );
     </script>
