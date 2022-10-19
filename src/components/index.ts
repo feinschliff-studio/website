@@ -1,27 +1,29 @@
 import { CustomElementInterface } from './CustomElement';
 
-const modules = import.meta.glob<CustomElementModule>([
-    './*.ts',
-    '!./index.ts',
-    '!./CustomElement.ts',
-]);
+export function setup(): void {
+    const modules = import.meta.glob<CustomElementModule>([
+        './*.ts',
+        '!./index.ts',
+        '!./CustomElement.ts',
+    ]);
+
+    for (const path in modules) {
+        modules[path]().then((module: CustomElementModule) => {
+            // Take the first exported symbol, as we know it must be a component
+            // instance exposing a register method
+            const component = Object.values(module)[0] || null;
+
+            if (!component || !component.register) {
+                return;
+            }
+
+            component.register(customElements);
+        });
+    }
+}
 
 interface CustomElementModule {
     [key: string]: CustomElementInterface;
-}
-
-for (const path in modules) {
-    modules[path]().then((module: CustomElementModule) => {
-        // Take the first exported symbol, as we know it must be a component
-        // instance exposing a register method
-        const component = Object.values(module)[0] || null;
-
-        if (!component || !component.register) {
-            return;
-        }
-
-        component.register(customElements);
-    });
 }
 
 type Attributes<K extends keyof HTMLElementTagNameMap> = Partial<
