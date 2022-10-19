@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@cloudflare/pages-plugin-mailchannels@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@cloudflare/pages-plugin-mailchannels/-/pages-plugin-mailchannels-0.1.1.tgz#8cbed9cf1bea2597cbfa6ab148c5bf3a19acb86f"
-  integrity sha512-lxfPNOYkMfG08z+c+TRqg5r78aQN7yLxPUEVfL61AGdbYBiS3D8I7COIkSaUqO9g2aOp43BLjbEGSr7bWbBqcA==
-
 "@cloudflare/workers-types@^3.16.0":
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/@cloudflare/workers-types/-/workers-types-3.17.0.tgz#8cee4499019daa6a23c9cc5501aa8382bb94d4da"
