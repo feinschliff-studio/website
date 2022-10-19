@@ -8,6 +8,7 @@
     "telephone": "+497681494944",
     "email": "verena@feinschliff.studio",
     "priceRange": "$$",
+    "paymentAccepted": "Cash",
     "address": {
         "@type": "PostalAddress",
         "streetAddress": "Benzengäßle 3",
@@ -31,5 +32,11 @@
         ],
         "opens": "09:00",
         "closes": "17:00"
+    },
+    "founder": {
+        "name": "Verena Alpers",
+        "givenName": "Verena",
+        "familyName": "Alpers",
+        "email": "verena@feinschliff.studio"
     }
 }

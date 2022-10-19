@@ -21,7 +21,12 @@
           <h1>Kontakt</h1>
         </header>
 
-        <form method="post" accept-charset="utf-8" action="/api/contact-submission">
+        <form
+          method="post"
+          accept-charset="utf-8"
+          enctype="application/x-www-form-urlencoded"
+          action="/api/contact-submission"
+        >
           <label for="name">
             <input
               type="text"
@@ -36,16 +41,29 @@
             <span>Ihr Name</span>
           </label>
 
-          <label for="phone">
-            <input
-              type="phone"
-              name="phone"
-              id="phone"
-              placeholder="07681&thinsp;/&thinsp;123456789"
-              autocomplete="tel"
-            >
-            <span>Ihre Telefonnummer (optional)</span>
-          </label>
+          <div class="form__group">
+            <label for="phone">
+              <input
+                type="phone"
+                name="phone"
+                id="phone"
+                placeholder="07681&thinsp;/&thinsp;123456789"
+                autocomplete="tel"
+              >
+              <span>Ihre Telefonnummer (optional)</span>
+            </label>
+
+            <label for="email">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="sabine@mustermann.de"
+                autocomplete="email"
+              >
+              <span>Ihre E-Mail-Adresse (optional)</span>
+            </label>
+          </div>
 
           <label for="message">
             <textarea
