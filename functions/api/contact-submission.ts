@@ -1,16 +1,46 @@
-import schema from '../../schema.json';
-import ejs from 'ejs';
+import schemaData from '../../schema.json';
+import { BeautySalon } from 'schema-dts';
 
-type SubmissionEnvironment = {
-    SUBMISSION_SUBJECT: string | undefined;
-};
-type SubmissionData = {
-};
-type SubmissionContext = EventContext<
-    SubmissionEnvironment,
-    string,
-    SubmissionData
->;
+const schema = schemaData as typeof schemaData & BeautySalon;
+
+function renderHtmlText(context: TemplateContext): string {
+    return `
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Neue Nachricht</title>
+        <style type="text/css">
+            body {
+                font-family: sans-serif;
+                color:#333;
+                line-height: 1.4;
+                padding: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <span>Am ${new Date().toLocaleString('de')} hat ${context.name} eine Nachricht hinterlassen:</span><br>
+        <p>${context.message}</p>
+        <br>
+        <span>Telefonnummer: </span><strong>${
+            context.phone || 'Nicht angegeben'
+        }</strong><br>
+        <span>E-Mail-Adresse: </span><strong>${
+            context.email || 'Nicht angegeben'
+        }</strong>
+    </body>
+</html>
+`.trim();
+}
+
+function renderPlainText(context: TemplateContext): string {
+    return `Am ${new Date().toLocaleString('de')} hat ${context.name} eine Nachricht hinterlassen:
+${context.message}
+
+Telefonnummer: ${context.phone || 'Nicht angegeben'}
+E-Mail-Adresse: ${context.email || 'Nicht angegeben'}
+`.trim();
+}
 
 export const onRequestPost: PagesFunction = async function onRequestPost(
     context: SubmissionContext
@@ -36,26 +66,26 @@ export const onRequestPost: PagesFunction = async function onRequestPost(
         const phone = formData.get('phone') as string | undefined;
         const message = formData.get('message') as string | undefined;
         const domain = new URL(schema.url).hostname;
-        const [plainContent,htmlContent] = await Promise.all([
-            ejs.renderFile('../../templates/submission.txt.ejs', {
+        const [plainContent, htmlContent] = await Promise.all([
+            renderPlainText({
                 name,
                 email,
                 phone,
                 message,
                 subject,
-                schema
+                schema,
             }),
-            ejs.renderFile('../../templates/submission.html.ejs', {
+            renderHtmlText({
                 name,
                 email,
                 phone,
                 message,
                 subject,
-                schema
-            })
+                schema,
+            }),
         ]);
 
-        await sendEmail({
+        const result = await sendEmail({
             from: {
                 email: `website@${domain}`,
                 name,
@@ -88,8 +118,12 @@ export const onRequestPost: PagesFunction = async function onRequestPost(
             ],
         });
 
-        redirectLocation.searchParams.append('state', 'success');
-
+        if (isFailure(result)) {
+            redirectLocation.searchParams.append('state', 'error');
+            redirectLocation.searchParams.append('error', result.errors.join(', '));
+        } else {
+            redirectLocation.searchParams.append('state', 'success');
+        }
     } catch (error) {
         redirectLocation.searchParams.append('state', 'error');
         redirectLocation.searchParams.append('error', error.message);
@@ -117,7 +151,9 @@ export const sendEmail = async (
     });
 
     if (response.status === 202) {
-        return { success: true };
+        return {
+            success: true,
+        };
     }
 
     try {
@@ -141,7 +177,7 @@ interface EmailAddress {
     name?: string;
 }
 
-  export interface Personalization {
+export interface Personalization {
     to: [EmailAddress, ...EmailAddress[]];
     from?: EmailAddress;
     dkim_domain?: string;
@@ -152,27 +188,51 @@ interface EmailAddress {
     bcc?: EmailAddress[];
     subject?: string;
     headers?: Record<string, string>;
-  }
+}
 
-  export interface ContentItem {
+export interface ContentItem {
     type: string;
     value: string;
-  }
+}
 
-  export interface MailSendBody {
+export interface MailSendBody {
     personalizations: [Personalization, ...Personalization[]];
     from: EmailAddress;
     reply_to?: EmailAddress;
     subject: string;
     content: [ContentItem, ...ContentItem[]];
     headers?: Record<string, string>;
-  }
+}
 
-  interface Success {
+interface Success {
     success: true;
-  }
+}
 
-  interface Failure {
+interface Failure {
     success: false;
     errors: string[];
-  }
+}
+
+type SubmissionEnvironment = {
+    SUBMISSION_SUBJECT: string | undefined;
+};
+type SubmissionData = {
+};
+type SubmissionContext = EventContext<
+    SubmissionEnvironment,
+    string,
+    SubmissionData
+>;
+
+interface TemplateContext {
+    name: string;
+    subject: string;
+    message: string;
+    phone?: string;
+    email?: string;
+    schema?: BeautySalon;
+}
+
+function isFailure(r: Success|Failure): r is Failure {
+    return r.success === false;
+}
