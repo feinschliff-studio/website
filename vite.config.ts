@@ -60,15 +60,15 @@ export default defineConfig(async ({ mode }) => {
                 ),
                 footerLinks: [
                     {
-                        href: '/pages/contact.html',
+                        href: '/contact.html',
                         label: 'Kontakt',
                     },
                     {
-                        href: '/pages/privacy.html',
+                        href: '/privacy.html',
                         label: 'Datenschutz',
                     },
                     {
-                        href: '/pages/imprint.html',
+                        href: '/imprint.html',
                         label: 'Impressum',
                     },
                 ],
