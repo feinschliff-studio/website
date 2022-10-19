@@ -45,7 +45,7 @@ E-Mail-Adresse: ${context.email || 'Nicht angegeben'}
 export const onRequestPost: PagesFunction = async function onRequestPost(
     context: SubmissionContext
 ): Promise<Response> {
-    const redirectLocation = new URL('/pages/contact.html', schema.url);
+    const redirectLocation = new URL('/contact.html', schema.url);
     const {
         request, // same as existing Worker API
         env, // same as existing Worker API
