@@ -1,0 +1,60 @@
+{
+  "_main.fce79582.js": {
+    "file": "assets/main.fce79582.js",
+    "dynamicImports": [
+      "components/GeoMap.ts",
+      "components/MapMarker.ts",
+      "components/MapPopup.ts",
+      "components/ScrollIndicator.ts"
+    ],
+    "css": [
+      "assets/main.1033a1d8.css"
+    ]
+  },
+  "components/GeoMap.ts": {
+    "file": "assets/GeoMap.b8e49abb.js",
+    "src": "components/GeoMap.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_CustomElement.43dab8c6.js",
+      "_geo-map.c8b756f7.js",
+      "_main.fce79582.js"
+    ]
+  },
+  "_CustomElement.43dab8c6.js": {
+    "file": "assets/CustomElement.43dab8c6.js"
+  },
+  "_geo-map.c8b756f7.js": {
+    "file": "assets/geo-map.c8b756f7.js"
+  },
+  "components/MapMarker.ts": {
+    "file": "assets/MapMarker.93e5a8c4.js",
+    "src": "components/MapMarker.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_CustomElement.43dab8c6.js",
+      "_geo-map.c8b756f7.js"
+    ]
+  },
+  "components/MapPopup.ts": {
+    "file": "assets/MapPopup.b98580d4.js",
+    "src": "components/MapPopup.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_CustomElement.43dab8c6.js"
+    ]
+  },
+  "components/ScrollIndicator.ts": {
+    "file": "assets/ScrollIndicator.d6791075.js",
+    "src": "components/ScrollIndicator.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_CustomElement.43dab8c6.js",
+      "_main.fce79582.js"
+    ]
+  },
+  "main.css": {
+    "file": "assets/main.1033a1d8.css",
+    "src": "main.css"
+  }
+}
