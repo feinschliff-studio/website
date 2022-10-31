@@ -12,22 +12,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Source+Sans+Pro:wght@300;400&display=swap"
-    rel="preload"
-    as="style"
-  >
+    rel="preload" as="style">
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Source+Sans+Pro:wght@300;400&display=swap"
-    rel="stylesheet"
-    media="print"
-    onload="this.media='all'"
-  >
+    rel="stylesheet" media="print" onload="this.media='all'">
 
   <noscript>
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Source+Sans+Pro:wght@300;400&display=swap"
-      type="text/css"
-      rel="stylesheet"
-    >
+      type="text/css" rel="stylesheet">
   </noscript>
 </head>
 
@@ -45,15 +38,6 @@
 
     <section class="content__section" id="intro">
       <div class="section__inner">
-        <p>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-          clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-          consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-          takimata sanctus est Lorem ipsum dolor sit amet.
-        </p>
-
         <h3>Unsere Leistungen</h3>
 
         <ul class="price-list">
@@ -96,14 +80,50 @@
             <span>Biodroga Drain Massage</span>
             <data>15&hairsp;€</data>
           </li>
+
+          <li>
+            <span>Fußpflege (inkl. Fußbad und Creme)</span>
+            <data>38&hairsp;€</data>
+          </li>
+
+          <li>
+            <span>Lackieren</span>
+            <data>3&hairsp;€</data>
+          </li>
+
+          <li>
+            <span>Augenbrauen zupfen&thinsp;/&thinsp;färben</span>
+            <data>15&hairsp;€</data>
+          </li>
+          <li>
+            <span>Wimpern färben</span>
+            <data>15&hairsp;€</data>
+          </li>
+
+          <li>
+            <span>Maniküre</span>
+            <data>35&hairsp;€</data>
+          </li>
+
+          <li>
+            <span>Lackieren</span>
+            <data>3&hairsp;€</data>
+          </li>
         </ul>
+
+        <p>
+          Bitte sprechen Sie uns bei medizinischen Problemen an.
+          Wir bieten Ihnen auch Hilfe und Beratung bei eingewachsenen Nägeln etc.<br>
+        </p>
+        <p>
+          Hausbesuche sind möglich.
+        </p>
       </div>
     </section>
 
     <footer class="content__section content__section--footer content__section--fill" id="map">
       <geo-map map-width="100%" map-height="600px" class="map__container"
-        map-center="<%- schema.geo.latitude %>,<%- schema.geo.longitude %>" map-zoom="17"
-        map-id="<%- vars.geoMapId %>">
+        map-center="<%- schema.geo.latitude %>,<%- schema.geo.longitude %>" map-zoom="17" map-id="<%- vars.geoMapId %>">
         <map-marker>
           <map-popup y-offset="-5">
             <span class="map-popup__map-popup-title">
@@ -128,9 +148,11 @@
       <nav class="footer-links" id="footer">
         <% for (const link of vars.footerLinks) { %>
           <span class="footer-links__footer-link">
-            <a href="<%- link.href %>"><%- link.label %></a>
+            <a href="<%- link.href %>">
+              <%- link.label %>
+            </a>
           </span>
-        <% } %>
+          <% } %>
       </nav>
     </footer>
   </article>
@@ -148,9 +170,9 @@
         anonymize_ip: true
       } );
     </script>
-  <% } %>
+    <% } %>
 
-  <script type="application/ld+json">
+      <script type="application/ld+json">
     <%- JSON.stringify(schema) %>
   </script>
 </body>
