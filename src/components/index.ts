@@ -59,10 +59,10 @@ export function createElement<K extends keyof HTMLElementTagNameMap>(
     return Object.entries(attributes).reduce((element, [attribute, value]) => {
         switch (attribute) {
             case 'class':
-                const classes: string = Array.isArray(value)
-                    ? value.join(' ')
-                    : (value as string);
-                element.classList.add(classes);
+                const classes: string[] = Array.isArray(value)
+                    ? value
+                    : [value as string];
+                element.classList.add(...classes);
                 break;
 
             case 'style':

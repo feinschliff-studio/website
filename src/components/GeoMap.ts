@@ -2,6 +2,7 @@ import { Coordinates, loadMap } from '../modules/map';
 import { CustomElement } from './CustomElement';
 import style from './../styles/components/geo-map.pcss?inline';
 import { createElement as h } from '.';
+import { consent, ConsentChangeEvent } from './ConsentBanner';
 
 export class GeoMap extends CustomElement {
     public map: google.maps.Map | null = null;
@@ -19,11 +20,26 @@ export class GeoMap extends CustomElement {
             class: 'geo-map',
             style: {
                 width: this.mapWidth,
-                height: this.mapHeight,
+                height: '0',
             },
         });
         shadow.appendChild(wrapper);
 
+        if (consent.level > 1) {
+            wrapper.style.height = this.mapHeight;
+            await this.initialize(wrapper);
+        }
+
+        consent.addEventListener('change', ({ detail }: ConsentChangeEvent) => {
+            if (detail.level > 1) {
+                wrapper.style.height = this.mapHeight;
+
+                return this.initialize(wrapper);
+            }
+        });
+    }
+
+    private async initialize(wrapper: HTMLDivElement): Promise<void> {
         this.map = await loadMap(wrapper, {
             center: this.center,
             mapId: this.mapId,
