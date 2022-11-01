@@ -42,12 +42,18 @@ type Attributes<K extends keyof HTMLElementTagNameMap> = Partial<
 export function createElement<K extends keyof HTMLElementTagNameMap>(
     type: K,
     attributes: Attributes<K> = {} as Attributes<K>,
-    children: HTMLElement[] = [],
+    children: (HTMLElement | string)[] = [],
 ): HTMLElementTagNameMap[K] {
     const element = document.createElement(type);
 
-    if (children.length > 0) {
-        element.appendChild.apply(element, children);
+    for (const child of children) {
+        if (typeof child === 'string') {
+            element.insertAdjacentText('beforeend', child);
+
+            continue;
+        }
+
+        element.appendChild(child);
     }
 
     return Object.entries(attributes).reduce((element, [attribute, value]) => {
@@ -55,7 +61,7 @@ export function createElement<K extends keyof HTMLElementTagNameMap>(
             case 'class':
                 const classes: string = Array.isArray(value)
                     ? value.join(' ')
-                    : value as string;
+                    : (value as string);
                 element.classList.add(classes);
                 break;
 

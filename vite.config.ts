@@ -3,8 +3,10 @@ import { defineConfig, loadEnv } from 'vite';
 import { LocalBusiness, Thing } from 'schema-dts';
 import { sitemap } from './src/plugins/vite-plugin-sitemap';
 import { mpa } from './src/plugins/vite-plugin-mpa';
+import fontDownload from 'vite-plugin-webfont-dl';
 import { join, parse, resolve } from 'path';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
+import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig(async ({ mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
@@ -95,32 +97,54 @@ export default defineConfig(async ({ mode }) => {
                 baseUrl: schema.url,
             }),
 
-            ViteEjsPlugin({
-                schema,
-                vars: {
-                    primaryColor: 'rgb(202, 194, 188)',
-                    localBusinessSchema: schema,
-                    geoMapId: env.VITE_GEO_MAP_ID,
-                    googleTagId: env.VITE_GOOGLE_TAG_ID,
-                    googleTagEnabled: flagEnabled(
-                        env.VITE_GOOGLE_TAG_ENABLED?.toLowerCase(),
-                    ),
-                    footerLinks: [
-                        {
-                            href: '/contact.html',
-                            label: 'Kontakt',
-                        },
-                        {
-                            href: '/privacy.html',
-                            label: 'Datenschutz',
-                        },
-                        {
-                            href: '/imprint.html',
-                            label: 'Impressum',
-                        },
-                    ],
+            fontDownload(
+                [
+                    'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Source+Sans+Pro:wght@300;400&display=swap',
+                ],
+                {},
+            ),
+
+            ViteEjsPlugin(
+                {
+                    schema,
+                    vars: {
+                        primaryColor: 'rgb(202, 194, 188)',
+                        localBusinessSchema: schema,
+                        geoMapId: env.VITE_GEO_MAP_ID,
+                        googleTagId: env.VITE_GOOGLE_TAG_ID,
+                        googleTagEnabled: flagEnabled(
+                            env.VITE_GOOGLE_TAG_ENABLED?.toLowerCase(),
+                        ),
+                        footerLinks: [
+                            {
+                                href: '/contact.html',
+                                label: 'Kontakt',
+                            },
+                            {
+                                href: '/privacy.html',
+                                label: 'Datenschutz',
+                            },
+                            {
+                                href: '/imprint.html',
+                                label: 'Impressum',
+                            },
+                        ],
+                    },
                 },
-            }),
+                {
+                    ejs: {
+                        async: false,
+                        includer(path) {
+                            const root = fileURLToPath(
+                                new URL('./src', import.meta.url),
+                            );
+                            const filename = resolve(root, path);
+
+                            return { filename };
+                        },
+                    },
+                },
+            ),
         ],
     };
 });
