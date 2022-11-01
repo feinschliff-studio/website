@@ -3,33 +3,44 @@
     "file": "assets/background.2f3f892c.jpg",
     "src": "assets/background.jpg"
   },
-  "_main.51bda28a.js": {
-    "file": "assets/main.51bda28a.js",
+  "_main.976d8410.js": {
+    "file": "assets/main.976d8410.js",
     "dynamicImports": [
+      "components/ConsentBanner.ts",
       "components/GeoMap.ts",
       "components/MapMarker.ts",
       "components/MapPopup.ts",
       "components/ScrollIndicator.ts"
     ],
     "css": [
-      "assets/main.89393ae5.css"
+      "assets/main.f94bccd7.css"
     ],
     "assets": [
       "assets/background.2f3f892c.jpg"
     ]
   },
+  "components/ConsentBanner.ts": {
+    "file": "assets/ConsentBanner.6f89f9a8.js",
+    "src": "components/ConsentBanner.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_main.976d8410.js",
+      "_CustomElement.43dab8c6.js"
+    ]
+  },
+  "_CustomElement.43dab8c6.js": {
+    "file": "assets/CustomElement.43dab8c6.js"
+  },
   "components/GeoMap.ts": {
-    "file": "assets/GeoMap.56b8e8b0.js",
+    "file": "assets/GeoMap.e01f0822.js",
     "src": "components/GeoMap.ts",
     "isDynamicEntry": true,
     "imports": [
       "_CustomElement.43dab8c6.js",
       "_geo-map.c8b756f7.js",
-      "_main.51bda28a.js"
+      "_main.976d8410.js",
+      "components/ConsentBanner.ts"
     ]
-  },
-  "_CustomElement.43dab8c6.js": {
-    "file": "assets/CustomElement.43dab8c6.js"
   },
   "_geo-map.c8b756f7.js": {
     "file": "assets/geo-map.c8b756f7.js"
@@ -52,16 +63,16 @@
     ]
   },
   "components/ScrollIndicator.ts": {
-    "file": "assets/ScrollIndicator.91b5c365.js",
+    "file": "assets/ScrollIndicator.c5c3611d.js",
     "src": "components/ScrollIndicator.ts",
     "isDynamicEntry": true,
     "imports": [
       "_CustomElement.43dab8c6.js",
-      "_main.51bda28a.js"
+      "_main.976d8410.js"
     ]
   },
   "main.css": {
-    "file": "assets/main.89393ae5.css",
+    "file": "assets/main.f94bccd7.css",
     "src": "main.css"
   },
   "92zPtBhPNqw79Ij1E865zBUv7myjJTVFNIg8mg.woff2": {
