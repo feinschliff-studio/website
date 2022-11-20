@@ -1,6 +1,5 @@
 import { CustomElement } from './CustomElement';
-import { GeoMap } from './GeoMap';
-import { MapMarker, MarkerReadyEvent } from './MapMarker';
+import { MarkerReadyEvent } from './MapMarker';
 
 export class MapPopup extends CustomElement {
     public popup: google.maps.InfoWindow | null = null;
@@ -38,10 +37,9 @@ export class MapPopup extends CustomElement {
         );
     }
 
-    public get htmlContent(): string{
+    public get htmlContent(): string {
         return `<div class="map-popup">${this.content}</div>`;
     }
-
 
     public get content(): string {
         return this.hasAttribute('content')

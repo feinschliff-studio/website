@@ -1,0 +1,30 @@
+.glide__track {
+    position: relative;
+}
+
+.glide__slide {
+    position: relative;
+    overflow: hidden;
+    max-height: 75vh;
+
+    & img {
+        object-fit: cover;
+        object-position: center;
+        max-height: inherit;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+
+.glide__arrow {
+    font-size: 1.2rem;
+}
+
+@supports (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0)) {
+    .glide__arrow {
+        background-color: rgba(255, 255, 255, 0.1);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        backdrop-filter: blur(12px) saturate(180%);
+        border: 2px solid rgba(255, 255, 255, 0.05);
+    }
+}

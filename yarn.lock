@@ -29,6 +29,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.12.tgz#475b33a2631a3d8ca8aa95ee127f9a61d95bf9c1"
   integrity sha512-tZEowDjvU7O7I04GYvWQOS4yyP9E/7YlsB0jjw1Ycukgr2ycEzKyIk5tms5WnLBymaewc6VmRKnn5IJWgK4eFw==
 
+"@glidejs/glide@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@glidejs/glide/-/glide-3.6.0.tgz#d13fd57de8473a2d86022ac601b5cbc98c9dcfe5"
+  integrity sha512-47Aa+JmYjY4xTFpTtYCwrqirmI1arnp1UZETwtWpbTPisXUAuxrdJxKJLH8KHFWMsSrLi9+AcfyfzDIuO75rEA==
+
 "@googlemaps/js-api-loader@^1.14.3":
   version "1.14.3"
   resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.14.3.tgz#d7a161cd547be04ad46a1cb176e6c2647f6d74a7"
@@ -116,6 +121,16 @@
     "@types/node" "*"
     "@types/qs" "*"
     "@types/range-parser" "*"
+
+"@types/glidejs@^1.0.31":
+  version "1.0.31"
+  resolved "https://registry.yarnpkg.com/@types/glidejs/-/glidejs-1.0.31.tgz#6c1929a7bbd289a3b1f29737ec6247960663fb72"
+  integrity sha512-70C7VbwbbP2ORa0i0dA4dCCeOC7qR2VkCzCRkOf7jkgSP0/O37ME1Ar60R5bS1umppB+q4F/+xT1AtiPxv13SQ==
+
+"@types/glidejs__glide@^3.4.3":
+  version "3.4.3"
+  resolved "https://registry.yarnpkg.com/@types/glidejs__glide/-/glidejs__glide-3.4.3.tgz#fff95a0c38ff808fff43b09fee165685a096bacf"
+  integrity sha512-sJHLeDNBojkTvjvhuU9YtTbnb9jxLvtOsYNNUn0kkYzrON39h69QOyGmMd/AfOSw2oSz5tJpOW7UapG5tNYv0A==
 
 "@types/google.maps@^3.50.2":
   version "3.50.4"

@@ -96,6 +96,18 @@
       </div>
     </section>
 
+    <section class="content__section content__section--gallery content__section--fill" id="gallery">
+      <media-gallery per-view="2" start-at="0" autoplay="500" gap="0" keyboard>
+        <img src="/assets/images/a.jpg">
+        <img src="/assets/images/b.jpg">
+        <img src="/assets/images/c.jpg">
+        <img src="/assets/images/d.jpg">
+        <img src="/assets/images/e.jpg">
+        <img src="/assets/images/f.jpg">
+        <img src="/assets/images/g.jpg">
+      </media-gallery>
+    </section>
+
     <footer class="content__section content__section--footer content__section--fill" id="map">
       <geo-map map-width="100%" map-height="600px" class="map__container"
         map-center="<%- schema.geo.latitude %>,<%- schema.geo.longitude %>" map-zoom="17" map-id="<%- vars.geoMapId %>">

@@ -37,6 +37,7 @@ type Attributes<K extends keyof HTMLElementTagNameMap> = Partial<
 > &
     Partial<{
         class: string | string[];
+        data: Record<string, string>;
     }>;
 
 export function createElement<K extends keyof HTMLElementTagNameMap>(
@@ -70,6 +71,11 @@ export function createElement<K extends keyof HTMLElementTagNameMap>(
                     element.style.setProperty(property, styleValue);
                 }
                 break;
+
+            case 'data':
+                for (let [property, dataValue] of Object.entries(value)) {
+                    element.dataset[property] = dataValue;
+                }
 
             default:
                 element[attribute] = value;
