@@ -41,26 +41,7 @@ export default defineConfig(async ({ mode }) => {
             manifest: true,
             emptyOutDir: true,
             reportCompressedSize: true,
-            rollupOptions: {
-                /*
-                input: {
-                    'main': resolve(__dirname + '/src/pages/index.html'),
-                    'pages/x/contact': resolve(
-                        __dirname + '/src/pages/contact.html',
-                    ),
-                    'privacy': resolve(__dirname + '/src/pages/privacy.html'),
-                    'imprint': resolve(__dirname + '/src/pages/imprint.html'),
-                },
-                input: {
-                    main: resolve(__dirname + '/src/pages/index.html'),
-                    ...entryPoints(
-                        'src/pages/contact.html',
-                        'src/pages/privacy.html',
-                        'src/pages/imprint.html',
-                    )
-                }
-*/
-            },
+            rollupOptions: {},
         },
 
         define: {
