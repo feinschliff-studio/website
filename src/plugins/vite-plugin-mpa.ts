@@ -1,6 +1,6 @@
 import type { Plugin, UserConfig } from 'vite';
 import history from 'connect-history-api-fallback';
-import path, { resolve, basename, dirname, extname, join } from 'path';
+import { resolve, basename, dirname, extname, join } from 'path';
 import { mkdir, rename, rm, unlink } from 'fs/promises';
 import { cwd } from 'process';
 import fg from 'fast-glob';
@@ -16,14 +16,6 @@ export const mpa = function mpa(userOptions: UserOptions = {}): Plugin {
         rewrites: [],
         ...userOptions,
     };
-
-    if (!options.scanFile.includes('.')) {
-        console.error(
-            '[vite:mpa]: scanFile should be something like main.ts/main.{js,ts}/index.js/index{ts,tsx}',
-        );
-
-        process.exit(1);
-    }
 
     let resolvedConfig: UserConfig;
 
@@ -51,7 +43,7 @@ export const mpa = function mpa(userOptions: UserOptions = {}): Plugin {
         async configureServer({ middlewares: app }): Promise<void> {
             app.use(
                 // @see https://github.com/vitejs/vite/blob/8733a83d291677b9aff9d7d78797ebb44196596e/packages/vite/src/node/server/index.ts#L433
-                // @yts-ignore
+                // @ts-ignore
                 history({
                     verbose:
                         Boolean(process.env.DEBUG) &&
@@ -120,6 +112,29 @@ export const mpa = function mpa(userOptions: UserOptions = {}): Plugin {
                 force: true,
             });
         },
+
+        transformIndexHtml(html, context): string {
+            const referencedAssets = Object.fromEntries(
+                Object.entries(context.bundle)
+                    .filter(([k]) => k.startsWith('assets'))
+                    .map(([k, v]) => [
+                        // Extract the hash from "assets/e.[a6558b35].jpg"
+                        k.split('/', 2).pop().split('.').slice(-2, -1),
+                        v.fileName,
+                    ]),
+            );
+
+            return html.replace(
+                /__VITE_ASSET__(.[a-z0-9]+)__/gi,
+                (full, match) => {
+                    if (!(match in referencedAssets)) {
+                        return full;
+                    }
+
+                    return join(resolvedConfig.base, referencedAssets[match]);
+                },
+            );
+        },
     };
 };
 
@@ -127,6 +142,10 @@ export const mpa = function mpa(userOptions: UserOptions = {}): Plugin {
  * return first page path
  */
 function getFirstPage(pages: Record<string, string>): string {
+    if ('index.html' in pages) {
+        return '/index.html';
+    }
+
     const firstPageName = Object.keys(pages)[0];
     return `/${firstPageName}/index.html`;
 }
