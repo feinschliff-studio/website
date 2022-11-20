@@ -1,44 +1,83 @@
 {
+  "assets/images/a.jpg": {
+    "file": "assets/a.883b5f32.jpg",
+    "src": "assets/images/a.jpg"
+  },
+  "assets/images/b.jpg": {
+    "file": "assets/b.e44a0518.jpg",
+    "src": "assets/images/b.jpg"
+  },
+  "assets/images/c.jpg": {
+    "file": "assets/c.f0305553.jpg",
+    "src": "assets/images/c.jpg"
+  },
+  "assets/images/d.jpg": {
+    "file": "assets/d.1415db57.jpg",
+    "src": "assets/images/d.jpg"
+  },
+  "assets/images/e.jpg": {
+    "file": "assets/e.a6558b35.jpg",
+    "src": "assets/images/e.jpg"
+  },
+  "assets/images/f.jpg": {
+    "file": "assets/f.dd288968.jpg",
+    "src": "assets/images/f.jpg"
+  },
+  "assets/images/g.jpg": {
+    "file": "assets/g.55aea68d.jpg",
+    "src": "assets/images/g.jpg"
+  },
   "assets/background.jpg": {
     "file": "assets/background.2f3f892c.jpg",
     "src": "assets/background.jpg"
   },
-  "_main.7f9c864d.js": {
-    "file": "assets/main.7f9c864d.js",
+  "_main.34574d5a.js": {
+    "file": "assets/main.34574d5a.js",
     "dynamicImports": [
+      "components/BackButton.ts",
       "components/ConsentBanner.ts",
       "components/GeoMap.ts",
       "components/MapMarker.ts",
       "components/MapPopup.ts",
+      "components/MediaGallery.ts",
       "components/ScrollIndicator.ts"
     ],
     "css": [
-      "assets/main.f94bccd7.css"
+      "assets/main.756c90f3.css"
     ],
     "assets": [
       "assets/background.2f3f892c.jpg"
     ]
   },
-  "components/ConsentBanner.ts": {
-    "file": "assets/ConsentBanner.4230caa0.js",
-    "src": "components/ConsentBanner.ts",
+  "components/BackButton.ts": {
+    "file": "assets/BackButton.c4ff3037.js",
+    "src": "components/BackButton.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_main.7f9c864d.js",
+      "_main.34574d5a.js",
       "_CustomElement.43dab8c6.js"
     ]
   },
   "_CustomElement.43dab8c6.js": {
     "file": "assets/CustomElement.43dab8c6.js"
   },
+  "components/ConsentBanner.ts": {
+    "file": "assets/ConsentBanner.5d1a2b82.js",
+    "src": "components/ConsentBanner.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_main.34574d5a.js",
+      "_CustomElement.43dab8c6.js"
+    ]
+  },
   "components/GeoMap.ts": {
-    "file": "assets/GeoMap.309d7866.js",
+    "file": "assets/GeoMap.58e0fa6f.js",
     "src": "components/GeoMap.ts",
     "isDynamicEntry": true,
     "imports": [
       "_CustomElement.43dab8c6.js",
       "_geo-map.c8b756f7.js",
-      "_main.7f9c864d.js",
+      "_main.34574d5a.js",
       "components/ConsentBanner.ts"
     ]
   },
@@ -62,17 +101,26 @@
       "_CustomElement.43dab8c6.js"
     ]
   },
+  "components/MediaGallery.ts": {
+    "file": "assets/MediaGallery.ddc244f2.js",
+    "src": "components/MediaGallery.ts",
+    "isDynamicEntry": true,
+    "imports": [
+      "_main.34574d5a.js",
+      "_CustomElement.43dab8c6.js"
+    ]
+  },
   "components/ScrollIndicator.ts": {
-    "file": "assets/ScrollIndicator.477f5e64.js",
+    "file": "assets/ScrollIndicator.e0957d1d.js",
     "src": "components/ScrollIndicator.ts",
     "isDynamicEntry": true,
     "imports": [
       "_CustomElement.43dab8c6.js",
-      "_main.7f9c864d.js"
+      "_main.34574d5a.js"
     ]
   },
   "main.css": {
-    "file": "assets/main.f94bccd7.css",
+    "file": "assets/main.756c90f3.css",
     "src": "main.css"
   },
   "92zPtBhPNqw79Ij1E865zBUv7myjJTVFNIg8mg.woff2": {
