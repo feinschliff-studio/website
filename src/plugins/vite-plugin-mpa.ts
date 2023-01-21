@@ -115,7 +115,7 @@ export const mpa = function mpa(userOptions: UserOptions = {}): Plugin {
 
         transformIndexHtml(html, context): string {
             const referencedAssets = Object.fromEntries(
-                Object.entries(context.bundle)
+                Object.entries(context.bundle || {})
                     .filter(([k]) => k.startsWith('assets'))
                     .map(([k, v]) => [
                         // Extract the hash from "assets/e.[a6558b35].jpg"
