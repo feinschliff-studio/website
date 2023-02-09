@@ -64,6 +64,18 @@
     & header > h1 {
         font-size: 3rem;
     }
+
+    & .subheading {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 1.5rem 0 0.25rem;
+
+        & h3,
+        & h4 {
+            margin: 0;
+        }
+    }
 }
 
 .section__hero {
@@ -122,5 +134,14 @@
     .section__hero {
         padding-left: calc(100vw / 5);
         padding-bottom: calc(100vh / 5);
+    }
+
+    .content__section {
+        padding: 2rem;
+
+        & .subheading {
+            flex-direction: row;
+            align-items: center;
+        }
     }
 }
