@@ -6,7 +6,7 @@
     "@id": "https://feinschliff.studio",
     "url": "https://feinschliff.studio",
     "telephone": "+497681494944",
-    "email": "verena@feinschliff.studio",
+    "email": "verena.friedrich@feinschliff.studio",
     "priceRange": "$$",
     "paymentAccepted": "Cash",
     "address": {
@@ -38,6 +38,6 @@
         "name": "Verena Alpers",
         "givenName": "Verena",
         "familyName": "Alpers",
-        "email": "website@feinschliff.studio"
+        "email": "kontakt@feinschliff.studio"
     }
 }
