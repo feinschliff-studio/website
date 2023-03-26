@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import { defineConfig, loadEnv } from 'vite';
-import { LocalBusiness, Thing } from 'schema-dts';
+import { LocalBusiness, Organization, Thing } from 'schema-dts';
 import { sitemap } from './src/plugins/vite-plugin-sitemap';
 import { mpa } from './src/plugins/vite-plugin-mpa';
 import fontDownload from 'vite-plugin-webfont-dl';
@@ -91,6 +91,7 @@ export default defineConfig(async ({ mode }) => {
                     vars: {
                         primaryColor: 'rgb(202, 194, 188)',
                         localBusinessSchema: schema,
+                        formattedPhoneNumber: formatPhoneNumber(schema),
                         geoMapId: env.VITE_GEO_MAP_ID,
                         googleTagId: env.VITE_GOOGLE_TAG_ID,
                         googleTagEnabled: flagEnabled(
@@ -150,4 +151,23 @@ function entryPoints(...paths: string[]): Record<string, string> {
     });
 
     return Object.fromEntries(entries);
+}
+
+function formatPhoneNumber(schema: LocalBusiness): string {
+    if (
+        typeof schema === 'string' ||
+        !schema.telephone ||
+        typeof schema.telephone !== 'string'
+    ) {
+        return '';
+    }
+
+    const parts = schema.telephone.replace('+49', '0');
+    const prefix = parts.slice(0, 5);
+    const suffix = parts
+        .slice(5)
+        .match(/.{1,2}/g)
+        ?.join('&thinsp;');
+
+    return `${prefix}&thinsp;/&thinsp;${suffix}`;
 }
