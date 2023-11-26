@@ -1,0 +1,30 @@
+// See https://kit.svelte.dev/docs/types#app
+// for information about these interfaces
+import type { StoryblokClient } from "@storyblok/svelte";
+
+declare global {
+  namespace App {
+    // interface Error {}
+
+    interface Locals {
+      storyblokClient: StoryblokClient;
+    }
+
+    interface PageData {
+      storyblokClient: StoryblokClient;
+    }
+
+   interface Platform {
+       env: {
+           COUNTER: DurableObjectNamespace;
+       };
+       context: {
+           waitUntil(promise: Promise<unknown>): void;
+       };
+       caches: CacheStorage & { default: Cache }
+   }
+
+  }
+}
+
+export {};

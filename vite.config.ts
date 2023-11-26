@@ -1,173 +1,34 @@
-import { readFile } from 'fs/promises';
-import { defineConfig, loadEnv } from 'vite';
-import { LocalBusiness, Organization, Thing } from 'schema-dts';
-import { sitemap } from './src/plugins/vite-plugin-sitemap';
-import { mpa } from './src/plugins/vite-plugin-mpa';
-import fontDownload from 'vite-plugin-webfont-dl';
-import { join, parse, resolve } from 'path';
-import { ViteEjsPlugin } from 'vite-plugin-ejs';
-import { fileURLToPath, URL } from 'node:url';
+import { sveltekit } from "@sveltejs/kit/vite";
+import basicSsl from "@vitejs/plugin-basic-ssl";
+import { defineConfig } from "vite";
+import fontDownload from "vite-plugin-webfont-dl";
+import storyblokComponentsPlugin from "./src/build/vite-plugin-storyblok-components";
+import storyblokRedirectsPlugin from "./src/build/vite-plugin-storyblok-redirects.mjs";
 
-export default defineConfig(async ({ mode }) => {
-    const env = loadEnv(mode, process.cwd(), '');
-    const schema = await loadSchema<LocalBusiness>('./schema.json');
+export default defineConfig({
+  plugins: [
+    basicSsl(),
+    storyblokComponentsPlugin({
+      componentsPath: "src/lib/components/Blocks",
+    }),
+    storyblokRedirectsPlugin({
+      datasource: 'redirects'
+    }),
+    sveltekit(),
+    fontDownload(),
+  ],
 
-    return {
-        root: 'src/',
-        envDir: '../',
-        publicDir: 'public/',
-        cacheDir: 'cache/',
-        base: '/',
-        appType: 'mpa',
+  server: {
+    https: true,
+    strictPort: true,
+  },
 
-        server: {
-            strictPort: true,
-            port: 3000,
-        },
+  build: {
+    sourcemap: true,
+    reportCompressedSize: true,
+  },
 
-        css: {
-            devSourcemap: true,
-        },
-
-        optimizeDeps: {
-            esbuildOptions: {
-                keepNames: true,
-            },
-        },
-
-        build: {
-            outDir: '../dist',
-            sourcemap: true,
-            manifest: true,
-            emptyOutDir: true,
-            reportCompressedSize: true,
-            rollupOptions: {},
-        },
-
-        define: {
-            schema,
-            vars: {
-                primaryColor: 'rgb(202, 194, 188)',
-                localBusinessSchema: schema,
-                geoMapId: env.VITE_GEO_MAP_ID,
-                googleTagId: env.VITE_GOOGLE_TAG_ID,
-                googleTagEnabled: flagEnabled(
-                    env.VITE_GOOGLE_TAG_ENABLED?.toLowerCase(),
-                ),
-                footerLinks: [
-                    {
-                        href: '/contact.html',
-                        label: 'Kontakt',
-                    },
-                    {
-                        href: '/privacy.html',
-                        label: 'Datenschutz',
-                    },
-                    {
-                        href: '/imprint.html',
-                        label: 'Impressum',
-                    },
-                ],
-            },
-        },
-
-        plugins: [
-            mpa({}),
-
-            sitemap({
-                baseUrl: schema.url,
-            }),
-
-            fontDownload(
-                [
-                    'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Source+Sans+Pro:wght@300;400&display=swap',
-                ],
-                {},
-            ),
-
-            ViteEjsPlugin(
-                {
-                    schema,
-                    vars: {
-                        primaryColor: 'rgb(202, 194, 188)',
-                        localBusinessSchema: schema,
-                        formattedPhoneNumber: formatPhoneNumber(schema),
-                        geoMapId: env.VITE_GEO_MAP_ID,
-                        googleTagId: env.VITE_GOOGLE_TAG_ID,
-                        googleTagEnabled: flagEnabled(
-                            env.VITE_GOOGLE_TAG_ENABLED?.toLowerCase(),
-                        ),
-                        footerLinks: [
-                            {
-                                href: '/contact.html',
-                                label: 'Kontakt',
-                            },
-                            {
-                                href: '/privacy.html',
-                                label: 'Datenschutz',
-                            },
-                            {
-                                href: '/imprint.html',
-                                label: 'Impressum',
-                            },
-                        ],
-                    },
-                },
-                {
-                    ejs: {
-                        async: false,
-                        includer(path) {
-                            const root = fileURLToPath(
-                                new URL('./src', import.meta.url),
-                            );
-                            const filename = resolve(root, path);
-
-                            return { filename };
-                        },
-                    },
-                },
-            ),
-        ],
-    };
+  css: {
+    devSourcemap: true,
+  },
 });
-
-function flagEnabled(value: string): boolean {
-    return ['true', 'on', 'yes', '1'].includes(value);
-}
-
-async function loadSchema<T extends Thing>(path: string): Promise<T> {
-    const schema = await readFile(path, 'utf-8');
-
-    return JSON.parse(schema);
-}
-
-function entryPoints(...paths: string[]): Record<string, string> {
-    const entries = paths.map(parse).map((entry) => {
-        const { dir, base, name } = entry;
-        const key = join(dir, name);
-        const path = resolve(__dirname, dir, base);
-
-        return [key, path];
-    });
-
-    return Object.fromEntries(entries);
-}
-
-function formatPhoneNumber(schema: LocalBusiness): string {
-    if (
-        typeof schema === 'string' ||
-        !schema.telephone ||
-        typeof schema.telephone !== 'string'
-    ) {
-        return '';
-    }
-
-    const parts = schema.telephone.replace('+49', '0');
-    const prefix = parts.slice(0, 5);
-    const suffix = parts
-        .slice(5)
-        .match(/.{1,2}/g)
-        ?.join('&thinsp;');
-
-    return `${prefix}&thinsp;/&thinsp;${suffix}`;
-}

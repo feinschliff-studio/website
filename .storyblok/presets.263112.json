@@ -1,0 +1,2123 @@
+{
+  "presets": [
+    {
+      "id": 1967978,
+      "name": "Beispiel",
+      "preset": {
+        "gap": "4",
+        "_uid": "a54eee9e-d6d9-4462-802c-25e017900b2b",
+        "rows": "1",
+        "bleed": false,
+        "items": [
+          {
+            "_uid": "5e8b5e61-c0cd-470f-93d6-9d448687b01f",
+            "text": "Erste Spalte",
+            "component": "Text"
+          },
+          {
+            "_uid": "1bc58336-2d3e-4383-9ae9-8ea274546c10",
+            "text": "Zweite Spalte",
+            "component": "Text"
+          },
+          {
+            "_uid": "66729392-acc3-4118-a593-c168ca41b646",
+            "text": "Dritte Spalte",
+            "component": "Text"
+          }
+        ],
+        "popOut": false,
+        "recede": false,
+        "colored": false,
+        "columns": "3",
+        "component": "Grid"
+      },
+      "component_id": 4912598,
+      "space_id": 263112,
+      "created_at": "2023-11-21T13:23:09.191Z",
+      "updated_at": "2023-11-21T13:23:09.191Z",
+      "image": "",
+      "color": "",
+      "icon": "block-table-2",
+      "description": "Ein dreispaltiges Beispiel-Layout."
+    },
+    {
+      "id": 1964951,
+      "name": "Embark on Epic Adventures Beyond Earth",
+      "preset": {
+        "_uid": "40747d5b-eb67-4f37-adb0-2fc0a069e33a",
+        "cols": "3",
+        "lead": "Experience the Future of Space Tourism with Unforgettable Journeys to the International Space Station, Lunar Expeditions, and Mars Missions.",
+        "cards": [
+          {
+            "_uid": "f0d2d662-f8eb-44d5-9981-03c64b10a290",
+            "price": "9000.90",
+            "button": [
+              {
+                "_uid": "6306a5c2-868e-495b-8230-0aa07719191d",
+                "link": {
+                  "id": "",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": ""
+                },
+                "size": "medium",
+                "label": "Contact sales",
+                "style": "default",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "currency": "€",
+            "headline": "ISS",
+            "component": "price-card",
+            "subheadline": "Experience life aboard the ISS",
+            "most_popular": false,
+            "text_below_price": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "all inclusive",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            "text_below_button": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "bullet_list",
+                  "content": [
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "1-2 days travel time",
+                              "type": "text",
+                              "marks": [
+                                {
+                                  "type": "textStyle",
+                                  "attrs": {
+                                    "color": "rgb(55, 65, 81)"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "7-day stay at the International Space Station",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Zero gravity experience",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "See Earth from space",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Spacewalk opportunity ",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "899a7487-9f8e-45dd-9fb8-e5efadd462f9",
+            "price": "49000.90",
+            "button": [
+              {
+                "_uid": "66d4ecfb-cb67-4523-9d90-d609130c588f",
+                "link": {
+                  "id": "",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": ""
+                },
+                "size": "medium",
+                "label": "Contact sales",
+                "style": "default",
+                "component": "button",
+                "button_color": "secondary"
+              }
+            ],
+            "currency": "€",
+            "headline": "Moon",
+            "component": "price-card",
+            "subheadline": "Land on the Lunar surface",
+            "most_popular": true,
+            "text_below_price": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "all inclusive",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "textStyle",
+                          "attrs": {
+                            "color": "rgb(55, 65, 81)"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "text_below_button": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "bullet_list",
+                  "content": [
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "3 days travel time",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Zero gravity experience",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "See Earth from the Moon",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Lunar exploration opportunity",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "6d803b37-6bea-44a4-96e2-dcee2704dc68",
+            "price": "99000.90",
+            "button": [
+              {
+                "_uid": "04d8e8e9-afb4-4358-a8d2-9080675b16e1",
+                "link": {
+                  "id": "",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": ""
+                },
+                "size": "medium",
+                "label": "Contact sales",
+                "style": "default",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "currency": "€",
+            "headline": "Mars",
+            "component": "price-card",
+            "subheadline": "Set foot on the Red Planet",
+            "most_popular": false,
+            "text_below_price": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "per month.",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "textStyle",
+                          "attrs": {
+                            "color": "rgb(91, 98, 120)"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "text_below_button": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "bullet_list",
+                  "content": [
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "6-9 months travel time (one-way)",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Zero gravity experience",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Martian Surface Visit",
+                              "type": "text",
+                              "marks": [
+                                {
+                                  "type": "textStyle",
+                                  "attrs": {
+                                    "color": "rgb(55, 65, 81)"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Travel with one of the most innovative spaceships",
+                              "type": "text",
+                              "marks": [
+                                {
+                                  "type": "textStyle",
+                                  "attrs": {
+                                    "color": null
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "headline": "Embark on Epic Adventures Beyond Earth",
+        "component": "grid-section",
+        "background_color": "white"
+      },
+      "component_id": 4901796,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.795Z",
+      "updated_at": "2023-11-17T22:34:01.795Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1971810,
+      "name": "Kontaktformular",
+      "preset": {
+        "gap": "4",
+        "_uid": "c72f4260-238a-43d1-990d-e611c42cf94a",
+        "name": "Kontaktformular",
+        "rows": "",
+        "action": "/api/contact-submissions",
+        "fields": [
+          {
+            "_uid": "9db43e18-6b28-4297-8ed1-b6eb2ae87356",
+            "name": "name",
+            "type": "text",
+            "label": "Ihr Name",
+            "required": true,
+            "autofocus": false,
+            "component": "TextField",
+            "spellcheck": true,
+            "placeholder": "Sabine Mustermann",
+            "autocomplete": "name",
+            "autocapitalize": false
+          },
+          {
+            "gap": "auto",
+            "_uid": "ef3408a5-4dea-419e-ac5b-482cec974423",
+            "rows": "1",
+            "fields": [
+              {
+                "_uid": "8daf94f2-7091-4c19-ba82-af2867fa7533",
+                "name": "phone",
+                "size": "",
+                "type": "tel",
+                "label": "Ihre Telefonnummer (Optional)",
+                "value": "",
+                "pattern": "",
+                "disabled": false,
+                "readonly": false,
+                "required": false,
+                "autofocus": false,
+                "component": "TextField",
+                "maxlength": "",
+                "minlength": "",
+                "spellcheck": true,
+                "placeholder": "07681 / 1234567",
+                "autocomplete": "tel",
+                "autocapitalize": false
+              },
+              {
+                "_uid": "4fff1049-e204-44f0-9a81-3fbdef27526c",
+                "name": "email",
+                "size": "",
+                "type": "email",
+                "label": "Ihre E-Mail-Adresse",
+                "value": "",
+                "pattern": "",
+                "disabled": false,
+                "readonly": false,
+                "required": false,
+                "autofocus": false,
+                "component": "TextField",
+                "maxlength": "",
+                "minlength": "",
+                "spellcheck": true,
+                "placeholder": "sabine@mustermann.de",
+                "autocomplete": "email",
+                "autocapitalize": false
+              }
+            ],
+            "columns": "2",
+            "component": "FieldGroup"
+          },
+          {
+            "_uid": "ec0d821f-bf8c-4c38-86e7-28a8128f9f0f",
+            "cols": "20",
+            "name": "message",
+            "rows": "3",
+            "wrap": "",
+            "label": "Ihre Nachricht",
+            "disabled": false,
+            "readonly": false,
+            "required": true,
+            "autofocus": false,
+            "component": "MultiLineField",
+            "maxlength": "",
+            "minlength": "",
+            "spellcheck": "default",
+            "autocorrect": true,
+            "placeholder": "",
+            "autocomplete": false
+          },
+          {
+            "_uid": "9d04a3ff-5ec0-46bd-a33d-b8c38a18fec9",
+            "name": "",
+            "type": "submit",
+            "label": "Nachricht abschicken",
+            "value": "",
+            "disabled": false,
+            "autofocus": false,
+            "component": "Button"
+          }
+        ],
+        "method": "post",
+        "colored": true,
+        "columns": "",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Mit dem Absenden des Formulars erklären Sie sich mit der Verarbeitung Ihrer Daten zum Zweck der Bearbeitung.",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": "Ihrer Anfrage einverstanden. Weitere Informationen finden Sie in unserer ",
+                  "type": "text"
+                },
+                {
+                  "text": "Datenschutzerklärung",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "link",
+                      "attrs": {
+                        "href": "/datenschutz",
+                        "uuid": "7eaa8390-05e4-42b9-a824-b9b33b0146de",
+                        "anchor": null,
+                        "target": "_self",
+                        "linktype": "story"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "text": ".",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        "component": "Form",
+        "encodingType": "application/x-www-form-urlencoded",
+        "notificationHtml": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Am {date} hat ",
+                  "type": "text"
+                },
+                {
+                  "text": "{name}",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                },
+                {
+                  "text": " eine Nachricht hinterlassen:",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "blockquote",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "{message}",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": " Telefonnummer: {phone}",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": "E-Mail-Adresse: {email}",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        "notificationPlain": "Am {date} hat {name} eine Nachricht hinterlassen:\n{message}\n\nTelefonnummer: {phone}\nE-Mail-Adresse: {email}",
+        "redirectionTarget": {
+          "id": "25aa5968-3b15-4359-9fd5-7564e05a1e88",
+          "rel": "",
+          "url": "",
+          "title": "",
+          "linktype": "story",
+          "fieldtype": "multilink",
+          "cached_url": "kontakt"
+        },
+        "notificationSubject": "Neue Nachricht auf Webseite",
+        "notificationRecipientName": "Verena Alpers",
+        "notificationRecipientEmail": "kontakt@feinschliff.studio"
+      },
+      "component_id": 4910651,
+      "space_id": 263112,
+      "created_at": "2023-11-25T11:27:57.077Z",
+      "updated_at": "2023-11-25T11:27:57.077Z",
+      "image": "//a.storyblok.com/f/263112/x/6da76bae63/bildschirmfoto-2023-11-25-um-12-27-34.png",
+      "color": "#ff6159",
+      "icon": "block-comment",
+      "description": "Ein vollständiges Kontaktformular."
+    },
+    {
+      "id": 1972169,
+      "name": "Ohne Startseite",
+      "preset": {
+        "_uid": "9c15c3ab-0e76-4cac-ac69-33bf35db6737",
+        "links": [
+          {
+            "_uid": "2b3f99bf-4c0d-4e1d-a7dc-a437564c2cca",
+            "label": "Kontakt",
+            "target": {
+              "id": "25aa5968-3b15-4359-9fd5-7564e05a1e88",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "kontakt"
+            },
+            "component": "MenuLink"
+          },
+          {
+            "_uid": "0d163669-d085-4f3a-94a7-0523960014b7",
+            "label": "Impressum",
+            "target": {
+              "id": "c3c7fbb1-7d8a-47a4-aa2e-d4808536c6e5",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "impressum"
+            },
+            "component": "MenuLink"
+          },
+          {
+            "_uid": "f1926575-67f8-4cfa-90aa-ac33488cb10a",
+            "label": "Datenschutz",
+            "target": {
+              "id": "7eaa8390-05e4-42b9-a824-b9b33b0146de",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "datenschutz"
+            },
+            "component": "MenuLink"
+          }
+        ],
+        "colored": true,
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph"
+            }
+          ]
+        },
+        "component": "Footer"
+      },
+      "component_id": 4905073,
+      "space_id": 263112,
+      "created_at": "2023-11-26T10:46:12.772Z",
+      "updated_at": "2023-11-26T10:46:27.504Z",
+      "image": "",
+      "color": "#00b3b0",
+      "icon": "block-add",
+      "description": "Alle Navigationselemente außer der Startseite."
+    },
+    {
+      "id": 1964944,
+      "name": "Planet Facts",
+      "preset": {
+        "_uid": "8a824a2a-43b5-45d7-aa70-b7fd3be02941",
+        "lead": "Read more about Mars, Venus, and Jupiter.",
+        "entries": [
+          {
+            "_uid": "48742376-8326-4e89-b282-fb350f9d5fd0",
+            "image": {
+              "id": 7544550,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/192354/3500x2000/c1eaf13a48/mars.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "button": [
+              {
+                "_uid": "7dfd4cf3-0e00-485a-998c-48842d2d195b",
+                "link": {
+                  "id": "48b2fd50-5610-4842-b304-e1617391bd28",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "categories/mars-exploration"
+                },
+                "size": "medium",
+                "label": "Read the article",
+                "style": "default",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "headline": "Mars",
+            "component": "tabbed-content-entry",
+            "description": "Mars has become a favorite subject of experts and enthusiasts everywhere. It's not hard to see why – the dense rock formations, captured asteroids, and stunning color all make for a breathtakingly different world. However, a few key facts show us that Mars isn't actually that different from our own."
+          },
+          {
+            "_uid": "30450690-2d2d-46e6-b31f-8cf97d0b574e",
+            "image": {
+              "id": 7544551,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/192354/3500x2000/fb337a2b19/venus.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "button": [
+              {
+                "_uid": "4c4ffbdf-8573-41c7-bb43-3b7d878708e0",
+                "link": {
+                  "id": "3b6202f6-f475-4ad3-be43-90f2ff096483",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/can-anything-survive-on-venus"
+                },
+                "size": "medium",
+                "label": "Read the article",
+                "style": "default",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "headline": "Venus",
+            "component": "tabbed-content-entry",
+            "description": "In astrology, Venus is thought to represent love. However, the sheer difficulty of surviving on Venus means that it might be more accurate to say it represents tough love.\nIt's a well-known fact that humans wouldn't exactly thrive on the other planets in our solar system. However, Venus is one of the tougher options."
+          },
+          {
+            "_uid": "b3bfc0ff-3eb7-4426-8fb9-2d20dbcc6d4a",
+            "image": {
+              "id": 7544552,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/192354/3500x2000/153cc75d3c/jupiter.jpg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "button": [
+              {
+                "_uid": "c434dde6-63dd-47b0-9008-89433bb09ec7",
+                "link": {
+                  "id": "5de53282-b18e-4f15-8f3d-3b053dfc5ecf",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/jupiter-larger-than-life"
+                },
+                "size": "medium",
+                "label": "Read the article",
+                "style": "default",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "headline": "Jupiter",
+            "component": "tabbed-content-entry",
+            "description": "Jupiter is a gas giant unlike any other. Its giant size, multiple moons, and high speeds set it apart as a truly incredible planet.\nJupiter's size is undeniably impressive. However, it isn't just confined to the planet itself. It also puts things into perspective elsewhere: for as large as Jupiter is, you could easily fit it in between Earth and our Moon! Aren't cosmic distances wild?"
+          }
+        ],
+        "headline": "Planet Facts",
+        "component": "tabbed-content-section"
+      },
+      "component_id": 4901784,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.300Z",
+      "updated_at": "2023-11-17T22:34:01.300Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1972168,
+      "name": "Preisliste November 2023",
+      "preset": {
+        "_uid": "dacd60a9-0a46-43a8-be60-96587e35965f",
+        "items": [
+          {
+            "_uid": "7b68173e-fe0c-4097-a85f-bddbd5ee4a0e",
+            "name": "Fußpflege (inkl. Fußbad und Creme)",
+            "price": "38 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph"
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "9fbfccc6-b509-4254-ad23-96ddd9266069",
+            "name": "Lackieren",
+            "price": "3 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph"
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "b3d6f606-c18a-4134-bd18-514349985fbc",
+            "name": "Augenbrauen zupfen / färben",
+            "price": "15 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph"
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "b68113a4-59b9-470a-b00d-049c8845749a",
+            "name": "Wimpern färben",
+            "price": "15 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph"
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "3729f3e5-5670-4f6f-8dfc-0ddd3b5edd36",
+            "name": "Maniküre",
+            "price": "35 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph"
+                }
+              ]
+            }
+          }
+        ],
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "horizontal_rule"
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Wir bieten Ihnen auch Hilfe und Beratung bei eingewachsenen Nägeln etc.",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": "Hausbesuche sind möglich.",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "horizontal_rule"
+            },
+            {
+              "type": "blok",
+              "attrs": {
+                "id": "35f896de-ade2-40c2-96ab-6f82dd5e2eef",
+                "body": [
+                  {
+                    "_uid": "i-2e01f687-013d-4f84-91d7-025a3f98e2b8",
+                    "label": "Jetzt Termin vereinbaren",
+                    "target": {
+                      "id": "25aa5968-3b15-4359-9fd5-7564e05a1e88",
+                      "url": "",
+                      "linktype": "story",
+                      "fieldtype": "multilink",
+                      "cached_url": "kontakt"
+                    },
+                    "component": "Link"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "component": "OfferingList",
+        "highlights": [
+          {
+            "_uid": "7c66b896-5bce-4392-b287-116becca0018",
+            "name": "Verwöhnbehandlung",
+            "price": "60 Minuten 80 € / 90 Minuten 120 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Ich biete Ihnen auch eine 60- oder 90-minütige Biodroga Verwöhn­behandlung an: Ihre Haut bekommt alles was sie braucht, während Sie Ruhe und Kraft schöpfen.",
+                      "type": "text"
+                    },
+                    {
+                      "type": "hard_break"
+                    },
+                    {
+                      "text": "Die Behandlung umfasst eine Analyse, gefolgt von entsprechender Reinigung, Peeling, Maske und Augenbrauen­zupfen, sowie eine entspannende Gesichts­massage.",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Während wir Ihre Wünsche besprechen, können Sie gerne einen Tee oder Kaffee genießen.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "dec63ac0-31a9-450f-bb73-a66eb45a2234",
+            "name": "Acid-Infusion",
+            "price": "75 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Bei der Acid-Infusion handelt es sich um ein Säure-Peeling. Bereits nach der ersten Behandlung wirkt die Haut geglättet und eben­mäßiger, sie strahlt wieder. Als Kur ist sie ein Neustart für die Haut.",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Geeignet bei:",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet_list",
+                  "content": [
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Unreiner Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Großporiger Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Altersflecken und Fältchen",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Lichtgeschädigter Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Ungleichmäßiger Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Oberflächliche Narben, aber auch tief­liegende Aknenarben",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Fahle und graue Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Reife Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Trockene schuppige Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Nicht geeignet bei:",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "type": "bullet_list",
+                  "content": [
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Sehr sensibler oder akut gereizter Haut",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Vorgeschädigter Haut nach Chemo­therapie oder Cortison",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Psoriasis, Ekzemen, Neuro­dermitis oder Vitiligo, entzündlicher Akne",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list_item",
+                      "content": [
+                        {
+                          "type": "paragraph",
+                          "content": [
+                            {
+                              "text": "Keloidnarben",
+                              "type": "text"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Lassen Sie sich hierzu individuell beraten.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "d5122054-592c-4699-a2c4-48af6d6f2798",
+            "name": "Micro-Needling",
+            "price": "95 € + einmalig 29 € Needling Roller",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Das Micro-Needling gehört zu den wirkungs­vollsten nicht-invasiven Verfahren und regt die erstaunlichen Regenerations- und Selbst­heilungs­mechanismen der Haut an. Die feinen Nadeln des Rollers durchdringen die Hautoberfläche und täuschen ihr eine »Verletzung« vor. Die Haut produziert unmittelbar mehr Kollagen, Elastin und auch Hyaluronsäure.",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Geeignet im Anti-Aging Bereich, aber auch bei UV-Schäden und Pigment­störungen, Narben, sowie großporiger, öliger oder fahler Haut.",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Lassen Sie sich hierzu individuell beraten.",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "_uid": "8fa0bea8-2c61-47dd-91a1-a2bf95544207",
+            "name": "Biodroga Drainmassage",
+            "price": "15 €",
+            "component": "Offering",
+            "description": {
+              "type": "doc",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "content": [
+                    {
+                      "text": "Diese spezielle Gesichts­massage regt den Lymphfluss an und kann so entstauen. Das Gesicht erscheint rosig und erholt.",
+                      "type": "text",
+                      "marks": [
+                        {
+                          "type": "textStyle",
+                          "attrs": {
+                            "color": "rgb(125, 113, 104)"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "component_id": 4903319,
+      "space_id": 263112,
+      "created_at": "2023-11-26T10:35:08.631Z",
+      "updated_at": "2023-11-26T10:41:54.764Z",
+      "image": "",
+      "color": "#ffac00",
+      "icon": "block-cart",
+      "description": "Die Preisliste zum Stand November 2023."
+    },
+    {
+      "id": 1964952,
+      "name": "Space Facts",
+      "preset": {
+        "_uid": "5e8d93f8-5df3-4b05-a48a-083be4f22e1d",
+        "cols": "3",
+        "lead": "Space is the area beyond the upper limits of Earth’s atmosphere. Space is a vacuum, meaning it contains almost nothing, but it is not completely empty.",
+        "cards": [
+          {
+            "_uid": "ecae854f-8e7d-4035-b48d-73ea5273224f",
+            "icon": {
+              "id": 5664862,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/172000/x/aba05ce8db/ico-space.svg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "text": "Space does not begin at a specific altitude above the Earth, but the Kármán line at 100 km is a commonly used definition.",
+            "label": "Space",
+            "button": [
+              {
+                "_uid": "76f98437-c266-47d7-9e6d-15291c9bdf89",
+                "link": {
+                  "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/"
+                },
+                "size": "small",
+                "label": "Read More",
+                "style": "ghost",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "component": "grid-card",
+            "icon_width": "80"
+          },
+          {
+            "_uid": "316a6686-e83a-4b23-85ab-30a1d88b877d",
+            "icon": {
+              "id": 5664861,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/172000/x/eb62e014b3/ico-stars.svg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "text": "Every star you see in the night sky is bigger and brighter than our sun. You can't see millions of stars on a dark night.",
+            "label": "Stars",
+            "button": [
+              {
+                "_uid": "cdeae83c-bc7c-479c-a768-f5b1473694dd",
+                "link": {
+                  "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/"
+                },
+                "size": "small",
+                "label": "Read More",
+                "style": "ghost",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "component": "grid-card",
+            "icon_width": "80",
+            "text_color": "",
+            "background_color": {
+              "value": "",
+              "plugin": "storyblok-palette"
+            }
+          },
+          {
+            "_uid": "bd9c4ca7-2c2c-4452-a1bb-67433296e9b7",
+            "icon": {
+              "id": 5664860,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/172000/x/e314ecb990/ico-rocket.svg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "text": "The International Space Station is the largest ever crewed object in space.",
+            "label": "ISS",
+            "button": [
+              {
+                "_uid": "acc38a3a-36d7-4a2b-a4e7-c928a062e80f",
+                "link": {
+                  "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/"
+                },
+                "size": "small",
+                "label": "Read More",
+                "style": "ghost",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "component": "grid-card",
+            "icon_width": "80"
+          },
+          {
+            "_uid": "78ba6806-a7d5-427c-b619-d1f3732be7be",
+            "icon": {
+              "id": 5664857,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/172000/x/8b73ffa684/ico-comet.svg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "text": "Comets are leftovers from the creation of our solar system about 4.5 billion years ago – they consist of sand, ice and carbon dioxide.",
+            "label": "Comets",
+            "button": [
+              {
+                "_uid": "1078e92c-3c5e-4e11-95dd-ffc342ffacb9",
+                "link": {
+                  "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/"
+                },
+                "size": "small",
+                "label": "Read More",
+                "style": "ghost",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "component": "grid-card",
+            "icon_width": "80"
+          },
+          {
+            "_uid": "ce00ee8b-05d9-4a13-a73c-12e58755b501",
+            "icon": {
+              "id": 5664859,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/172000/x/c7590b7f21/ico-hot-planet.svg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "text": "The hottest planet in the solar system is Venus. This scorching planet has an average surface temperature of about 232 °F (450 °C)",
+            "label": "The hottest planet",
+            "button": [
+              {
+                "_uid": "a97149bb-0652-4bad-ae59-a4f606731c2a",
+                "link": {
+                  "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/"
+                },
+                "size": "small",
+                "label": "Read More",
+                "style": "ghost",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "component": "grid-card",
+            "icon_width": "80"
+          },
+          {
+            "_uid": "bc520a1e-5a75-4bfa-ba69-855bd3e5d102",
+            "icon": {
+              "id": 5664858,
+              "alt": "",
+              "name": "",
+              "focus": "",
+              "title": "",
+              "filename": "https://a.storyblok.com/f/172000/x/0d9c1872fa/ico-astronaut.svg",
+              "copyright": "",
+              "fieldtype": "asset",
+              "is_external_url": false
+            },
+            "text": "The word astronaut comes from the Greek words for “star” and “sailor.” Not all astronauts are called astronauts...",
+            "label": "Astronaut",
+            "button": [
+              {
+                "_uid": "152f20a8-e290-4dae-b47c-961581a66667",
+                "link": {
+                  "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+                  "url": "",
+                  "linktype": "story",
+                  "fieldtype": "multilink",
+                  "cached_url": "articles/"
+                },
+                "size": "small",
+                "label": "Read More",
+                "style": "ghost",
+                "component": "button",
+                "button_color": "primary"
+              }
+            ],
+            "component": "grid-card",
+            "icon_width": "80"
+          }
+        ],
+        "headline": "Space Facts",
+        "component": "grid-section",
+        "background_color": "white",
+        "headline__i18n__fr": "C'est un gros titre..."
+      },
+      "component_id": 4901796,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.816Z",
+      "updated_at": "2023-11-17T22:34:01.816Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1964949,
+      "name": "Still want to learn more?",
+      "preset": {
+        "_uid": "56f29146-8e47-4793-b92e-d4a334e30b7a",
+        "buttons": [
+          {
+            "_uid": "14029ec5-b55c-4582-9bad-1cb9225b0224",
+            "link": {
+              "id": "",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": ""
+            },
+            "size": "medium",
+            "label": "Free Trial",
+            "style": "default",
+            "component": "button",
+            "button_color": "primary"
+          },
+          {
+            "_uid": "b373dbfe-94fe-475a-b4a2-c7be331590bc",
+            "link": {
+              "id": "",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": ""
+            },
+            "size": "medium",
+            "ghost": false,
+            "label": "Subscribe",
+            "style": "default",
+            "component": "button",
+            "button_color": "white"
+          }
+        ],
+        "headline": "Still want to learn more?",
+        "component": "banner",
+        "full_width": false,
+        "text_color": "white",
+        "subheadline": "Try a free trial or subscribe today",
+        "background_blur": "0",
+        "pattern_overlay": true,
+        "background_image": {
+          "id": 5671218,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "filename": "https://a.storyblok.com/f/172000/2560x1008/cfc7167652/earth-surface.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "is_external_url": false
+        },
+        "background_brightness": "0"
+      },
+      "component_id": 4901792,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.628Z",
+      "updated_at": "2023-11-17T22:34:01.628Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1972170,
+      "name": "Studio in Waldkirch",
+      "preset": {
+        "_uid": "77017a83-b466-4668-a859-a9f0b7fb3184",
+        "open": true,
+        "title": "feinschliff.studio",
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Benzengäßle 3",
+                  "type": "text"
+                },
+                {
+                  "type": "hard_break"
+                },
+                {
+                  "text": "79183 Waldkirch",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        "latitude": "48.0952351",
+        "component": "MapMarker",
+        "longitude": "7.9646315"
+      },
+      "component_id": 4905062,
+      "space_id": 263112,
+      "created_at": "2023-11-26T10:50:58.391Z",
+      "updated_at": "2023-11-26T10:51:47.135Z",
+      "image": "//a.storyblok.com/f/263112/x/e47449bbb9/bildschirmfoto-2023-11-26-um-11-50-11.png",
+      "color": "#395ece",
+      "icon": "block-map-pin",
+      "description": "Ein Marker an der Adresse des Studios im Benzengäßle 3."
+    },
+    {
+      "id": 1964950,
+      "name": "Top Five Discoveries",
+      "preset": {
+        "_uid": "aef60e0e-6ad2-4fdc-ba22-fba3badad86c",
+        "buttons": [
+          {
+            "_uid": "8336d9b6-bc4d-4649-856a-31878e24305e",
+            "link": {
+              "id": "",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": ""
+            },
+            "size": "large",
+            "ghost": true,
+            "label": "Explore Mars",
+            "style": "default",
+            "component": "button",
+            "button_color": "primary"
+          }
+        ],
+        "headline": "Top Five Discoveries, Curiosity Rover at Mars",
+        "component": "banner",
+        "full_width": true,
+        "text_color": "white",
+        "subheadline": "There are many things we don't know about space. The mysteries of black holes, dark matter, dark energy, quantum entanglement, antimatter, and so much more.",
+        "background_blur": "",
+        "pattern_overlay": true,
+        "background_image": {
+          "id": 5671216,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "filename": "https://a.storyblok.com/f/172000/2560x1414/f8bb0b8f17/mars-surface.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "is_external_url": false
+        },
+        "background_brightness": "0"
+      },
+      "component_id": 4901792,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.651Z",
+      "updated_at": "2023-11-17T22:34:01.651Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1972158,
+      "name": "Vollständige Navigation",
+      "preset": {
+        "_uid": "6757a0c1-c298-49de-99d3-6a44f00daf1d",
+        "links": [
+          {
+            "_uid": "925777ef-2087-4493-ba30-76fadc6adb1f",
+            "label": "Home",
+            "target": {
+              "id": "adcc9fa7-2a2b-4d23-b1bf-43dac356f67e",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "home"
+            },
+            "component": "MenuLink"
+          },
+          {
+            "_uid": "281bcfe3-57d7-4a9f-af29-4e120efc10e8",
+            "label": "Kontakt",
+            "target": {
+              "id": "25aa5968-3b15-4359-9fd5-7564e05a1e88",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "kontakt"
+            },
+            "component": "MenuLink"
+          },
+          {
+            "_uid": "90296551-2877-4788-b2ff-6a90d74c03cc",
+            "label": "Datenschutz",
+            "target": {
+              "id": "7eaa8390-05e4-42b9-a824-b9b33b0146de",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "datenschutz"
+            },
+            "component": "MenuLink"
+          },
+          {
+            "_uid": "1eb45885-04c8-4098-bd2b-6f529b443661",
+            "label": "Impressum",
+            "target": {
+              "id": "c3c7fbb1-7d8a-47a4-aa2e-d4808536c6e5",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "impressum"
+            },
+            "component": "MenuLink"
+          }
+        ],
+        "colored": true,
+        "content": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph"
+            }
+          ]
+        },
+        "component": "Footer"
+      },
+      "component_id": 4905073,
+      "space_id": 263112,
+      "created_at": "2023-11-26T09:30:05.223Z",
+      "updated_at": "2023-11-26T10:46:24.437Z",
+      "image": "",
+      "color": "#00b3b0",
+      "icon": "block-add",
+      "description": "Eine Fußzeile mit allen Navigationselementen, inklusive Link zur Startseite."
+    },
+    {
+      "id": 1964945,
+      "name": "We don't know what we don't know",
+      "preset": {
+        "_uid": "0328648d-0481-434c-8c71-9cd3f86420ef",
+        "lead": "Until the mid 1990's, we didn't even know that other solar systems existed.",
+        "text": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "There are many things we don't know about space. The mysteries of black holes, dark matter, dark energy, quantum entanglement, antimatter, and so much more. ",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Follow along with us to learn more.",
+                  "type": "text",
+                  "marks": [
+                    {
+                      "type": "bold"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "button": [
+          {
+            "_uid": "83dcbb2b-6c5e-4a67-9264-665092a209c2",
+            "link": {
+              "id": "",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": ""
+            },
+            "size": "medium",
+            "label": "Begin your journey",
+            "style": "ghost",
+            "component": "button",
+            "button_color": "primary"
+          }
+        ],
+        "headline": "We don't know what we don't know.",
+        "alignment": "center",
+        "component": "text-section",
+        "background_color": "light",
+        "overlap_preceding_hero": true
+      },
+      "component_id": 4901787,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.374Z",
+      "updated_at": "2023-11-17T22:34:01.374Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1964946,
+      "name": "What do astronauts do for fun?",
+      "preset": {
+        "_uid": "48da15cb-fd2b-422d-9d03-c977c35ce798",
+        "text": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "text": "Astronauts typically have about 4-5 hours of free time per work day, as well as 2.5 hours of time to exercise. So, what do they do to avoid boredom? ",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "type": "bullet_list",
+              "content": [
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Staring out the window is unsurprisingly a common pastime. Astronauts even get to experience a sunrise or sunset every 45 minutes while orbiting Earth.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "When you are bunked this closely with your team, inevitably some time is spent hanging out with each other.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Astronauts commonly contact family and friends from their computers. They can call, email, or even video chat!",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Astronauts have hobbies like the rest of us, so you might also catch them reading a book, watching DVDs, taking photographs of the incredible views, or even playing an musical instrument.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "image": {
+          "id": 5671213,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "filename": "https://a.storyblok.com/f/172000/1000x1170/f92915eac0/astronaut.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "is_external_url": false
+        },
+        "button": [
+          {
+            "_uid": "4b703224-c7fd-42f9-8360-ea7d22b2a707",
+            "link": {
+              "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "articles/"
+            },
+            "size": "medium",
+            "ghost": false,
+            "label": "Read More",
+            "component": "button",
+            "button_color": "primary",
+            "background_color": "white"
+          }
+        ],
+        "headline": "What do astronauts do for fun?",
+        "component": "image-text-section",
+        "text_color": "light",
+        "image_layout": "fixed-height",
+        "reverse_layout": true,
+        "background_color": "white"
+      },
+      "component_id": 4901788,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.434Z",
+      "updated_at": "2023-11-17T22:34:01.434Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    },
+    {
+      "id": 1964947,
+      "name": "What's in space now?",
+      "preset": {
+        "_uid": "7880ff31-6ca4-4e29-b11c-0e60a768f4df",
+        "text": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "bullet_list",
+              "content": [
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "There are currently two Space Stations orbiting the Earth, the International Space Station (ISS) and China's Tiangong Space Station (TSS). ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "There are three rovers on Mars including the Curiosity, Perseverance, and Zhurong. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Nearly 5,000 active artificial satellites are orbiting the Earth.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Over 40 space telescopes of all different types are orbiting the earth.",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "list_item",
+                  "content": [
+                    {
+                      "type": "paragraph",
+                      "content": [
+                        {
+                          "text": "Many other unmanned space missions are actively occurring. ",
+                          "type": "text"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "image": {
+          "id": 5671212,
+          "alt": "",
+          "name": "",
+          "focus": "",
+          "title": "",
+          "filename": "https://a.storyblok.com/f/172000/5647x3770/a513af1ed5/space.jpg",
+          "copyright": "",
+          "fieldtype": "asset",
+          "is_external_url": false
+        },
+        "button": [
+          {
+            "_uid": "ea1071e8-afb0-41e2-9331-6fabf2dc06c2",
+            "link": {
+              "id": "1431945b-144d-429d-aee1-4ecc8f47ed1a",
+              "url": "",
+              "linktype": "story",
+              "fieldtype": "multilink",
+              "cached_url": "articles/"
+            },
+            "size": "medium",
+            "ghost": true,
+            "label": "Read More",
+            "component": "button",
+            "button_color": "primary",
+            "background_color": "tertiary"
+          }
+        ],
+        "headline": "What's in space now?",
+        "component": "image-text-section",
+        "text_color": "dark",
+        "image_layout": "fixed-height",
+        "reverse_layout": false,
+        "background_color": "white"
+      },
+      "component_id": 4901788,
+      "space_id": 263112,
+      "created_at": "2023-11-17T22:34:01.455Z",
+      "updated_at": "2023-11-17T22:34:01.455Z",
+      "image": "",
+      "color": "",
+      "icon": "",
+      "description": ""
+    }
+  ]
+}
