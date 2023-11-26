@@ -1,6 +1,16 @@
-@import './styles/config.pcss';
-@import './styles/base.pcss';
-@import './styles/tags.pcss';
-@import './styles/forms.pcss';
-@import './styles/content.pcss';
-@import './styles/price-list.pcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    a, .link {
+        @apply relative inline-flex no-underline text-inherit opacity-80 transition-opacity hover:opacity-100
+        after:absolute after:block after:w-full after:h-[3px] after:left-0 after:bottom-0.5 after:opacity-50
+        after:text-inherit after:bg-current after:transition-all hover:after:h-[5px] hover:after:bottom-0
+        hover:after:opacity-80;
+    }
+
+    textarea::-webkit-resizer {
+        @apply hidden;
+    }
+}
