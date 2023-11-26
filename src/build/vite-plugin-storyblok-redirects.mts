@@ -28,7 +28,7 @@ export function generateRedirectsPlugin({ datasource }: PluginOptions): Plugin {
   return {
     name: "vite-plugin-storyblok-redirects",
 
-    async generateBundle() {
+    async configResolved() {
       const token = process.env.STORYBLOK_ACCESS_TOKEN;
 
       if (!token) {
