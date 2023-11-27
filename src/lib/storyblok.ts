@@ -10,6 +10,7 @@ import {
 } from "@storyblok/svelte";
 import type { ISbComponentType, ISbLinkURLObject } from "storyblok-js-client";
 import { components } from "virtual:$storyblok/components";
+import type { ISbResult } from "@storyblok/js";
 
 export async function init(accessToken: string) {
   storyblokInit({
@@ -31,11 +32,31 @@ export async function loadStory<T extends ISbComponentType<V>, V extends string 
   slug: string,
   params?: ISbStoryParams,
 ) {
-  const { data } = await client.get(slug, {
-    version: dev || version === "preview" ? "draft" : "published",
-    resolve_links: "story",
-    ...params,
-  });
+  let result: ISbResult;
+
+  try {
+    result = await client.get(slug, {
+      version: dev || version === "preview" ? "draft" : "published",
+      resolve_links: "story",
+      ...params,
+    });
+  } catch (error) {
+    if (typeof error !== "string") {
+      throw error;
+    }
+
+    const errorData = JSON.parse(error) as {
+      message: string;
+      status: number;
+      response?: string;
+    };
+    const message = `Failed to fetch story "${slug}" from Storyblok API: ${errorData.message}` +
+      (errorData.response ? `: ${errorData.response}` : "");
+
+    throw new StoryblokError(message, errorData.status);
+  }
+
+  const { data } = result;
   const story: ISbStoryData<T> = data.story;
   const links = (data.links as ISbLinkURLObject[]).reduce<Map<string, ISbLinkURLObject>>(
     (links, link: ISbLinkURLObject) => links.set(link.uuid, link),
@@ -52,4 +73,11 @@ export function resolveLink(linkField: Exclude<MultilinkStoryblok, { linktype?: 
     ?? linkField.cached_url;
 
   return slug && slug.startsWith("/") ? slug : `/${slug}`;
+}
+
+export class StoryblokError extends Error {
+  constructor(message: string, public readonly status: number) {
+    super(message);
+    Error.captureStackTrace(this, StoryblokError);
+  }
 }

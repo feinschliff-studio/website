@@ -1,5 +1,5 @@
 import { apiPlugin, type ISbResult, type StoryblokClient, storyblokInit } from "@storyblok/js";
-import { writeFile } from "fs/promises";
+import { mkdir, writeFile } from "fs/promises";
 import { resolve } from "node:path";
 import type { Plugin } from "vite";
 import "dotenv/config";
@@ -49,7 +49,7 @@ export function generateRedirectsPlugin({ datasource }: PluginOptions): Plugin {
           datasource,
         });
       } catch (error) {
-         this.error(`Could not fetch redirects from Storyblok: ${error}`);
+        this.error(`Could not fetch redirects from Storyblok: ${error}`);
       }
 
       // noinspection JSUnresolvedReference
@@ -69,6 +69,7 @@ export function generateRedirectsPlugin({ datasource }: PluginOptions): Plugin {
       );
       const redirectsFile = resolve(outputPath, "_redirects");
 
+      await mkdir(outputPath, { recursive: true });
       await writeFile(redirectsFile, redirects.join("\n"), "utf-8");
     },
   };
