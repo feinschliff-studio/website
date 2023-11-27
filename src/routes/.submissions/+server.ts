@@ -107,10 +107,7 @@ export const POST: RequestHandler = async function POST({ request, url }) {
     });
 
     if (isFailure(result)) {
-      storyUrl.searchParams.set("state", "error");
-      storyUrl.searchParams.set("error", result.errors.join(", "));
-
-      throw redirect(303, storyUrl);
+      throw new Error(result.errors.join(", "));
     }
   } catch (error) {
     storyUrl.searchParams.set("state", "error");
