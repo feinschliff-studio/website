@@ -17,7 +17,9 @@ export default defineConfig({
 		sveltekit(),
 		fontDownload([
 			'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Source+Sans+3:ital,wght@0,300;0,400;1,300;1,400&display=swap'
-		])
+		], {
+			injectAsStyleTag: false,
+		})
 	],
 
 	server: {
