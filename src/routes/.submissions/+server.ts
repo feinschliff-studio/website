@@ -114,7 +114,11 @@ export const POST: RequestHandler = async function POST({ request, url }) {
     }
   } catch (error) {
     storyUrl.searchParams.set("state", "error");
-    storyUrl.searchParams.set("error", (error as Error).message);
+    storyUrl.searchParams.set("error", (error as Error).message ?? "Unknown error");
+
+    console.error("Failed to dispatch form submission", {
+      error,
+    });
 
     throw redirect(303, storyUrl);
   }
