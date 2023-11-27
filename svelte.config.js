@@ -20,7 +20,8 @@ const config = {
         "script-src": [
           "'self'",
           "https://*.storyblok.com",
-          "https://maps.googleapis.com"
+          "https://maps.googleapis.com",
+          "https://static.cloudflareinsights.com"
         ],
       },
     },
