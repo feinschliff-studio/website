@@ -6,19 +6,16 @@ import { error, redirect } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
 
 export const POST: RequestHandler = async function POST({ request, url }) {
-  console.error("POST", url);
   const formData = await request.formData();
   const pageId = formData.get("_page") as string | undefined;
 
   if (!pageId) {
-    console.error("Missing page identifier", Object.fromEntries(formData.entries()));
     throw error(400, "Missing page identifier");
   }
 
   const formId = formData.get("_form") as string | undefined;
 
   if (!formId) {
-    console.error("Missing form identifier", Object.fromEntries(formData.entries()));
     throw error(400, "Missing form identifier");
   }
 
@@ -32,13 +29,11 @@ export const POST: RequestHandler = async function POST({ request, url }) {
     fields = response.fields;
     story = response.story;
   } catch (err) {
-    console.error("Failed to load form", err);
     throw error(400, (err as Error).message);
   }
 
   const storyUrl = new URL(story.path ?? story.full_slug ?? story.slug, url.origin);
   const fieldValues: Record<string, FormDataEntryValue> = {};
-  console.error("form fields", fields);
 
   for (const field of fields) {
     const value = formData.get(field.name);

@@ -181,11 +181,3 @@
     </nav>
   {/if}
 </div>
-
-<style lang="postcss">
-    @import "@glidejs/glide/dist/css/glide.core.css";
-
-    .glide__arrow {
-        font-family: Arial, sans-serif;
-    }
-</style>

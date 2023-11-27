@@ -14,6 +14,8 @@
   import { StoryblokComponent, useStoryblokBridge } from "@storyblok/svelte";
   import { onMount, setContext } from "svelte";
   import type { PageData } from "./$types";
+  import type { WebPage, WithContext } from "schema-dts";
+  import JsonLd from "$lib/components/JsonLd.svelte";
 
   if (dev || version === "preview") {
     onMount(() => {
@@ -37,29 +39,23 @@
       return story;
     },
   });
+
+  $: schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": story.name,
+  } satisfies WithContext<WebPage>;
 </script>
 
 <svelte:head>
   <title>{story.name}</title>
-
-  <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "WebPage",
-      "name": "{story.name}",
-      "url": "{story.full_slug}",
-      "description": "{story.content.description}",
-      "publisher": {
-        "@type": "Organization",
-        "name": "Storyblok"
-      }
-    }
-  </script>
 </svelte:head>
 
 <div>
   {#if story}
     <StoryblokComponent blok={story.content} />
   {/if}
+
+  <JsonLd schema={schema} />
 </div>
 
