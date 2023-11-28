@@ -12,7 +12,7 @@ import type { ISbComponentType, ISbLinkURLObject } from "storyblok-js-client";
 import { components } from "virtual:$storyblok/components";
 import type { ISbResult } from "@storyblok/js";
 
-export async function init(accessToken: string) {
+export async function init(accessToken: string, fetch?: typeof window.fetch) {
   storyblokInit({
     accessToken,
     use: [apiPlugin],
@@ -21,6 +21,7 @@ export async function init(accessToken: string) {
     apiOptions: {
       https: true,
       region: "eu",
+      fetch,
     },
   });
 

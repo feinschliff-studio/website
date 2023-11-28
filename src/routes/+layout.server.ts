@@ -8,11 +8,12 @@ import type { BeautySalon, DayOfWeek, WithContext } from "schema-dts";
 
 export const prerender = true;
 
-export const load: LayoutServerLoad = async function load() {
-  const storyblokClient = await init(STORYBLOK_ACCESS_TOKEN);
+export const load: LayoutServerLoad = async function load({ fetch }) {
+  const storyblokClient = await init(STORYBLOK_ACCESS_TOKEN, fetch);
+  const contentVersion = dev || version.startsWith("preview") ? "draft" : "published";
   const [cookieBanner, siteConfig] = await Promise.all([
-    loadCookieBanner(storyblokClient),
-    loadSiteConfig(storyblokClient),
+    loadCookieBanner(storyblokClient, contentVersion),
+    loadSiteConfig(storyblokClient, contentVersion),
   ]);
   const schema = buildSchema(siteConfig);
 
@@ -117,18 +118,14 @@ function buildSchema(siteConfig: SiteConfigStoryblok): WithContext<BeautySalon> 
   };
 }
 
-async function loadSiteConfig(storyblokClient: StoryblokClient): Promise<SiteConfigStoryblok> {
-  const response = await storyblokClient.get("cdn/stories/_settings", {
-    version: dev || version.startsWith("preview") ? "draft" : "published",
-  });
+async function loadSiteConfig(client: StoryblokClient, version: "draft" | "published"): Promise<SiteConfigStoryblok> {
+  const response = await client.get("cdn/stories/_settings", { version });
 
   return response.data.story.content;
 }
 
-async function loadCookieBanner(storyblokClient: StoryblokClient): Promise<CookieBannerStoryblok> {
-  const response = await storyblokClient.get("cdn/stories/_cookie-banner", {
-    version: dev || version.startsWith("preview") ? "draft" : "published",
-  });
+async function loadCookieBanner(client: StoryblokClient, version: "draft" | "published"): Promise<CookieBannerStoryblok> {
+  const response = await client.get("cdn/stories/_cookie-banner", { version });
 
   return response.data.story.content;
 }

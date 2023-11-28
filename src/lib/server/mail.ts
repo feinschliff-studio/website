@@ -1,9 +1,8 @@
 import { dev, version } from "$app/environment";
-import { init } from "$lib/storyblok";
 import type { FieldGroupStoryblok, FormStoryblok } from "$storyblok/components";
 import { sendEmail } from "@cloudflare/pages-plugin-mailchannels/api";
 import { renderRichText } from "@storyblok/js";
-import type { ISbRichtext, ISbStory } from "@storyblok/svelte";
+import type { ISbRichtext, ISbStory, StoryblokClient } from "@storyblok/svelte";
 import type { ISbComponentType } from "storyblok-js-client";
 import { DKIM_DOMAIN, DKIM_PRIVATE_KEY } from "$env/static/private";
 
@@ -28,12 +27,11 @@ export async function dispatch(payload: MailSendBody): Promise<Failure | Success
   });
 }
 
-export async function loadForm(pageId: string, formId: string, accessToken: string) {
-  const storyblokClient = await init(accessToken);
+export async function loadForm(pageId: string, formId: string, client: StoryblokClient) {
   let response: ISbStory;
 
   try {
-    response = await storyblokClient.getStory(pageId, {
+    response = await client.getStory(pageId, {
       version: dev || version.startsWith("preview") ? "draft" : "published",
       resolve_links: "url",
       find_by: "uuid",
