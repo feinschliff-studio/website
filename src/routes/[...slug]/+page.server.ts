@@ -23,7 +23,7 @@ export const load: PageServerLoad = async function load({ parent, params }) {
   const storyblokClient = await init(STORYBLOK_ACCESS_TOKEN);
 
   try {
-    const { story, links } = await loadStory<PageStoryblok>(
+    const { story } = await loadStory<PageStoryblok>(
       storyblokClient,
       `cdn/stories/${params.slug || "home"}`,
     );
@@ -38,7 +38,6 @@ export const load: PageServerLoad = async function load({ parent, params }) {
       title: `${story.name} | ${parentData.siteConfig.companyName}`,
       schema,
       story,
-      links,
     };
   } catch (err) {
     if ((err as StoryblokError).status) {
