@@ -5,6 +5,7 @@ import { sendEmail } from "@cloudflare/pages-plugin-mailchannels/api";
 import { renderRichText } from "@storyblok/js";
 import type { ISbRichtext, ISbStory } from "@storyblok/svelte";
 import type { ISbComponentType } from "storyblok-js-client";
+import { CF_PAGES_URL, DKIM_PRIVATE_KEY } from "$env/static/private";
 
 export async function dispatch(payload: MailSendBody): Promise<Failure | Success> {
   if (dev) {
@@ -13,7 +14,18 @@ export async function dispatch(payload: MailSendBody): Promise<Failure | Success
     return { success: true };
   }
 
-  return sendEmail(payload);
+  return sendEmail({
+    ...payload,
+    personalizations: [
+      {
+        ...payload.personalizations[0],
+        dkim_domain: new URL(CF_PAGES_URL).hostname,
+        dkim_selector: "mailchannels",
+        dkim_private_key: DKIM_PRIVATE_KEY,
+      },
+      ...payload.personalizations.slice(1),
+    ],
+  });
 }
 
 export async function loadForm(pageId: string, formId: string, accessToken: string) {
