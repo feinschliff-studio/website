@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ContentSection from "$lib/components/Blocks/ContentSection.svelte";
+  import ContentSection from "$lib/components/ContentSection.svelte";
   import Slider, { type Slide } from "$lib/components/Slider.svelte";
   import type { GalleryStoryblok } from "$storyblok/components";
   import type { Breakpoints } from "@glidejs/glide/components/breakpoints";

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ContentSection from "$lib/components/Blocks/ContentSection.svelte";
+  import ContentSection from "$lib/components/ContentSection.svelte";
   import MapMarker from "$lib/components/Blocks/MapMarker.svelte";
   import GeoMap, { type Coordinates } from "$lib/components/GeoMap.svelte";
   import type { GeoMapStoryblok } from "$storyblok/components";

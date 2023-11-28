@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ContentSection from "$lib/components/Blocks/ContentSection.svelte";
+  import ContentSection from "$lib/components/ContentSection.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import RichText from "$lib/components/RichText.svelte";
   import type { TextSectionStoryblok } from "$storyblok/components";

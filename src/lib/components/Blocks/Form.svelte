@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import ContentSection from "$lib/components/Blocks/ContentSection.svelte";
+  import ContentSection from "$lib/components/ContentSection.svelte";
   import RichText from "$lib/components/RichText.svelte";
   import type { FormStoryblok } from "$storyblok/components";
   import { type ISbStoryData, StoryblokComponent, storyblokEditable } from "@storyblok/svelte";
