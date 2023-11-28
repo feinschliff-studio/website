@@ -5,7 +5,7 @@
   import type { GeoMapStoryblok } from "$storyblok/components";
   import { storyblokEditable } from "@storyblok/svelte";
   import { getContext } from "svelte";
-  import type { ConsentContext } from "../../../routes/+layout.svelte";
+  import type { ConsentContext } from "$routes/+layout.svelte";
 
   export let blok: GeoMapStoryblok;
   let anchor = blok.anchor;

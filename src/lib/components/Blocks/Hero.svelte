@@ -16,8 +16,7 @@
   id={anchor}
   style:background-color={backgroundColor}
   style:background-image={`url(${backgroundImage})`}
-  class="flex flex-col w-full min-h-[100vh] bg-cover bg-no-repeat"
-  class:pattern-overlay={blok.patternOverlay}
+  class="flex flex-col w-full min-h-[100vh] bg-cover bg-no-repeat {blok.patternOverlay ? 'bg-blend-lighten bg-[position:center_-20vh]' : ''}"
   use:storyblokEditable={blok}
 >
   <div
@@ -42,9 +41,3 @@
     <ScrollIndicator href="#intro" size={24} />
   {/if}
 </header>
-
-<style lang="postcss">
-  .pattern-overlay {
-      @apply bg-blend-lighten bg-[position:center_-20vh];
-  }
-</style>

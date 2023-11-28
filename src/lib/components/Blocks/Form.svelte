@@ -96,10 +96,3 @@
     </ContentSection>
   </section>
 {/key}
-
-<!--
-
-TODO:
- - SEO stuff, JSON-LD, etc.
- - Test CF deployments
--->

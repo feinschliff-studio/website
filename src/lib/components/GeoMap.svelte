@@ -9,12 +9,11 @@
 </script>
 
 <script lang="ts">
-  //TODO: Consent
   import { PUBLIC_MAPS_API_KEY } from "$env/static/public";
   import { Loader } from "@googlemaps/js-api-loader";
   import { setContext } from "svelte";
 
-  export let mapId: string;
+  export let mapId: string | undefined = undefined;
   export let center: Coordinates;
   export let height: string | number;
   $: cssHeight = typeof height === "number" ? `${height}px` : height;
@@ -29,6 +28,7 @@
 
   let map: google.maps.Map | null;
 
+  // noinspection JSUnusedGlobalSymbols -- not unused, see marker and popup
   setContext<GetMapContext>("map", {
     getMap: () => map,
   });
@@ -79,7 +79,7 @@
 
   interface MapParameters {
     zoom: number;
-    mapId: string;
+    mapId: string | undefined;
     center: Coordinates;
     options: Partial<GeoMapOptions>;
   }
