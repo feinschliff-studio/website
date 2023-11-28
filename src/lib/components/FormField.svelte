@@ -12,8 +12,7 @@
     <slot {required} />
   </span>
   <span
-    class="order-1 text-primary mt-2 mx-2 font-normal pointer-events-none select-none group-focus-within:text-secondary transition after:content-['*'] after:text-red-500"
-    class:after:content-none={!required}
+    class="order-1 text-primary mt-2 mx-2 font-normal pointer-events-none select-none group-focus-within:text-secondary transition {required ? `after:content-['*']` : 'content-none'} after:text-red-500"
     class:after:ml-0.5={required}
   >
     {label}
