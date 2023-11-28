@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
@@ -7,8 +8,8 @@ export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
-        sans: ["'Source Sans 3'", "sans-serif"],
-        display: ["Jost", "sans-serif"],
+        sans: ["'Source Sans 3 Variable'", "'Source Sans 3'", ...defaultTheme.fontFamily.sans],
+        display: ["'Jost Variable'", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -16,15 +16,17 @@
 </script>
 
 <script lang="ts">
+  import "../style.pcss";
+  import "@fontsource-variable/jost";
+  import "@fontsource-variable/source-sans-3";
+  import "@fontsource-variable/source-sans-3/wght-italic.css";
+
   import ConfiguredCookieBanner from "$lib/components/ConfiguredCookieBanner.svelte";
   import JsonLd from "$lib/components/JsonLd.svelte";
   import type { BeautySalon, DayOfWeek, WithContext } from "schema-dts";
   import { setContext } from "svelte";
   import { derived, writable } from "svelte/store";
   import type { LayoutData } from "./$types";
-
-  // This is the primary stylesheet used to integrate Tailwind
-  import "../style.pcss";
 
   export let data: LayoutData;
   let open: boolean = false;
