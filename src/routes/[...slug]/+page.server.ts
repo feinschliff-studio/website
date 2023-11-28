@@ -22,6 +22,8 @@ export const load: PageServerLoad = async function load({ parent, params }) {
   const parentData = await parent();
   const storyblokClient = await init(STORYBLOK_ACCESS_TOKEN);
 
+  console.log(`Page server load for ${params.slug || "home"}`);
+
   try {
     const { story } = await loadStory<PageStoryblok>(
       storyblokClient,
