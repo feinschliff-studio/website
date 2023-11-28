@@ -10,12 +10,12 @@ export const load: PageLoad = async function load({ data, parent, params }) {
 
     try {
       const { loadStory } = await import("$lib/storyblok");
-      const { story, links } = await loadStory<PageStoryblok>(
+      const { story } = await loadStory<PageStoryblok>(
         storyblokClient,
         `cdn/stories/${params.slug || "home"}`,
       );
 
-      return { ...data, story, links };
+      return { ...data, story };
     } catch (err) {
       if ((err as StoryblokError).status) {
         const { status, message } = err as StoryblokError;
