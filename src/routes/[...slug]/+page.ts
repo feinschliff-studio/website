@@ -1,7 +1,6 @@
 import type { StoryblokError } from "$lib/storyblok";
 import type { PageStoryblok } from "$storyblok/components";
 import type { PageLoad } from "./$types";
-import { error } from "@sveltejs/kit";
 import { dev, version } from "$app/environment";
 
 export const load: PageLoad = async function load({ data, parent, params }) {
@@ -19,6 +18,7 @@ export const load: PageLoad = async function load({ data, parent, params }) {
     } catch (err) {
       if ((err as StoryblokError).status) {
         const { status, message } = err as StoryblokError;
+        const { error } = await import("@sveltejs/kit");
 
         throw error(status, message);
       }
