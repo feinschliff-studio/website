@@ -205,7 +205,6 @@ export interface FormStoryblok {
   action: string;
   encodingType: "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
   colored?: boolean;
-  redirectionTarget: Exclude<MultilinkStoryblok, {linktype?: "email"} | {linktype?: "asset"}>;
   fallbackValue: string;
   feedbackOptions?: any;
   successMessage: RichtextStoryblok;
