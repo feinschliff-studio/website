@@ -1,6 +1,4 @@
 import { apiPlugin, type ISbResult, type StoryblokClient, storyblokInit } from "@storyblok/js";
-import { mkdir, writeFile } from "fs/promises";
-import { resolve } from "node:path";
 import type { Plugin } from "vite";
 import "dotenv/config";
 
@@ -23,13 +21,11 @@ async function initStoryblokApi(accessToken: string): Promise<StoryblokClient> {
 
 export function generateRedirectsPlugin({ datasource }: PluginOptions): Plugin {
   let client: StoryblokClient;
-  let outputPath: string;
 
   return {
     name: "vite-plugin-storyblok-redirects",
 
-    async configResolved(resolvedConfig) {
-      outputPath = resolve(resolvedConfig.root, resolvedConfig.build.outDir);
+    async configResolved(_resolvedConfig) {
       const token = process.env.STORYBLOK_ACCESS_TOKEN;
 
       if (!token) {
@@ -39,7 +35,7 @@ export function generateRedirectsPlugin({ datasource }: PluginOptions): Plugin {
       client = await initStoryblokApi(token);
     },
 
-    async closeBundle() {
+    async generateBundle() {
       let response: ISbResult;
 
       try {
@@ -67,10 +63,12 @@ export function generateRedirectsPlugin({ datasource }: PluginOptions): Plugin {
            dimension_value,
          }) => `${name} ${value} ${dimension_value ?? 302}`,
       );
-      const redirectsFile = resolve(outputPath, "_redirects");
 
-      await mkdir(outputPath, { recursive: true });
-      await writeFile(redirectsFile, redirects.join("\n"), "utf-8");
+      this.emitFile({
+        type: "asset",
+        fileName: "_redirects",
+        source: redirects.join("\n"),
+      });
     },
   };
 }
