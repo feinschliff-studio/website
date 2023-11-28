@@ -92,7 +92,6 @@ export const POST: RequestHandler = async function POST({ request, url }) {
           value: renderHtmlText(form.notificationHtml, context),
         },
       ],
-      headers: {},
       subject: form.notificationSubject,
       personalizations: [
         {
