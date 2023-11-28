@@ -37,7 +37,7 @@ export async function loadStory<T extends ISbComponentType<V>, V extends string 
   try {
     result = await client.get(slug, {
       version: dev || version.startsWith("preview") ? "draft" : "published",
-      resolve_links: "story",
+      resolve_links: "link",
       ...params,
     });
   } catch (error) {
@@ -56,18 +56,21 @@ export async function loadStory<T extends ISbComponentType<V>, V extends string 
     throw new StoryblokError(message, errorData.status);
   }
 
-  const { data } = result;
+  const { data } = result as {
+    data: {
+      story: ISbStoryData<T>;
+      links: (ISbLinkURLObject & { real_path?: string })[];
+    }
+  };
   const story: ISbStoryData<T> = data.story;
-  const links = (data.links as ISbLinkURLObject[]).reduce<Map<string, ISbLinkURLObject>>(
-    (links, link: ISbLinkURLObject) => links.set(link.uuid, link),
-    new Map(),
-  );
 
-  return { story, links };
+  return { story };
 }
 
 export function resolveLink(linkField: Exclude<MultilinkStoryblok, { linktype?: "asset" }>): string | undefined {
   const slug = linkField.story?.path
+    ?? linkField.story?.real_path
+    ?? linkField.story?.url
     ?? linkField.story?.full_slug
     ?? linkField.url
     ?? linkField.cached_url;

@@ -1,23 +1,14 @@
-<script context="module" lang="ts">
-  import type { PageStoryblok } from "$storyblok/components";
-  import type { ISbStoryData } from "@storyblok/svelte";
-  import type { ISbLinkURLObject } from "storyblok-js-client";
-
-  export type PageContext = {
-    getLinks(): ISbLinkURLObject[];
-    getStory(): ISbStoryData<PageStoryblok>;
-  };
-</script>
-
 <script lang="ts">
   import { dev, version } from "$app/environment";
-  import { StoryblokComponent, useStoryblokBridge } from "@storyblok/svelte";
-  import { onMount, setContext } from "svelte";
+  import { StoryblokComponent } from "@storyblok/svelte";
+  import { onMount } from "svelte";
   import type { PageData } from "./$types";
   import { serializeSchema } from "$lib/schema";
 
   if (dev || version.startsWith("preview")) {
-    onMount(() => {
+    onMount(async () => {
+      const { useStoryblokBridge } = await import("@storyblok/svelte");
+
       if (data.story) {
         useStoryblokBridge(data.story.id, (newStory) => (data.story = newStory), {
           resolveLinks: "url",
@@ -27,7 +18,6 @@
   }
 
   export let data: PageData;
-  $: links = data.links;
   $: story = data.story;
 </script>
 
