@@ -9,12 +9,8 @@
 
 <div
   {id}
-  class="flex flex-col w-full min-h-[75vh] px-4 py-16 sm:p-8 lg:py-16 text-2xl leading-relaxed"
-  class:bleed={bleed}
-  class:colored={colored}
-  class:popout={popOut}
-  class:recede={recede}
-  class:uncolored={!colored}
+  class="flex flex-col w-full {colored ? 'bg-primary text-white' : 'bg-white text-secondary'}
+  {recede ? 'min-h-0' : 'min-h-[75vh]'} {bleed ? 'p-0' : 'px-4 py-16 sm:p-8 lg:py-16'} text-2xl leading-relaxed"
 >
   <div class="w-full max-w-5xl mx-auto" class:contents={popOut}>
     {#if header && $$slots.heading}
@@ -31,21 +27,3 @@
     <slot />
   </div>
 </div>
-
-<style lang="postcss">
-    .bleed {
-        @apply p-0;
-    }
-
-    .recede {
-        @apply min-h-0;
-    }
-
-    .uncolored {
-        @apply bg-white text-secondary;
-    }
-
-    .colored {
-        @apply bg-primary text-white;
-    }
-</style>
