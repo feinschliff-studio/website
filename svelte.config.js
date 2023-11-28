@@ -1,6 +1,6 @@
 import adapter from "@sveltejs/adapter-cloudflare";
 import { vitePreprocess } from "@sveltejs/kit/vite";
-import { env } from "node:process";
+import process from "node:process";
 
 /** @type {import("@sveltejs/kit").Config} */
 const config = {
@@ -9,9 +9,6 @@ const config = {
   preprocess: vitePreprocess({}),
 
   kit: {
-    // adapter-auto only supports some environments, see https://kit.svelte.dev/docs/adapter-auto for a list.
-    // If your environment is not supported or you settled on a specific environment, switch out the adapter.
-    // See https://kit.svelte.dev/docs/adapters for more information about adapters.
     adapter: adapter(),
 
     csp: {
@@ -27,10 +24,10 @@ const config = {
     },
 
     version: {
-      name: env.NODE_ENV === "production"
-        ? env.CF_PAGES_BRANCH === "main"
-          ? "production:" + env.CF_PAGES_COMMIT_SHA
-          : "preview:" + env.CF_PAGES_COMMIT_SHA
+      name: process.env.NODE_ENV === "production"
+        ? process.env.CF_PAGES_BRANCH === "main"
+          ? "production:" + process.env.CF_PAGES_COMMIT_SHA
+          : "preview:" + process.env.CF_PAGES_COMMIT_SHA
         : "development",
     },
 
@@ -49,7 +46,6 @@ const config = {
   },
   compilerOptions: {
     enableSourcemap: true,
-    sourcemap: true,
   },
 };
 
