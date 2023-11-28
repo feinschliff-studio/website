@@ -18,14 +18,15 @@ export const entries: EntryGenerator = async function entries() {
   }));
 };
 
-export const load: PageServerLoad = async function load({ parent, params }) {
+export const load: PageServerLoad = async function load({ parent, params, fetch }) {
   const parentData = await parent();
-  const storyblokClient = await init(STORYBLOK_ACCESS_TOKEN);
+  const storyblokClient = await init(STORYBLOK_ACCESS_TOKEN, fetch);
 
   try {
+    const slug = params.slug || "home";
     const { story } = await loadStory<PageStoryblok>(
       storyblokClient,
-      `cdn/stories/${params.slug || "home"}`,
+      `cdn/stories/${slug}`,
     );
 
     const schema: WithContext<WebPage> = {

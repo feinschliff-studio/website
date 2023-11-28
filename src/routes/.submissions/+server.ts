@@ -4,8 +4,9 @@ import type { FieldGroupStoryblok, FormStoryblok, PageStoryblok } from "$storybl
 import type { ISbStoryData } from "@storyblok/svelte";
 import { error, redirect } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
+import { init } from "$lib/storyblok";
 
-export const POST: RequestHandler = async function POST({ request, url }) {
+export const POST: RequestHandler = async function POST({ request, url, fetch }) {
   const formData = await request.formData();
   const pageId = formData.get("_page") as string | undefined;
 
@@ -24,7 +25,8 @@ export const POST: RequestHandler = async function POST({ request, url }) {
   let story: ISbStoryData<PageStoryblok>;
 
   try {
-    const response = await loadForm(pageId, formId, STORYBLOK_ACCESS_TOKEN);
+    const storyblokClient = await init(STORYBLOK_ACCESS_TOKEN, fetch);
+    const response = await loadForm(pageId, formId, storyblokClient);
     form = response.form;
     fields = response.fields;
     story = response.story;
