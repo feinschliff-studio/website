@@ -10,7 +10,7 @@
   export let consent: Writable<SerializedChoices>;
   export let open: boolean | undefined = undefined;
 
-  const visible = !dev && version !== "preview";
+  const visible = !dev && !version.startsWith("preview");
 
   const choices = [
     {

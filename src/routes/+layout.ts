@@ -27,7 +27,7 @@ export const load: Load = async function load() {
 
 async function loadSiteConfig(storyblokClient: StoryblokClient): Promise<SiteConfigStoryblok> {
   const response = await storyblokClient.get("cdn/stories/_settings", {
-    version: dev || version === "preview" ? "draft" : "published",
+    version: dev || version.startsWith("preview") ? "draft" : "published",
   });
 
   return response.data.story.content;
@@ -35,7 +35,7 @@ async function loadSiteConfig(storyblokClient: StoryblokClient): Promise<SiteCon
 
 async function loadCookieBanner(storyblokClient: StoryblokClient): Promise<CookieBannerStoryblok> {
   const response = await storyblokClient.get("cdn/stories/_cookie-banner", {
-    version: dev || version === "preview" ? "draft" : "published",
+    version: dev || version.startsWith("preview") ? "draft" : "published",
   });
 
   return response.data.story.content;

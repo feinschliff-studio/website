@@ -21,7 +21,7 @@ const config = {
           "'self'",
           "https://*.storyblok.com",
           "https://maps.googleapis.com",
-          "https://static.cloudflareinsights.com"
+          "https://static.cloudflareinsights.com",
         ],
       },
     },
@@ -29,8 +29,8 @@ const config = {
     version: {
       name: env.NODE_ENV === "production"
         ? env.CF_PAGES_BRANCH === "main"
-          ? "production"
-          : "preview"
+          ? "production:" + env.CF_PAGES_COMMIT_SHA
+          : "preview:" + env.CF_PAGES_COMMIT_SHA
         : "development",
     },
 
