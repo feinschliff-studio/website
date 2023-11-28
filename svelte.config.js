@@ -15,7 +15,7 @@ const config = {
       mode: "auto",
       directives: {
         "script-src": [
-          "'self'",
+          "self",
           "https://*.storyblok.com",
           "https://maps.googleapis.com",
           "https://static.cloudflareinsights.com",
