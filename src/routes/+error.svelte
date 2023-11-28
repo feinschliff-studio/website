@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import ContentSection from "$lib/components/Blocks/ContentSection.svelte";
+  import ContentSection from "$lib/components/ContentSection.svelte";
 
   const title = $page.status === 404 ? "Seite nicht gefunden" : "Ein Fehler ist aufgetreten";
   const subtitle = $page.status === 404 ? "Die angeforderte Seite konnte nicht gefunden werden." : "Bitte versuchen Sie es später erneut.";
