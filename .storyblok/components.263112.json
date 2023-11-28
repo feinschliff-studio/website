@@ -806,7 +806,7 @@
       "name": "Form",
       "display_name": "Formular",
       "created_at": "2023-11-20T16:23:31.773Z",
-      "updated_at": "2023-11-26T09:38:18.597Z",
+      "updated_at": "2023-11-28T12:52:16.319Z",
       "id": 4910651,
       "schema": {
         "notificationRecipientName": {
@@ -1089,8 +1089,7 @@
           "keys": [
             "method",
             "encodingType",
-            "action",
-            "redirectionTarget"
+            "action"
           ],
           "pos": 14,
           "type": "tab",
@@ -1165,20 +1164,6 @@
           "inline_label": true,
           "pos": 18,
           "key": "colored"
-        },
-        "redirectionTarget": {
-          "type": "multilink",
-          "display_name": "Umleitung nach Versand",
-          "required": true,
-          "description": "Die Seite, auf die die Besucher:in umgeleitet werden soll, nachdem das Formular abgeschickt wurde.",
-          "show_anchor": true,
-          "allow_custom_attributes": true,
-          "restrict_content_types": true,
-          "component_whitelist": [
-            "Page"
-          ],
-          "key": "redirectionTarget",
-          "pos": 19
         },
         "fallbackValue": {
           "type": "text",
