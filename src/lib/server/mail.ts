@@ -5,7 +5,7 @@ import { sendEmail } from "@cloudflare/pages-plugin-mailchannels/api";
 import { renderRichText } from "@storyblok/js";
 import type { ISbRichtext, ISbStory } from "@storyblok/svelte";
 import type { ISbComponentType } from "storyblok-js-client";
-import { CF_PAGES_URL, DKIM_PRIVATE_KEY } from "$env/static/private";
+import { DKIM_DOMAIN, DKIM_PRIVATE_KEY } from "$env/static/private";
 
 export async function dispatch(payload: MailSendBody): Promise<Failure | Success> {
   if (dev) {
@@ -19,7 +19,7 @@ export async function dispatch(payload: MailSendBody): Promise<Failure | Success
     personalizations: [
       {
         ...payload.personalizations[0],
-        dkim_domain: new URL(CF_PAGES_URL).hostname,
+        dkim_domain: DKIM_DOMAIN,
         dkim_selector: "mailchannels",
         dkim_private_key: DKIM_PRIVATE_KEY,
       },
