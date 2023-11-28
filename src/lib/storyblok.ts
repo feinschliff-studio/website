@@ -16,7 +16,7 @@ export async function init(accessToken: string) {
   storyblokInit({
     accessToken,
     use: [apiPlugin],
-    bridge: dev || version === "preview",
+    bridge: dev || version.startsWith("preview"),
     components,
     apiOptions: {
       https: true,
@@ -36,7 +36,7 @@ export async function loadStory<T extends ISbComponentType<V>, V extends string 
 
   try {
     result = await client.get(slug, {
-      version: dev || version === "preview" ? "draft" : "published",
+      version: dev || version.startsWith("preview") ? "draft" : "published",
       resolve_links: "story",
       ...params,
     });

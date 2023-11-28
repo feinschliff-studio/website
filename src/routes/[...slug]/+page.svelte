@@ -17,7 +17,7 @@
   import type { WebPage, WithContext } from "schema-dts";
   import JsonLd from "$lib/components/JsonLd.svelte";
 
-  if (dev || version === "preview") {
+  if (dev || version.startsWith("preview")) {
     onMount(() => {
       if (data.story) {
         useStoryblokBridge(data.story.id, (newStory) => (data.story = newStory), {

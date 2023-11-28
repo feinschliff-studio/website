@@ -34,7 +34,7 @@ export async function loadForm(pageId: string, formId: string, accessToken: stri
 
   try {
     response = await storyblokClient.getStory(pageId, {
-      version: dev || version === "preview" ? "draft" : "published",
+      version: dev || version.startsWith("preview") ? "draft" : "published",
       resolve_links: "url",
       find_by: "uuid",
     });
