@@ -1,16 +1,8 @@
 import { dev, version } from "$app/environment";
 import type { MultilinkStoryblok } from "$storyblok/components";
-import {
-  apiPlugin,
-  type ISbStoryData,
-  type ISbStoryParams,
-  type StoryblokClient,
-  storyblokInit,
-  useStoryblokApi,
-} from "@storyblok/svelte";
-import type { ISbComponentType, ISbLinkURLObject } from "storyblok-js-client";
+import { apiPlugin, type StoryblokClient, storyblokInit, useStoryblokApi } from "@storyblok/svelte";
+import type { ISbComponentType, ISbError, ISbStory, ISbStoryData, ISbStoryParams } from "storyblok-js-client";
 import { components } from "virtual:$storyblok/components";
-import type { ISbResult } from "@storyblok/js";
 
 export async function init(accessToken: string, fetch?: typeof window.fetch) {
   storyblokInit({
@@ -33,10 +25,10 @@ export async function loadStory<T extends ISbComponentType<V>, V extends string 
   slug: string,
   params?: ISbStoryParams,
 ) {
-  let result: ISbResult;
+  let result: ISbStory;
 
   try {
-    result = await client.get(slug, {
+    result = await client.getStory(slug, {
       version: dev || version.startsWith("preview") ? "draft" : "published",
       resolve_links: "link",
       ...params,
@@ -46,24 +38,15 @@ export async function loadStory<T extends ISbComponentType<V>, V extends string 
       throw error;
     }
 
-    const errorData = JSON.parse(error) as {
-      message: string;
-      status: number;
-      response?: string;
-    };
+    const errorData = JSON.parse(error) as ISbError;
     const message = `Failed to fetch story "${slug}" from Storyblok API: ${errorData.message}` +
       (errorData.response ? `: ${errorData.response}` : "");
 
-    throw new StoryblokError(message, errorData.status);
+    throw new StoryblokError(message, errorData.status ?? 500);
   }
 
-  const { data } = result as {
-    data: {
-      story: ISbStoryData<T>;
-      links: (ISbLinkURLObject & { real_path?: string })[];
-    }
-  };
-  const story: ISbStoryData<T> = data.story;
+  const { data } = result;
+  const story = data.story as ISbStoryData<T>;
 
   return { story };
 }
@@ -84,4 +67,8 @@ export class StoryblokError extends Error {
     super(message);
     Error.captureStackTrace(this, StoryblokError);
   }
+}
+
+export function isStoryblokError(error: unknown): error is StoryblokError {
+  return !!(error && typeof error === "object" && "status" in error);
 }

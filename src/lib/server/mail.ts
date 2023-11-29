@@ -65,6 +65,7 @@ export async function loadForm(pageId: string, formId: string, client: Storyblok
 export function renderHtmlText(template: ISbRichtext, context: Record<string, FormDataEntryValue>): string {
   const renderedContent = renderTemplate(renderRichText(template), context);
 
+  // noinspection HtmlDeprecatedAttribute
   return `
 <!DOCTYPE html>
 <html lang="de">
@@ -73,7 +74,7 @@ export function renderHtmlText(template: ISbRichtext, context: Record<string, Fo
         <style type="text/css">
             body {
                 font-family: sans-serif;
-                color:#333;
+                color: #333;
                 line-height: 1.4;
                 padding: 32px;
             }
@@ -96,14 +97,6 @@ export function renderTemplate(template: string, context: Record<string, FormDat
 
 export function isFailure(r: Success | Failure): r is Failure {
   return !r.success;
-}
-
-export interface TemplateContext {
-  name: string;
-  message: string;
-  phone?: string;
-  email?: string;
-  date: string;
 }
 
 interface EmailAddress {
