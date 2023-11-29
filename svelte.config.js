@@ -20,6 +20,7 @@ const config = {
           "https://maps.googleapis.com",
           "https://static.cloudflareinsights.com",
         ],
+        "frame-ancestors": ["self", "https://app.storyblok.com"],
       },
     },
 
