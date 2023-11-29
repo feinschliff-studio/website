@@ -1,8 +1,8 @@
 import { STORYBLOK_ACCESS_TOKEN } from "$env/static/private";
-import { init, loadStory, type StoryblokError } from "$lib/storyblok";
+import { init, isStoryblokError, loadStory } from "$lib/storyblok";
 import type { EntryGenerator, PageServerLoad } from "./$types";
 import type { PageStoryblok } from "$storyblok/components";
-import { error } from "@sveltejs/kit";
+import { error as respondWithError } from "@sveltejs/kit";
 import type { WebPage, WithContext } from "schema-dts";
 
 export const entries: EntryGenerator = async function entries() {
@@ -24,10 +24,7 @@ export const load: PageServerLoad = async function load({ parent, params, fetch 
 
   try {
     const slug = params.slug || "home";
-    const { story } = await loadStory<PageStoryblok>(
-      storyblokClient,
-      `cdn/stories/${slug}`,
-    );
+    const { story } = await loadStory<PageStoryblok>(storyblokClient, slug);
 
     const schema: WithContext<WebPage> = {
       "@context": "https://schema.org",
@@ -40,13 +37,13 @@ export const load: PageServerLoad = async function load({ parent, params, fetch 
       schema,
       story,
     };
-  } catch (err) {
-    if ((err as StoryblokError).status) {
-      const { status, message } = err as StoryblokError;
+  } catch (error) {
+    if (isStoryblokError(error)) {
+      const { status, message } = error;
 
-      throw error(status, message);
+      throw respondWithError(status, message);
     }
 
-    throw err;
+    throw error;
   }
 };

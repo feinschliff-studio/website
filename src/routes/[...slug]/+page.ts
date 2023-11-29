@@ -1,4 +1,3 @@
-import type { StoryblokError } from "$lib/storyblok";
 import type { PageStoryblok } from "$storyblok/components";
 import type { PageLoad } from "./$types";
 import { dev, version } from "$app/environment";
@@ -9,21 +8,23 @@ export const load: PageLoad = async function load({ data, parent, params }) {
 
     try {
       const { loadStory } = await import("$lib/storyblok");
-      const { story } = await loadStory<PageStoryblok>(
-        storyblokClient,
-        `cdn/stories/${params.slug || "home"}`,
-      );
+      const slug = params.slug || "home";
+      const { story } = await loadStory<PageStoryblok>(storyblokClient, slug);
 
       return { ...data, story };
-    } catch (err) {
-      if ((err as StoryblokError).status) {
-        const { status, message } = err as StoryblokError;
-        const { error } = await import("@sveltejs/kit");
+    } catch (error) {
+      const [{ error: respondWithError }, { isStoryblokError }] = await Promise.all([
+        import("@sveltejs/kit"),
+        import("$lib/storyblok"),
+      ]);
 
-        throw error(status, message);
+      if (isStoryblokError(error)) {
+        const { status, message } = error;
+
+        throw respondWithError(status, message);
       }
 
-      throw err;
+      throw error;
     }
   }
 
