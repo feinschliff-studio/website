@@ -26,6 +26,7 @@
         "@types/google.maps": "^3.50.2",
         "@types/node": "^18.7.23",
         "connect-history-api-fallback": "^2.0.0",
+        "postcss": "^8.4.35",
         "postcss-nesting": "^10.2.0",
         "rollup-plugin-sitemap": "^1.0.3",
         "schema-dts": "^1.1.0",
