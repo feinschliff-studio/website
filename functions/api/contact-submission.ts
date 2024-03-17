@@ -61,7 +61,7 @@ export const onRequestPost: PagesFunction = async function onRequestPost(
         formData = await request.formData();
 
         const subject = env.SUBMISSION_SUBJECT || 'Neue Nachricht auf Webseite';
-        const name = formData.get('name') as string | undefined;
+        const name = (formData.get('name') as string | undefined) || `website@${domain}`;
         const email = formData.get('email') as string | undefined;
         const phone = formData.get('phone') as string | undefined;
         const message = formData.get('message') as string | undefined;
@@ -108,6 +108,9 @@ export const onRequestPost: PagesFunction = async function onRequestPost(
             subject,
             personalizations: [
                 {
+                    dkim_domain: env.DKIM_DOMAIN,
+                    dkim_selector: "mailchannels",
+                    dkim_private_key: env.DKIM_PRIVATE_KEY,
                     to: [
                         {
                             name: schema.founder.name,
