@@ -2,6 +2,7 @@
     "name": "feinschliff-studio.github.io",
     "version": "1.0.0",
     "displayName": "Feinschliff Studio",
+    "packageManager": "yarn@1.22.19",
     "maintainers": [
         {
             "name": "Moritz Friedrich",
