@@ -1,0 +1,3832 @@
+{
+  "components": [
+    {
+      "name": "Button",
+      "display_name": "Button",
+      "created_at": "2023-11-21T10:33:53.602Z",
+      "updated_at": "2023-11-26T09:53:11.565Z",
+      "id": 4914300,
+      "schema": {
+        "autofocus": {
+          "type": "boolean",
+          "pos": 0,
+          "description": "Wenn diese Einstellung aktiviert wird, wird das Eingabefeld automatisch fokussiert, sobald die Seite geladen wird.\nNur ein Eingabefeld auf einer Seite sollte automatisch fokussiert werden.",
+          "display_name": "Automatisch fokussieren"
+        },
+        "disabled": {
+          "type": "boolean",
+          "pos": 1,
+          "display_name": "Deaktiviert",
+          "description": "Legt fest, dass der Button deaktiviert ist und nicht angeklickt werden kann."
+        },
+        "label": {
+          "type": "text",
+          "pos": 2
+        },
+        "type": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 3,
+          "options": [
+            {
+              "_uid": "96c875ad-ebac-41c1-aac3-75261fb97711",
+              "name": "Formular abschicken",
+              "value": "submit"
+            },
+            {
+              "_uid": "f3d93c05-5341-49ce-a5c8-0666665e01db",
+              "value": "reset",
+              "name": "Formular zurücksetzen"
+            },
+            {
+              "_uid": "23d75fc0-be1b-41ee-9b60-167c6dbcecd9",
+              "value": "button",
+              "name": "Benutzerdefiniert"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "submit",
+          "required": true,
+          "display_name": "Aktion",
+          "description": "Die Aktion, die beim Klick auf den Button ausgelöst wird.\nBei \"Formular abschicken\" wird das Formular mit den aktuellen Eingaben versandt.\nBei \"Formular zurücksetzen\" werden alle Eingaben aus den Formularfeldern gelöscht.\nBei \"Benutzerdefiniert\" muss im Code eine Aktion hinterlegt sein. Wird normalerweise nicht benötigt."
+        },
+        "name": {
+          "type": "text",
+          "pos": 4,
+          "display_name": "Name",
+          "description": "Technischer Name des Buttons. Wenn mehrere Buttons in einem Formular verwendet werden, kann mit dem Namen unterschieden werden, durch welchen Button das Formular abgeschickt wurde.",
+          "regex": "[a-z0-9_.-]*",
+          "max_length": 63
+        },
+        "value": {
+          "type": "text",
+          "pos": 5,
+          "display_name": "Wert",
+          "description": "Wert, der für den Button mit dem Formular verschickt wird. Relevant im Zusammenhang mit dem Button-Namen."
+        },
+        "tab-4ca11388-d0e6-4a79-91fb-107bfa5fe7f7": {
+          "display_name": "Wert",
+          "keys": [
+            "value",
+            "name"
+          ],
+          "pos": 6,
+          "type": "tab"
+        },
+        "tab-bd3d1a17-22b3-4e84-9e2b-8602a9fc0779": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "disabled",
+            "autofocus"
+          ],
+          "pos": 7,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": "label",
+      "is_root": false,
+      "preview_tmpl": "",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Button",
+      "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+      "color": "#ff6159",
+      "icon": "block-arrow-pointer",
+      "component_group_name": "Formulare"
+    },
+    {
+      "name": "CheckboxField",
+      "display_name": "Ankreuzfeld",
+      "created_at": "2023-11-21T07:40:57.693Z",
+      "updated_at": "2023-11-21T07:46:09.291Z",
+      "id": 4912593,
+      "schema": {
+        "label": {
+          "type": "text",
+          "pos": 0,
+          "description": "Beschriftung des Eingabefelds.",
+          "display_name": "Beschriftung",
+          "required": true,
+          "translatable": true
+        },
+        "name": {
+          "type": "text",
+          "pos": 1,
+          "description": "Technischer Name des Felds. Sollte keine Leerzeichen enthalten.",
+          "display_name": "Name",
+          "translatable": true,
+          "required": true,
+          "max_length": 63,
+          "regex": "[a-z0-9._-]"
+        },
+        "placeholder": {
+          "type": "text",
+          "pos": 2,
+          "description": "Ein optionaler Platzhalter für das Eingabefeld.",
+          "display_name": "Platzhalter",
+          "translatable": true
+        },
+        "value": {
+          "type": "boolean",
+          "pos": 3,
+          "description": "Der anfänglich eingestellte Wert, wenn die Seite geladen wird.",
+          "display_name": "Initialwert"
+        },
+        "tab-e62f9a20-3f71-423d-862e-39b189ff1235": {
+          "display_name": "Validierung",
+          "keys": [
+            "required"
+          ],
+          "pos": 4,
+          "type": "tab"
+        },
+        "tab-fa82667c-20ca-4483-a341-5c90a341ead9": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "autofocus",
+            "disabled"
+          ],
+          "pos": 5,
+          "type": "tab"
+        },
+        "required": {
+          "type": "boolean",
+          "description": "Wenn diese Einstellung aktiviert ist, kann das Formular nicht abgeschickt werden, solange dieses Feld nicht ausgefüllt ist.",
+          "display_name": "Pflichtfeld"
+        },
+        "autofocus": {
+          "type": "boolean",
+          "description": "Wenn diese Einstellung aktiviert wird, wird das Eingabefeld automatisch fokussiert, sobald die Seite geladen wird.\nNur ein Eingabefeld auf einer Seite sollte automatisch fokussiert werden.",
+          "display_name": "Automatisch fokussieren"
+        },
+        "disabled": {
+          "type": "boolean",
+          "description": "Legt fest, dass das Feld inaktiv ist.",
+          "display_name": "Deaktiviert"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Ankreuzfeld",
+      "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+      "color": "#ff6159",
+      "icon": "block-comment",
+      "component_group_name": "Formulare"
+    },
+    {
+      "name": "CookieBanner",
+      "display_name": "Cookie-Banner",
+      "created_at": "2023-11-22T14:23:04.141Z",
+      "updated_at": "2023-11-25T18:54:41.126Z",
+      "id": 4922634,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "display_name": "Überschrift",
+          "required": true,
+          "translatable": true,
+          "description": "Die Überschrift des Cookie-Banners.",
+          "default_value": "Datenschutz-Hinweis",
+          "pos": 0,
+          "key": "heading"
+        },
+        "tab-e9fc8da0-3d21-4505-bb95-15f35f117482": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "roundedCorners",
+            "backdropBlur"
+          ],
+          "pos": 0,
+          "type": "tab"
+        },
+        "description": {
+          "type": "richtext",
+          "display_name": "Beschreibung",
+          "description": "Ausführlicher Beschreibungstext.",
+          "default_value": "Wir und ausgewählte Dritte setzen Cookies oder ähnliche Technologien für technische Zwecke ein und – mit Ihrer Einwilligung – für andere Zwecke, wie in der Cookie-Richtlinie beschrieben. Im Fall der Ablehnung könnten bestimmte Funktionen nicht verfügbar sein.\nIhre Einwilligung können Sie jederzeit erteilen, verweigern oder widerrufen.\nVerwenden Sie den „Zustimmen“-Button, um dem Einsatz solcher Technologien zuzustimmen.",
+          "required": true,
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "list",
+            "emoji",
+            "italic",
+            "olist",
+            "hrule",
+            "link"
+          ],
+          "allow_target_blank": true,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_group_whitelist": [
+            "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3"
+          ],
+          "pos": 1,
+          "key": "description"
+        },
+        "privacyPolicyLink": {
+          "type": "multilink",
+          "pos": 2,
+          "required": true,
+          "translatable": true,
+          "display_name": "Datenschutz-Richtlinie",
+          "description": "Link zur Datenschutzrichtlinie, der beim Klick auf \"Mehr Informationen\" aufgerufen wird.",
+          "show_anchor": false,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "Page"
+          ],
+          "allow_target_blank": true,
+          "key": "privacyPolicyLink"
+        },
+        "imprintLink": {
+          "type": "multilink",
+          "pos": 3,
+          "display_name": "Impressum",
+          "required": true,
+          "translatable": true,
+          "description": "Link zum Impressum.",
+          "show_anchor": false,
+          "allow_target_blank": true,
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "Page"
+          ],
+          "key": "imprintLink"
+        },
+        "immediateRejectionEnabled": {
+          "type": "boolean",
+          "pos": 4,
+          "display_name": "Explizites Ablehnen anbieten",
+          "description": "Legt fest, ob die Ablehnung aller nicht erforderlichen Cookies direkt angeboten wird. Dies ist nach aktueller Auslegung der DSGvO in Deutschland notwendig.",
+          "default_value": true
+        },
+        "labels": {
+          "type": "section",
+          "display_name": "Button-Beschriftungen",
+          "keys": [
+            "acceptLabel",
+            "rejectLabel",
+            "settingsLabel",
+            "closeLabel",
+            "editLabel",
+            "applyLabel"
+          ],
+          "pos": 5,
+          "key": "labels"
+        },
+        "acceptLabel": {
+          "type": "text",
+          "display_name": "Akzeptieren",
+          "required": true,
+          "translatable": true,
+          "default_value": "Alle akzeptieren",
+          "pos": 6,
+          "key": "acceptLabel"
+        },
+        "rejectLabel": {
+          "type": "text",
+          "display_name": "Ablehnen",
+          "required": true,
+          "translatable": true,
+          "default_value": "Nicht erforderliche ablehnen",
+          "pos": 7,
+          "key": "rejectLabel"
+        },
+        "settingsLabel": {
+          "type": "text",
+          "display_name": "Einstellungen",
+          "required": true,
+          "translatable": true,
+          "default_value": "Einstellungen",
+          "pos": 8,
+          "key": "settingsLabel"
+        },
+        "closeLabel": {
+          "type": "text",
+          "display_name": "Schließen",
+          "default_value": "Einstellungen schließen",
+          "translatable": true,
+          "required": true,
+          "pos": 9,
+          "key": "closeLabel"
+        },
+        "editLabel": {
+          "type": "text",
+          "description": "",
+          "display_name": "Bearbeiten",
+          "default_value": "Einstellungen ändern",
+          "required": true,
+          "translatable": true,
+          "pos": 10,
+          "key": "editLabel"
+        },
+        "applyLabel": {
+          "type": "text",
+          "display_name": "Übernehmen",
+          "default_value": "Ausgewählte übernehmen",
+          "required": true,
+          "translatable": true,
+          "pos": 11,
+          "key": "applyLabel"
+        },
+        "necessaryControlGroup": {
+          "type": "section",
+          "display_name": "Notwendige Cookies",
+          "keys": [
+            "necessaryCategoryLabel",
+            "necessaryCategoryDescription"
+          ],
+          "pos": 12,
+          "key": "necessaryControlGroup"
+        },
+        "necessaryCategoryLabel": {
+          "type": "text",
+          "display_name": "Notwendige Kategorie",
+          "key": "necessaryCategoryLabel",
+          "pos": 13,
+          "required": true,
+          "translatable": true,
+          "description": "Name der Notwendigen Cookie-Kategorie.",
+          "default_value": "Notwendig"
+        },
+        "necessaryCategoryDescription": {
+          "type": "textarea",
+          "pos": 14,
+          "description": "Beschreibungstext für die \"Notwenige Cookies\"-Kategorie.",
+          "display_name": "Beschreibung Notwenige Cookies",
+          "default_value": "Diese Cookies sind für das Funktionieren der Website erforderlich und können in unserem System nicht deaktiviert werden. In der Regel werden diese nur als Reaktion auf deine Aktionen gesetzt, die Dienstanforderungen wie z.B. Änderungen an deinen Datenschutzeinstellungen oder das Ausfüllen von Formularen beinhalten.",
+          "translatable": true,
+          "required": true,
+          "key": "necessaryCategoryDescription"
+        },
+        "trackingControlGroup": {
+          "type": "section",
+          "pos": 15,
+          "keys": [
+            "trackingCategoryLabel",
+            "trackingCategoryDescription",
+            "trackingCategoryEnabled"
+          ],
+          "display_name": "Tracking-Cookies",
+          "key": "trackingControlGroup"
+        },
+        "trackingCategoryLabel": {
+          "type": "text",
+          "pos": 16,
+          "display_name": "Tracking",
+          "required": true,
+          "translatable": true,
+          "description": "Name der Tracking-Cookie-Kategorie.",
+          "default_value": "Tracking",
+          "key": "trackingCategoryLabel"
+        },
+        "trackingCategoryDescription": {
+          "type": "textarea",
+          "pos": 17,
+          "description": "Beschreibungstext für die \"Tracking-Cookies\"-Kategorie.",
+          "display_name": "Beschreibung Tracking-Cookies",
+          "required": true,
+          "translatable": true,
+          "key": "trackingCategoryDescription",
+          "default_value": "Dank dieser Tracker können wir Ihnen eine verbesserte Nutzererfahrung bieten und Interaktionen mit externen Inhalten, Netzwerken und Plattformen ermöglichen."
+        },
+        "trackingCategoryEnabled": {
+          "type": "boolean",
+          "pos": 18,
+          "display_name": "Tracking-Kategorie aktiv",
+          "description": "Legt fest, ob die Tracking-Kategorie aktiv ist.",
+          "default_value": true,
+          "inline_label": true,
+          "key": "trackingCategoryEnabled"
+        },
+        "analyticsControlGroup": {
+          "type": "section",
+          "pos": 19,
+          "keys": [
+            "analyticsCategoryLabel",
+            "analyticsCategoryDescription",
+            "analyticsCategoryEnabled"
+          ],
+          "display_name": "Analytics-Cookies",
+          "key": "analyticsControlGroup"
+        },
+        "analyticsCategoryLabel": {
+          "type": "text",
+          "pos": 20,
+          "description": "Name der Analyse-Cookie-Kategorie.",
+          "display_name": "Analyse-Kategorie",
+          "translatable": true,
+          "required": true,
+          "default_value": "Analyse",
+          "key": "analyticsCategoryLabel"
+        },
+        "analyticsCategoryDescription": {
+          "type": "textarea",
+          "pos": 21,
+          "description": "Beschreibungstext für die \"Analyse-Cookies\"-Kategorie.",
+          "display_name": "Beschreibung  Analyse-Cookies",
+          "required": true,
+          "translatable": true,
+          "default_value": "Diese ermöglichen die Mitverfolgung und Analyse des Nutzerverhaltens. Beispielsweise können damit Aktivitäten von Anwendungen gemessen oder Nutzerprofile erstellt werden, um die Dienste anhand der Datennutzung durch die Anwender zu verbessern.",
+          "key": "analyticsCategoryDescription"
+        },
+        "analyticsCategoryEnabled": {
+          "type": "boolean",
+          "pos": 22,
+          "display_name": "Analyse-Kategorie aktiv",
+          "default_value": true,
+          "inline_label": true,
+          "description": "Legt fest, ob die Analyse-Kategorie aktiv ist.",
+          "key": "analyticsCategoryEnabled"
+        },
+        "marketingControlGroup": {
+          "type": "section",
+          "pos": 23,
+          "display_name": "Marketing-Cookies",
+          "keys": [
+            "marketingCategoryDescription",
+            "marketingCategoryLabel",
+            "marketingCategoryEnabled"
+          ],
+          "key": "marketingControlGroup"
+        },
+        "marketingCategoryLabel": {
+          "type": "text",
+          "pos": 24,
+          "display_name": "Marketing-Kategorie",
+          "required": true,
+          "translatable": true,
+          "description": "Name der Marketing-Cookie-Kategorie.",
+          "default_value": "Marketing",
+          "key": "marketingCategoryLabel"
+        },
+        "marketingCategoryDescription": {
+          "type": "textarea",
+          "pos": 25,
+          "description": "Beschreibungstext für die \"Marketing Cookies\"-Kategorie.",
+          "display_name": "Beschreibung Marketing-Cookies",
+          "required": true,
+          "translatable": true,
+          "default_value": "Diese Cookies können von unseren Werbepartnern auf unserer Website eingesetzt werden. Die betreffenden Unternehmen nutzen sie unter Umständen, um ein Profil deiner Interessen zu erstellen und relevante Anzeigen für dich auf anderen Websites einzublenden.\nSie speichern keine direkten personenbezogenen Daten, sondern basieren auf der eindeutigen Identifizierung deines Browsers und Endgeräts. Wenn du diese Cookies blockierst, sind die Werbeeinblendungen weniger personalisiert.",
+          "key": "marketingCategoryDescription"
+        },
+        "marketingCategoryEnabled": {
+          "type": "boolean",
+          "pos": 26,
+          "display_name": "Marketing-Kategorie aktiv",
+          "description": "Legt fest, ob die Marketing-Kategorie aktiv ist. Nur erforderlich, wenn Werbung geschalten wird.",
+          "inline_label": true,
+          "key": "marektingCategoryEnabled"
+        },
+        "tab-3bb0c374-b84d-4e3e-a0aa-268569312edd": {
+          "display_name": "Kategorien",
+          "keys": [
+            "categories",
+            "necessaryCategoryLabel",
+            "necessaryCategoryDescription",
+            "necessaryControlGroup",
+            "trackingCategoryLabel",
+            "trackingCategoryDescription",
+            "trackingControlGroup",
+            "analyticsControlGroup",
+            "analyticsCategoryLabel",
+            "analyticsCategoryDescription",
+            "marketingControlGroup",
+            "marketingCategoryLabel",
+            "marketingCategoryDescription",
+            "trackingCategoryEnabled",
+            "analyticsCategoryEnabled",
+            "marektingCategoryEnabled",
+            "marketingCategoryEnabled"
+          ],
+          "pos": 27,
+          "type": "tab",
+          "key": "tab-3bb0c374-b84d-4e3e-a0aa-268569312edd"
+        },
+        "roundedCorners": {
+          "type": "boolean",
+          "display_name": "Abgerundete Ecken",
+          "description": "Legt fest, ob die Ecken des Cookie-Banners abgerundet sein sollen.",
+          "default_value": true
+        },
+        "backdropBlur": {
+          "type": "boolean",
+          "display_name": "Milchglas-Effekt",
+          "description": "Legt fest, ob das Cookie-Banner einen semi-transparenten Hintergrund mit Milchglas-Effekt haben soll.",
+          "default_value": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Cookie-Banner",
+      "component_group_uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d",
+      "color": "#395ece",
+      "icon": "block-shield-2",
+      "component_group_name": "Seitentypen"
+    },
+    {
+      "name": "FieldGroup",
+      "display_name": "Feldgruppe",
+      "created_at": "2023-11-21T07:56:26.339Z",
+      "updated_at": "2023-11-26T09:55:49.616Z",
+      "id": 4912627,
+      "schema": {
+        "columns": {
+          "type": "number",
+          "pos": 0,
+          "display_name": "Anzahl Spalten",
+          "required": true,
+          "default_value": "3",
+          "min_value": 1,
+          "max_value": 12,
+          "description": "Anzahl an Spalten des Gitters.",
+          "decimals": 0
+        },
+        "fields": {
+          "type": "bloks",
+          "pos": 1,
+          "display_name": "Felder",
+          "description": "Eingabefelder, die als Gitter angeordnet werden sollen.",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "7d987d4d-febf-4398-bf1b-55a7b4c62267"
+          ],
+          "required": true
+        },
+        "rows": {
+          "type": "number",
+          "pos": 2,
+          "min_value": 1,
+          "default_value": "1",
+          "required": true,
+          "description": "Anzahl an Zeilen des Gitters.",
+          "display_name": "Anzahl Zeilen",
+          "max_value": 6,
+          "decimals": 0
+        },
+        "tab-fe5d32bc-7351-49e7-9cdb-6471241a8bc2": {
+          "display_name": "Layout",
+          "keys": [
+            "rows",
+            "columns",
+            "gap"
+          ],
+          "pos": 3,
+          "type": "tab"
+        },
+        "gap": {
+          "type": "option",
+          "description": "Abstand zwischen den Feldern innerhalb des Gitter-Layouts.",
+          "display_name": "Abstand",
+          "required": false,
+          "default_value": "auto",
+          "min_value": 0.5,
+          "steps": 1,
+          "max_value": 16,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "97350ab4-15da-4f3f-846e-7313431ed231",
+              "value": "auto",
+              "name": "Automatisch"
+            },
+            {
+              "_uid": "671393b8-bc4b-4361-b142-8256e59d46d6",
+              "name": "0,5",
+              "value": "0.5"
+            },
+            {
+              "_uid": "846dbfb0-8873-4f1f-9acc-7fb6f9f8e6b0",
+              "value": "1",
+              "name": "1"
+            },
+            {
+              "_uid": "22bfd2eb-7c93-4fd9-8885-5158dc236b14",
+              "value": "1.5",
+              "name": "1,5"
+            },
+            {
+              "_uid": "8d833363-8299-486e-b830-89df2a92a8e2",
+              "value": "2",
+              "name": "2"
+            },
+            {
+              "_uid": "7415b9c6-ca22-47d8-9c2a-7c230592b357",
+              "value": "2.5",
+              "name": "2,5"
+            },
+            {
+              "_uid": "ae7d8433-083b-46a2-814c-7512ff7eff58",
+              "value": "3",
+              "name": "3"
+            },
+            {
+              "_uid": "52a02797-c84a-4f4e-91a2-02ae518fa51a",
+              "value": "3.5",
+              "name": "3,5"
+            },
+            {
+              "_uid": "f3db12db-010d-42ee-9d61-7770ae4a1ed5",
+              "value": "4",
+              "name": "4"
+            },
+            {
+              "_uid": "6f7501ba-8769-453b-ad58-5566bcad8f46",
+              "value": "5",
+              "name": "5"
+            },
+            {
+              "_uid": "f5ff73be-21dc-451b-8f4f-1c0fc05c0b79",
+              "value": "6",
+              "name": "6"
+            },
+            {
+              "_uid": "b7c6fd59-c05c-4093-b58e-623f7505c252",
+              "value": "7",
+              "name": "7"
+            },
+            {
+              "_uid": "858c2cc1-0aeb-4930-bec9-0b1edb35c715",
+              "value": "8",
+              "name": "8"
+            },
+            {
+              "_uid": "03e40d39-4b02-4aa1-a1e4-b2b8bb81230c",
+              "value": "9",
+              "name": "9"
+            },
+            {
+              "_uid": "66dd2aff-b042-432b-9539-5a9107661a00",
+              "value": "10",
+              "name": "10"
+            },
+            {
+              "_uid": "641b9719-4e89-4a52-8169-07d7b41261ed",
+              "value": "11",
+              "name": "11"
+            },
+            {
+              "_uid": "e9245de3-6be4-4c2e-ae3d-ca11eb10b2b7",
+              "value": "12",
+              "name": "12"
+            },
+            {
+              "_uid": "cf72041d-c7de-40b8-960e-dbfaf64175ae",
+              "value": "14",
+              "name": "14"
+            },
+            {
+              "_uid": "caf4d2a2-bd9a-443f-a82c-5ade4ce61c7a",
+              "value": "16",
+              "name": "16"
+            }
+          ],
+          "exclude_empty_option": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "<ul>\n{{each(options.fields)}}\n<li>\n{{@this.label}}{{if(@this.required)}}*{{/if}}\n</li>\n{{/each}}\n</ul>",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Feldgruppe",
+      "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+      "color": "#ff6159",
+      "icon": "block-table-2",
+      "component_group_name": "Formulare"
+    },
+    {
+      "name": "Footer",
+      "display_name": "Fußzeile",
+      "created_at": "2023-11-19T16:44:07.387Z",
+      "updated_at": "2023-11-26T09:31:14.661Z",
+      "id": 4905073,
+      "schema": {
+        "links": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "MenuLink"
+          ],
+          "maximum": 6,
+          "description": "Verweise auf andere Seiten in der Navigation der Fußzeile.",
+          "display_name": "Menüeinträge",
+          "pos": 0
+        },
+        "tab-648da0ea-3140-4973-8484-c6807922ce18": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "colored"
+          ],
+          "pos": 0,
+          "type": "tab"
+        },
+        "content": {
+          "type": "richtext",
+          "display_name": "Inhalt",
+          "description": "Text, der unterhalb der Navigation in der Fußzeile angezeigt wird.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Text",
+            "Link"
+          ],
+          "translatable": true,
+          "allow_target_blank": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "emoji",
+            "italic",
+            "hrule"
+          ],
+          "pos": 1
+        },
+        "colored": {
+          "type": "boolean",
+          "description": "Legt fest, ob dieser Abschnitt eingefärbt werden soll.",
+          "display_name": "Eingefärbt",
+          "inline_label": true,
+          "default_value": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": "<ul>\n{{each(options.links)}}\n<li>\n<strong>{{@this.label}}</strong>\n</li>\n{{/each}}\n</ul>",
+      "is_nestable": false,
+      "all_presets": [
+        {
+          "id": 1972169,
+          "name": "Ohne Startseite",
+          "component_id": 4905073,
+          "image": "",
+          "color": "#00b3b0",
+          "icon": "block-add",
+          "description": "Alle Navigationselemente außer der Startseite."
+        },
+        {
+          "id": 1972158,
+          "name": "Vollständige Navigation",
+          "component_id": 4905073,
+          "image": "",
+          "color": "#00b3b0",
+          "icon": "block-add",
+          "description": "Eine Fußzeile mit allen Navigationselementen, inklusive Link zur Startseite."
+        }
+      ],
+      "preset_id": null,
+      "real_name": "Fußzeile",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#00b3b0",
+      "icon": "block-add",
+      "component_group_name": "Abschnitte"
+    },
+    {
+      "name": "Form",
+      "display_name": "Formular",
+      "created_at": "2023-11-20T16:23:31.773Z",
+      "updated_at": "2023-11-28T12:52:16.319Z",
+      "id": 4910651,
+      "schema": {
+        "notificationRecipientName": {
+          "type": "text",
+          "pos": 0,
+          "display_name": "Name des Empfängers",
+          "key": "notificationRecipientName",
+          "description": "Name des Empfängers, an den Benachrichtigungen über neue Einreichungen verschickt werden sollen.",
+          "default_value": "Verena Alpers",
+          "required": true
+        },
+        "notificationRecipientEmail": {
+          "type": "text",
+          "pos": 1,
+          "key": "notificationRecipientEmail",
+          "display_name": "E-Mail-Adresse des Empfängers",
+          "required": true,
+          "description": "Die E-Mail-Adresse, an die Benachrichtigungen über neue Einsendungen verschickt werden sollen.",
+          "default_value": "kontakt@feinschliff.studio",
+          "regex": ".+@.+"
+        },
+        "notificationSubject": {
+          "type": "text",
+          "key": "notificationSubject",
+          "pos": 2,
+          "display_name": "Betreff der Benachrichtigung",
+          "required": true,
+          "description": "Der Betreff von Benachrichtigungs-E-Mails."
+        },
+        "notificationHtml": {
+          "type": "richtext",
+          "display_name": "Inhalt (formatiert)",
+          "required": true,
+          "translatable": true,
+          "description": "Der formatierte Inhalt der Benachrichtigungs-E-Mail. Es können folgende Platzhalter verwendet werden:\n{name} (Name des Absenders)\n{message} (Nachrichtentext)\n{phone} (Telefonnummer des Absenders)\n{email} (E-Mail-Adresse des Absenders)\n{date} (Datum der Einreichung)",
+          "rich_markdown": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "italic",
+            "h1",
+            "h2",
+            "h3",
+            "list",
+            "olist",
+            "quote",
+            "hrule",
+            "link",
+            "paragraph"
+          ],
+          "key": "notificationHtml",
+          "pos": 3,
+          "default_value": "Am {date} hat **{name}** eine Nachricht hinterlassen:\n\n{message}\n\nTelefonnummer: {phone}  \nE-Mail-Adresse: {email}",
+          "allow_target_blank": true
+        },
+        "notificationPlain": {
+          "type": "textarea",
+          "tooltip": false,
+          "description": "Der Nur-Text-Inhalt der Benachrichtigungs-E-Mail. Es können folgende Platzhalter verwendet werden:\n {name} (Name des Absenders)\n{message} (Nachrichtentext)\n{phone} (Telefonnummer des Absenders)\n{email} (E-Mail-Adresse des Absenders)\n{date} (Datum der Einreichung)",
+          "default_value": "Am {date} hat {name} eine Nachricht hinterlassen:\n{message}\n\nTelefonnummer: {phone}\nE-Mail-Adresse: {email}",
+          "required": true,
+          "translatable": true,
+          "display_name": "Inhalt (reiner Text)",
+          "key": "notificationtext",
+          "pos": 4
+        },
+        "name": {
+          "type": "text",
+          "display_name": "Name",
+          "required": true,
+          "translatable": true,
+          "description": "Name des Formulars. Wird nicht öffentlich angezeigt.",
+          "default_value": "Kontaktformular",
+          "pos": 5,
+          "key": "name"
+        },
+        "fields": {
+          "type": "bloks",
+          "pos": 6,
+          "display_name": "Felder",
+          "required": true,
+          "description": "Felder des Formulars.",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "7d987d4d-febf-4398-bf1b-55a7b4c62267"
+          ],
+          "key": "fields"
+        },
+        "content": {
+          "type": "richtext",
+          "display_name": "Inhalt",
+          "translatable": true,
+          "description": "Zusätzlicher Text unterhalb des Formulars",
+          "style_options": [],
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "list",
+            "emoji",
+            "hrule",
+            "italic",
+            "link",
+            "image",
+            "olist"
+          ],
+          "allow_target_blank": true,
+          "pos": 7,
+          "key": "content"
+        },
+        "tab-ec5666cd-bfb2-4eac-b443-7e932ce6d0ce": {
+          "display_name": "E-Mail",
+          "keys": [
+            "recipientEmailAddress",
+            "recipientName",
+            "notificationSubject",
+            "notificationRecipientName",
+            "notificationRecipientEmail",
+            "notificationHtml",
+            "notificationtext",
+            "notificationPlain",
+            "fallbackValue"
+          ],
+          "pos": 8,
+          "type": "tab",
+          "name": "tab-ec5666cd-bfb2-4eac-b443-7e932ce6d0ce",
+          "key": "tab-ec5666cd-bfb2-4eac-b443-7e932ce6d0ce"
+        },
+        "columns": {
+          "type": "number",
+          "pos": 9,
+          "display_name": "Anzahl Spalten",
+          "required": false,
+          "description": "Anzahl an Spalten, in denen Formularfelder angeordnet wereden.",
+          "min_value": 1,
+          "max_value": 12,
+          "decimals": 0,
+          "steps": 1,
+          "default_value": "1",
+          "key": "columns"
+        },
+        "tab-8bbff6c1-ac8e-4971-a645-923943afa820": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "colored"
+          ],
+          "pos": 10,
+          "type": "tab",
+          "name": "tab-8bbff6c1-ac8e-4971-a645-923943afa820",
+          "key": "tab-8bbff6c1-ac8e-4971-a645-923943afa820"
+        },
+        "rows": {
+          "type": "number",
+          "pos": 11,
+          "min_value": 1,
+          "max_value": 6,
+          "decimals": 0,
+          "display_name": "Anzahl Zeilen",
+          "description": "Anzahl an Zeilen im Layout. Wenn keine Zeilenanzahl angegeben ist, fließt das Layout automatisch.",
+          "key": "rows"
+        },
+        "tab-0d1024ec-9df8-478e-a65f-1020ce7ca0ae": {
+          "display_name": "Layout",
+          "keys": [
+            "gap",
+            "rows",
+            "columns"
+          ],
+          "pos": 12,
+          "type": "tab",
+          "name": "tab-0d1024ec-9df8-478e-a65f-1020ce7ca0ae",
+          "key": "tab-0d1024ec-9df8-478e-a65f-1020ce7ca0ae"
+        },
+        "gap": {
+          "type": "option",
+          "required": true,
+          "default_value": "4",
+          "use_uuid": true,
+          "description": "Abstand zwischen Feldern innerhalb des Formulars",
+          "display_name": "Abstand",
+          "options": [
+            {
+              "_uid": "c18a8a9d-e987-42ef-bb4f-8f4e7c45cda9",
+              "name": "0,5",
+              "value": "0.5"
+            },
+            {
+              "_uid": "96cc0136-ed71-4f83-87d3-a3778b8d28d3",
+              "value": "1",
+              "name": "1"
+            },
+            {
+              "_uid": "d192bc1f-cdf9-40c9-b307-eebc7f54b9e1",
+              "value": "1.5",
+              "name": "1,5"
+            },
+            {
+              "_uid": "fa7bd786-934a-488e-9f4a-890ed845fd37",
+              "value": "2",
+              "name": "2"
+            },
+            {
+              "_uid": "5f5e7c53-3a28-4aaa-895c-9fcc438a4452",
+              "value": "2.5",
+              "name": "2,5"
+            },
+            {
+              "_uid": "e4dce96e-388f-40c7-9c0d-1f597bed4bff",
+              "value": "3",
+              "name": "3"
+            },
+            {
+              "_uid": "bb66ce42-eef2-4d2a-a33c-c380c1977b70",
+              "value": "3.5",
+              "name": "3,5"
+            },
+            {
+              "_uid": "e409b52c-12b5-4d4e-a986-a5e460824b1f",
+              "value": "4",
+              "name": "4 (Empfohlen)"
+            },
+            {
+              "_uid": "ea0a30db-c83b-4717-94f5-1b2a02569787",
+              "value": "5",
+              "name": "5"
+            },
+            {
+              "_uid": "47dd1c0e-b7d5-4c3d-b504-b834b3b162d8",
+              "value": "6",
+              "name": "6"
+            },
+            {
+              "_uid": "5dae8cb0-6883-4b4e-a493-55ba474e8d6c",
+              "value": "7",
+              "name": "7"
+            },
+            {
+              "_uid": "287502f8-6332-4a0a-92df-e8a9237d40d8",
+              "value": "8",
+              "name": "8"
+            },
+            {
+              "_uid": "9d897658-da36-4dec-82d5-93317db3b8b3",
+              "value": "9",
+              "name": "9"
+            },
+            {
+              "_uid": "4eb6f621-c9f5-45d7-9497-36ea5e0fef41",
+              "value": "10",
+              "name": "10"
+            },
+            {
+              "_uid": "24aa68dc-c6e1-4752-93f0-1065f4682a44",
+              "value": "11",
+              "name": "11"
+            },
+            {
+              "_uid": "4121588b-4099-4970-8e5e-8f6ac5e5f107",
+              "value": "12",
+              "name": "12"
+            },
+            {
+              "_uid": "25cdf4c4-5b58-4003-920a-b4ec0f009184",
+              "value": "14",
+              "name": "14"
+            },
+            {
+              "_uid": "e2a653db-671c-41a5-972d-64dc3f5cd58c",
+              "value": "16",
+              "name": "16"
+            }
+          ],
+          "exclude_empty_option": true,
+          "pos": 13,
+          "key": "gap"
+        },
+        "tab-87bfc822-b612-41e0-aabb-ad89756a6853": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "method",
+            "encodingType",
+            "action"
+          ],
+          "pos": 14,
+          "type": "tab",
+          "name": "tab-87bfc822-b612-41e0-aabb-ad89756a6853",
+          "key": "tab-87bfc822-b612-41e0-aabb-ad89756a6853"
+        },
+        "method": {
+          "type": "option",
+          "pos": 15,
+          "display_name": "HTTP-Verb",
+          "required": true,
+          "description": "Das HTTP-Verb (oder Methode), mit dem die Anfrage verschickt werden soll.",
+          "options": [
+            {
+              "_uid": "11ef07d0-cf4b-424c-94d6-ff2e2882ff98",
+              "value": "post",
+              "name": "POST"
+            },
+            {
+              "_uid": "67d553eb-a451-4c17-b8f7-895129f82e0d",
+              "name": "GET",
+              "value": "get"
+            }
+          ],
+          "default_value": "post",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "key": "method"
+        },
+        "action": {
+          "type": "text",
+          "pos": 16,
+          "display_name": "Endpunkt",
+          "required": true,
+          "description": "Der Endpunkt des Servers, der das Formular verarbeitet. Sollte nicht verändert werden, wenn das Standard-Formular-Handling verwendet werden soll.",
+          "key": "action",
+          "default_value": "/.submissions"
+        },
+        "encodingType": {
+          "type": "option",
+          "pos": 17,
+          "display_name": "Kodierung",
+          "required": true,
+          "description": "Das Kodierungsverfahren für das Formular. Sollte nicht geändert werden.",
+          "options": [
+            {
+              "_uid": "122647b5-ccfa-47b1-a9d5-b1241a0ae3f5",
+              "name": "Standard (URL-kodiert)",
+              "value": "application/x-www-form-urlencoded"
+            },
+            {
+              "_uid": "4b55185a-27f3-413c-9a35-f68882768408",
+              "value": "multipart/form-data",
+              "name": "Multipart (mit Anhängen)"
+            },
+            {
+              "_uid": "e5b16ab9-3b47-4624-82f6-72a644fa521d",
+              "value": "text/plain",
+              "name": "Reiner Text"
+            }
+          ],
+          "default_value": "application/x-www-form-urlencoded",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "key": "encodingType"
+        },
+        "colored": {
+          "type": "boolean",
+          "description": "Legt fest, ob dieser Abschnitt eingefärbt werden soll.",
+          "display_name": "Eingefärbt",
+          "default_value": true,
+          "inline_label": true,
+          "pos": 18,
+          "key": "colored"
+        },
+        "fallbackValue": {
+          "type": "text",
+          "display_name": "Standardwert für Eingaben",
+          "required": true,
+          "translatable": true,
+          "description": "Der Standardwert für nicht ausgefüllte Formularfelder, der in der Benachrichtigungs-E-Mail verwendet werden soll.",
+          "default_value": "Nicht angegeben"
+        },
+        "feedbackOptions": {
+          "type": "section",
+          "keys": [
+            "successMessage",
+            "errorMessage"
+          ],
+          "display_name": "Rückmeldung nach Einsendung"
+        },
+        "successMessage": {
+          "type": "richtext",
+          "display_name": "Erfolgsmeldung",
+          "required": true,
+          "translatable": true,
+          "description": "Text, der angezeigt wird, nachdem das Formular erfolgreich versandt wurde.",
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "list",
+            "emoji",
+            "hrule",
+            "image",
+            "italic",
+            "link",
+            "olist"
+          ],
+          "allow_target_blank": true
+        },
+        "errorMessage": {
+          "type": "richtext",
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "list",
+            "emoji",
+            "hrule",
+            "image",
+            "italic",
+            "link",
+            "olist"
+          ],
+          "allow_target_blank": true,
+          "display_name": "Fehlermeldung",
+          "description": "Text, der angezeigt wird, falls das Formular nicht erfolgreich abgeschickt werden konnte, oder die Nutzereingaben fehlerhaft sind.",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "<strong>{{name}}</strong>\n<ul>\n{{each(options.fields)}}\n<li>\n<span>{{@this.label}}</span>\n</li>\n{{/each}}\n</ul>",
+      "is_nestable": true,
+      "all_presets": [
+        {
+          "id": 1971810,
+          "name": "Kontaktformular",
+          "component_id": 4910651,
+          "image": "//a.storyblok.com/f/263112/x/6da76bae63/bildschirmfoto-2023-11-25-um-12-27-34.png",
+          "color": "#ff6159",
+          "icon": "block-comment",
+          "description": "Ein vollständiges Kontaktformular."
+        }
+      ],
+      "preset_id": null,
+      "real_name": "Formular",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#00b3b0",
+      "icon": "block-keyboard",
+      "component_group_name": "Abschnitte"
+    },
+    {
+      "name": "Gallery",
+      "display_name": "Galerie",
+      "created_at": "2023-11-18T16:07:59.234Z",
+      "updated_at": "2023-11-26T09:25:09.360Z",
+      "id": 4903184,
+      "schema": {
+        "playbackOptions": {
+          "type": "section",
+          "keys": [
+            "rewindDuration",
+            "rewind",
+            "autoplay",
+            "animationDuration",
+            "type",
+            "startAt",
+            "direction"
+          ],
+          "pos": 0,
+          "display_name": "Wiedergabe-Optionen"
+        },
+        "perViewOptions": {
+          "type": "section",
+          "pos": 1,
+          "keys": [
+            "perView",
+            "perViewMobile"
+          ],
+          "display_name": "Sichtbare Elemente"
+        },
+        "controlOptions": {
+          "type": "section",
+          "keys": [
+            "control",
+            "keyboard",
+            "hoverpause",
+            "bullets",
+            "swipeTreshold",
+            "dragThreshold"
+          ],
+          "pos": 2,
+          "display_name": "Steuerungs-Optionen"
+        },
+        "type": {
+          "type": "option",
+          "use_uuid": true,
+          "display_name": "Wiedergabemodus",
+          "required": true,
+          "description": "Der Modus, in dem Bilder angezeigt werden sollen. Im Modus \"Diashow\" springt die Galerie nach dem letzten Bild zurück zum Anfang.\nIm Modus \"Schleife\" läuft die Galerie kontinuierlich weiter.",
+          "exclude_empty_option": true,
+          "default_value": "carousel",
+          "options": [
+            {
+              "_uid": "4eb4717d-c83d-45df-a02e-64de391924a6",
+              "name": "Schleife",
+              "value": "carousel"
+            },
+            {
+              "_uid": "0758b394-ec9a-4566-8d65-a3aeafcb9d4d",
+              "value": "slider",
+              "name": "Diashow"
+            }
+          ],
+          "pos": 3
+        },
+        "autoplay": {
+          "type": "number",
+          "display_name": "Automatische Wiedergabe",
+          "required": true,
+          "description": "Zeitintervall, nach dem ein neues Bild eingeblendet wird, in Millisekunden. Wenn dieser Wert auf 0 gesetzt wird, wird die automatische Wiedergabe deaktiviert.",
+          "default_value": "5000",
+          "min_value": 0,
+          "steps": 50,
+          "decimals": 0,
+          "pos": 4
+        },
+        "animationDuration": {
+          "type": "number",
+          "display_name": "Animationsdauer",
+          "description": "Legt die Dauer der Animation in Millisekunden fest, mit der die Galerie neue Bilder anzeigt.",
+          "required": true,
+          "default_value": "400",
+          "min_value": 50,
+          "max_value": 10000,
+          "decimals": 0,
+          "steps": 50,
+          "pos": 5
+        },
+        "perView": {
+          "type": "number",
+          "display_name": "Gleichzeitig sichtbar",
+          "required": true,
+          "description": "Anzahl an gleichzeitig sichtbaren Bildern. Abhängig von der verfügbaren Bildschirmfläche werden unter Umständen weniger Bilder angezeigt; der hier eingestellte Wert bezieht sich auf die maximale Bildschirmbreite.",
+          "default_value": "2",
+          "min_value": 1,
+          "max_value": 5,
+          "decimals": 0,
+          "pos": 6
+        },
+        "perViewMobile": {
+          "type": "number",
+          "pos": 7,
+          "display_name": "Gleichzeitig sichtbar (Mobilgeräte)",
+          "required": true,
+          "min_value": 1,
+          "max_value": 5,
+          "decimals": 0,
+          "default_value": "1",
+          "description": "Anzahl an gleichzeitig sichtbaren Bildern auf Mobilgeräten (Smartphones, Tablets) mit kleinerem Bildschirm."
+        },
+        "direction": {
+          "type": "option",
+          "use_uuid": true,
+          "exclude_empty_option": true,
+          "options": [
+            {
+              "_uid": "45969ef1-4222-4b92-8ab4-a7262e4753b8",
+              "name": "Im Uhrzeigersinn",
+              "value": "ltr"
+            },
+            {
+              "_uid": "bda1c3a4-8685-4259-823a-c688174704ba",
+              "value": "rtl",
+              "name": "Gegen den Uhrzeigersinn"
+            }
+          ],
+          "default_value": "ltr",
+          "display_name": "Durchlauf-Richtung",
+          "description": "Legt die Richtung fest, in die die Galerie läuft.",
+          "required": true,
+          "pos": 8
+        },
+        "startAt": {
+          "type": "number",
+          "display_name": "Erstes Bild",
+          "required": true,
+          "default_value": "0",
+          "description": "Die Nummer des Bildes, das zuerst angezeigt werden soll.",
+          "min_value": 0,
+          "pos": 9
+        },
+        "peek": {
+          "type": "number",
+          "display_name": "Vorschaubereich",
+          "required": true,
+          "description": "Legt fest, ob ein Teil des vorherigen bzw. nächsten Bildes am Rand sichtbar sein soll (als würde es in den sichtbaren Bereich \"hineinragen\"). Beim Wert 0 ist nur das aktuelle Bild sichtbar.",
+          "default_value": "0",
+          "min_value": 0,
+          "decimals": 0,
+          "pos": 10
+        },
+        "rewind": {
+          "type": "boolean",
+          "pos": 11,
+          "display_name": "Am Ende zurückspulen",
+          "description": "Wenn der Modus \"Diashow\" aktiviert ist, legt diese Option fest, ob die Galerie am Ende zum Anfang zurückgespult werden soll.",
+          "default_value": true
+        },
+        "rewindDuration": {
+          "type": "number",
+          "pos": 12,
+          "display_name": "Rückspul-Animationsdauer",
+          "required": true,
+          "description": "Die Dauer der Animation in Millisekunden, mit der die Galerie zum Anfang zurückgespult wird, wenn der Modus Diashow und die Rückspul-Option aktiv ist.",
+          "default_value": "800",
+          "min_value": 100,
+          "max_value": 20000,
+          "decimals": 0,
+          "steps": 50
+        },
+        "keyboard": {
+          "type": "boolean",
+          "display_name": "Tastatursteuerung aktiv",
+          "description": "Legt fest, ob die Galerie auch mit der Tastatur bedient werden kann.",
+          "inline_label": true,
+          "default_value": true,
+          "pos": 13
+        },
+        "control": {
+          "type": "boolean",
+          "display_name": "Navigationspfeile anzeigen",
+          "description": "Legt fest, ob die Pfeile zum Zurück- und Weiterschalten angezeigt werden.",
+          "default_value": true,
+          "pos": 14
+        },
+        "hoverpause": {
+          "type": "boolean",
+          "display_name": "Beim Betrachten pausieren",
+          "description": "Legt fest, ob die automatische Wiedergabe angehalten werden soll, wenn sich der Finger oder Mauszeiger über der Galerie befindet.",
+          "default_value": true,
+          "pos": 15
+        },
+        "bullets": {
+          "type": "boolean",
+          "display_name": "Punkte-Anzeige aktiv",
+          "description": "Legt fest, ob die Punkte-Anzeige unterhalb der Galerie angezeigt wird. Dabei wird für jedes Bild ein Punkt eingeblendet, der anzeigt, ob das Bild gerade aktiv ist. Außerdem kann durch einen Klick auf einen Punkt ein bestimmtes Bild direkt angezeigt werden.",
+          "pos": 16
+        },
+        "swipeTreshold": {
+          "type": "number",
+          "pos": 17,
+          "display_name": "Wischgesten-Erkennung",
+          "description": "Legt die Distanz fest, die (auf Mobilgeräten) mit dem Finger gewischt werden muss, bis das nächste Bild angezeigt wird.\nWenn dieser Wert auf 0 gesetzt wird, werden Wischgesten deaktiviert.",
+          "min_value": 0,
+          "max_value": 2000,
+          "decimals": 0,
+          "steps": 10,
+          "default_value": "80",
+          "required": true
+        },
+        "dragThreshold": {
+          "type": "number",
+          "description": "Legt die Distanz fest, die mit dem Mauszeiger, mit gedrückt gehaltener linker Taste, \"gezogen\" werden muss, bis das nächste Bild angezeigt wird.\nWenn dieser Wert auf 0 gesetzt wird, werden Mausgesten deaktiviert.",
+          "required": true,
+          "display_name": "Mausgesten-Erkennung",
+          "default_value": "120",
+          "min_value": 0,
+          "max_value": 2000,
+          "decimals": 0,
+          "steps": 10,
+          "pos": 18
+        },
+        "name": {
+          "type": "text",
+          "pos": 19,
+          "display_name": "Name",
+          "required": true,
+          "default_value": "Bildergalerie",
+          "no_translate": false,
+          "description": "Name der Galerie. Wird nicht öffentlich angezeigt."
+        },
+        "items": {
+          "type": "multiasset",
+          "display_name": "Medien",
+          "required": true,
+          "translatable": false,
+          "description": "Medien in der Galerie.",
+          "filetypes": [
+            "images",
+            "videos"
+          ],
+          "pos": 20
+        },
+        "tab-22087a26-4efa-4993-bc22-b6ac7134f8ce": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "colored"
+          ],
+          "pos": 21,
+          "type": "tab"
+        },
+        "tab-42fb3bb0-2492-4095-b46a-6b5a2397d2e0": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "autoplay",
+            "perView",
+            "startAt",
+            "type",
+            "keyboard",
+            "animationDuration",
+            "direction",
+            "peek",
+            "rewindDuration",
+            "rewind",
+            "control",
+            "hoverpause",
+            "rewindOptions",
+            "playbackOptions",
+            "controlOptions",
+            "bullets",
+            "swipeTreshold",
+            "dragThreshold",
+            "perViewMobile",
+            "perViewOptions"
+          ],
+          "pos": 22,
+          "type": "tab"
+        },
+        "colored": {
+          "type": "boolean",
+          "display_name": "Eingefärbt",
+          "description": "Legt fest, ob dieser Abschnitt eingefärbt werden soll.",
+          "default_value": true,
+          "inline_label": true,
+          "pos": 23
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Galerie",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#395ece",
+      "icon": "block-image",
+      "component_group_name": "Abschnitte"
+    },
+    {
+      "name": "GeoMap",
+      "display_name": "Karte",
+      "created_at": "2023-11-19T10:36:45.998Z",
+      "updated_at": "2023-11-26T10:57:35.958Z",
+      "id": 4904560,
+      "schema": {
+        "tab-a5897d6a-91b4-4953-94c4-996d54e97b88": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "colored"
+          ],
+          "pos": 0,
+          "type": "tab",
+          "name": "tab-a5897d6a-91b4-4953-94c4-996d54e97b88"
+        },
+        "mapId": {
+          "type": "text",
+          "display_name": "Google Maps-Karten-ID",
+          "required": false,
+          "description": "ID der Karte aus den Google Maps Developer Tools.",
+          "default_value": "",
+          "max_length": 16,
+          "regex": "(^[a-f0-9]{16}$|^$)",
+          "pos": 0
+        },
+        "tab-d9b73aaa-6bab-4039-8923-943a835e8646": {
+          "display_name": "Mittelpunkt",
+          "keys": [
+            "latitude",
+            "longitude"
+          ],
+          "pos": 1,
+          "type": "tab",
+          "name": "tab-d9b73aaa-6bab-4039-8923-943a835e8646"
+        },
+        "maxZoom": {
+          "type": "number",
+          "display_name": "Maximale Zoomstufe",
+          "description": "Die größte verfügbare Einstellung für die Zoomstufe.",
+          "default_value": "18",
+          "min_value": 0,
+          "max_value": 21,
+          "decimals": 0,
+          "pos": 1
+        },
+        "tab-3e388ca0-7e36-484e-a55b-698780dd8f27": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "mapId",
+            "tilt",
+            "minZoom",
+            "maxZoom",
+            "clickableIcons",
+            "showStreetViewControl"
+          ],
+          "pos": 2,
+          "type": "tab",
+          "name": "tab-3e388ca0-7e36-484e-a55b-698780dd8f27"
+        },
+        "minZoom": {
+          "type": "number",
+          "display_name": "Minimale Zoomstufe",
+          "description": "Die kleinste verfügbare Einstellung für den Zoom-Wert.",
+          "decimals": 0,
+          "min_value": 0,
+          "max_value": 21,
+          "pos": 2
+        },
+        "tilt": {
+          "type": "boolean",
+          "display_name": "Automatische Neigung",
+          "description": "Diese Einstellung bewirkt, dass der Neigungswinkel automatisch auf 45 wechselt, wenn für das\naktuelle Zoomlevel und den Viewport 45°-Bilder verfügbar sind, und wieder auf 0 wechselt, wenn keine 45°-Bilder verfügbar sind (das ist das Standardverhalten).\n45°-Bilder sind nur für die Kartenarten \"satellite\" und \"hybrid\" an bestimmten Orten und Zoomleveln verfügbar.",
+          "min_value": 0,
+          "max_value": 45,
+          "decimals": 2,
+          "default_value": true,
+          "pos": 3
+        },
+        "showStreetViewControl": {
+          "type": "boolean",
+          "default_value": true,
+          "description": "Steuert die Anzeige des Google-Street-View-Buttons.",
+          "display_name": "Street View verfügbar",
+          "inline_label": true,
+          "pos": 4
+        },
+        "clickableIcons": {
+          "type": "boolean",
+          "description": "Legt fest, ob andere Örtlichkeiten (POIs) auf der Karte anklickbar sein sollen.",
+          "inline_label": true,
+          "pos": 5,
+          "display_name": "POIs klickbar",
+          "default_value": true
+        },
+        "zoom": {
+          "type": "number",
+          "display_name": "Zoom-Stufe",
+          "required": true,
+          "min_value": 1,
+          "max_value": 25,
+          "default_value": "17",
+          "description": "Nähe, auf die die Karte an den Mittelpunkt herangezoomt wird.",
+          "pos": 6
+        },
+        "markers": {
+          "type": "bloks",
+          "display_name": "Marker",
+          "description": "Marker an bestimmten Koordinaten auf der Karte.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "MapMarker"
+          ],
+          "maximum": 10,
+          "pos": 7
+        },
+        "longitude": {
+          "type": "number",
+          "pos": 8,
+          "decimals": 13
+        },
+        "latitude": {
+          "type": "number",
+          "pos": 9,
+          "required": false,
+          "decimals": 13
+        },
+        "colored": {
+          "type": "boolean",
+          "description": "Legt fest, ob dieser Abschnitt eingefärbt werden soll.",
+          "display_name": "Eingefärbt",
+          "default_value": true,
+          "inline_label": true
+        }
+      },
+      "image": "//a.storyblok.com/f/263112/x/c15c6a253f/bildschirmfoto-2023-11-26-um-11-57-23.png",
+      "preview_field": "longitude",
+      "is_root": false,
+      "preview_tmpl": "{{longitude}}, {{latitude}}",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Karte",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#395ece",
+      "icon": "block-map-pin",
+      "component_group_name": "Abschnitte"
+    },
+    {
+      "name": "Grid",
+      "display_name": "Mehrere Spalten",
+      "created_at": "2023-11-21T07:51:13.167Z",
+      "updated_at": "2023-11-26T10:45:16.010Z",
+      "id": 4912598,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "display_name": "Abschnittstitel",
+          "required": false,
+          "translatable": true,
+          "description": "Ein Titel für den Abschnitt. Optional.",
+          "pos": 0
+        },
+        "subheading": {
+          "type": "text",
+          "display_name": "Untertitel",
+          "translatable": true,
+          "tooltip": false,
+          "description": "Ein Untertitel für den Abschnitt. Optional.",
+          "pos": 1
+        },
+        "items": {
+          "type": "bloks",
+          "display_name": "Blöcke",
+          "description": "Blöcke, die im Gitter-Layout angeordnet werden sollen.",
+          "required": false,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": [
+            "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+            "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+            "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3"
+          ],
+          "pos": 2
+        },
+        "headingLevel": {
+          "type": "number",
+          "required": true,
+          "display_name": "Titel-Ebene",
+          "min_value": 2,
+          "max_value": 6,
+          "default_value": "2",
+          "pos": 3,
+          "description": "Der Ordnungsgrad des Abschnittstitels."
+        },
+        "subheadingLevel": {
+          "type": "number",
+          "display_name": "Untertitel-Ebene",
+          "required": true,
+          "default_value": "3",
+          "min_value": 2,
+          "max_value": 6,
+          "decimals": 0,
+          "pos": 4,
+          "description": "Der Ordnungsgrad des Untertitels."
+        },
+        "columns": {
+          "type": "number",
+          "min_value": 1,
+          "decimals": 0,
+          "default_value": "3",
+          "description": "Anzahl an Spalten des Gitters.",
+          "display_name": "Anzahl Spalten",
+          "required": true,
+          "pos": 5,
+          "max_value": 12
+        },
+        "tab-c3cc647b-75d5-4df1-a81f-8d5ff048ce31": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "colored"
+          ],
+          "pos": 6,
+          "type": "tab"
+        },
+        "rows": {
+          "type": "number",
+          "display_name": "Anzahl Zeilen",
+          "required": true,
+          "description": "Anzahl an Zeilen des Gitters.",
+          "default_value": "1",
+          "min_value": 1,
+          "pos": 7,
+          "max_value": 6,
+          "decimals": 0
+        },
+        "gap": {
+          "type": "option",
+          "pos": 8,
+          "use_uuid": true,
+          "description": "Abstand zwischen den Feldern innerhalb des Gitter-Layouts.",
+          "display_name": "Abstand",
+          "required": true,
+          "default_value": "4",
+          "options": [
+            {
+              "_uid": "0d354a01-0b28-4407-ad70-0cd26d6aa684",
+              "name": "Automatisch",
+              "value": "auto"
+            },
+            {
+              "_uid": "150584b2-73ee-4efb-9128-da664f9d09f0",
+              "value": "0.5",
+              "name": "0,5"
+            },
+            {
+              "_uid": "949f7cf9-5b81-433c-8266-2cfea44904d1",
+              "value": "1",
+              "name": "1"
+            },
+            {
+              "_uid": "4eea6379-5111-4dd1-904d-6c6694f00eec",
+              "value": "1.5",
+              "name": "1,5"
+            },
+            {
+              "_uid": "ce1f275d-e009-4605-9226-eb44474ced9f",
+              "value": "2",
+              "name": "2"
+            },
+            {
+              "_uid": "076b757a-d8f8-4c4b-a349-63c98f112c95",
+              "value": "2.5",
+              "name": "2,5"
+            },
+            {
+              "_uid": "8b3134ab-e5ba-4aab-85bd-c35176212897",
+              "value": "3",
+              "name": "3"
+            },
+            {
+              "_uid": "3070e6ee-674e-42d9-b295-892188f1ba07",
+              "value": "3.5",
+              "name": "3,5"
+            },
+            {
+              "_uid": "27d04bf1-88be-465c-ab5a-3ce53c988454",
+              "value": "4",
+              "name": "4"
+            },
+            {
+              "_uid": "154984ad-354b-4273-af1e-4a6bf707497f",
+              "value": "5",
+              "name": "5"
+            },
+            {
+              "_uid": "2ecb5b10-193c-4cc3-b2f5-96de02878b61",
+              "value": "6",
+              "name": "6"
+            },
+            {
+              "_uid": "2170141c-80a6-4ca2-b628-fb92b4d13b7e",
+              "value": "7",
+              "name": "7"
+            },
+            {
+              "_uid": "cb6b7856-e6a4-48ec-ae7b-17ab44d8b5da",
+              "value": "8",
+              "name": "8"
+            },
+            {
+              "_uid": "ee59dd20-6e47-43f9-87ba-e799bc4b76b9",
+              "value": "9",
+              "name": "9"
+            },
+            {
+              "_uid": "6da75af0-0f0d-4a40-b895-2d95b4c576df",
+              "value": "10",
+              "name": "10"
+            },
+            {
+              "_uid": "27e79d5d-8065-4720-a4ba-04ec0cd52ac1",
+              "value": "11",
+              "name": "11"
+            },
+            {
+              "_uid": "7a89eb09-fa2e-4e3b-896a-f19ba4df0a3a",
+              "value": "12",
+              "name": "12"
+            },
+            {
+              "_uid": "336141bd-22e3-45c8-ba4d-c54a4c698442",
+              "value": "14",
+              "name": "14"
+            },
+            {
+              "_uid": "5bba56ba-2e6f-4c9e-aaa5-4457433c427c",
+              "value": "16",
+              "name": "16"
+            }
+          ],
+          "exclude_empty_option": true
+        },
+        "recede": {
+          "type": "boolean",
+          "pos": 9,
+          "display_name": "Höhe an Inhalt ausrichten",
+          "description": "Legt fest ob sich die minimale Höhe des Abschnitts an seinem Inhalt orientieren soll.",
+          "inline_label": true
+        },
+        "bleed": {
+          "type": "boolean",
+          "pos": 10,
+          "display_name": "Randlos",
+          "description": "Legt fest, ob dieser Abschnitt ohne Rand angezeigt werden soll.",
+          "inline_label": true
+        },
+        "popOut": {
+          "type": "boolean",
+          "pos": 11,
+          "display_name": "Volle Breite",
+          "description": "Legt fest, ob dieser Abschnitt die volle Breite der Seite einnehmen soll.",
+          "inline_label": true
+        },
+        "tab-807bb112-c827-4528-933d-72326ffd113f": {
+          "display_name": "Layout",
+          "keys": [
+            "bleed",
+            "popOut",
+            "recede",
+            "columns",
+            "rows",
+            "gap"
+          ],
+          "pos": 12,
+          "type": "tab"
+        },
+        "colored": {
+          "type": "boolean",
+          "display_name": "Eingefärbt",
+          "description": "Legt fest, ob dieser Abschnitt eingefärbt werden soll.",
+          "inline_label": true,
+          "pos": 13
+        },
+        "tab-2eb86b3f-5e25-47bd-8bdd-53cb89afa5e2": {
+          "display_name": "Überschriften",
+          "keys": [
+            "headingLevel",
+            "subheadingLevel",
+            "anchor"
+          ],
+          "pos": 14,
+          "type": "tab"
+        },
+        "anchor": {
+          "type": "text",
+          "description": "Wenn ein Link-Anker gesetzt ist, können Links auf anderen Seiten oder in anderen Abschnitten auf diesen Abschnitt verweisen. Darf keine Leerzeichen enthalten.",
+          "display_name": "Link-Anker",
+          "regex": "[a-zA-Z0-9_.-]*"
+        }
+      },
+      "image": null,
+      "preview_field": "heading",
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [
+        {
+          "id": 1967978,
+          "name": "Beispiel",
+          "component_id": 4912598,
+          "image": "",
+          "color": "",
+          "icon": "block-table-2",
+          "description": "Ein dreispaltiges Beispiel-Layout."
+        }
+      ],
+      "preset_id": null,
+      "real_name": "Mehrere Spalten",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#ffac00",
+      "icon": "block-table-2",
+      "component_group_name": "Abschnitte"
+    },
+    {
+      "name": "Hero",
+      "display_name": "Aufmacher",
+      "created_at": "2023-11-17T22:34:01.480Z",
+      "updated_at": "2023-11-26T10:48:58.233Z",
+      "id": 4901789,
+      "schema": {
+        "headline": {
+          "type": "text",
+          "pos": 0,
+          "translatable": true,
+          "key": "headline",
+          "display_name": "Überschrift",
+          "required": true,
+          "description": "Überschrift der Seite.",
+          "default_value": "feinschliff.studio"
+        },
+        "scrollIndicator": {
+          "type": "boolean",
+          "display_name": "Scroll-Indikator anzeigen",
+          "inline_label": true,
+          "description": "Zeigt einen animierten Pfeil an, der auf die Möglichkeit hinweist, weiter nach unten zu scrollen.",
+          "default_value": true,
+          "pos": 1
+        },
+        "subheading": {
+          "type": "bloks",
+          "pos": 2,
+          "key": "subheading",
+          "translatable": true,
+          "display_name": "Untertitel",
+          "required": false,
+          "show_anchor": true,
+          "allow_target_blank": true,
+          "allow_custom_attributes": true,
+          "restrict_content_types": false,
+          "component_whitelist": [
+            "Text",
+            "Link"
+          ],
+          "description": "Text, der unterhalb des Seitentitels angezeigt wird. Kann einen Verweis auf einen anderen Bereich der Seite oder einfach Text enthalten.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "minimum": 1,
+          "maximum": 1
+        },
+        "backgroundImage": {
+          "type": "asset",
+          "pos": 3,
+          "filetypes": [
+            "images",
+            "videos"
+          ],
+          "translatable": true,
+          "key": "background_image",
+          "display_name": "Hintergrundbild"
+        },
+        "backgroundColor": {
+          "type": "custom",
+          "field_type": "storyblok-palette",
+          "options": [
+            {
+              "name": "size",
+              "value": "medium",
+              "_uid": "fc00bf44-6321-436e-9ed4-8b0f556965d2"
+            },
+            {
+              "name": "defaultValue",
+              "value": "#cac2bc",
+              "_uid": "a402711e-da09-4d95-afc3-bc9b5bb39050"
+            },
+            {
+              "name": "colors",
+              "value": "[\"#cac2bc\", \"#7d7168\", \"#f1f5f9\",\"#f3f4f6\",\"#f4f4f5\",\"#f5f5f5\",\"#f5f5f4\",\"#fee2e2\",\"#ffedd5\",\"#fef3c7\",\"#fef9c3\",\"#ecfccb\",\"#dcfce7\",\"#d1fae5\",\"#ccfbf1\",\"#cffafe\",\"#e0f2fe\",\"#dbeafe\",\"#e0e7ff\",\"#ede9fe\",\"#f3e8ff\",\"#fae8ff\",\"#fce7f3\",\"#ffe4e6\",\"#e2e8f0\",\"#e5e7eb\",\"#e4e4e7\",\"#e5e5e5\",\"#e7e5e4\",\"#fecaca\",\"#fed7aa\",\"#fde68a\",\"#fef08a\",\"#d9f99d\",\"#bbf7d0\",\"#a7f3d0\",\"#99f6e4\",\"#a5f3fc\",\"#bae6fd\",\"#bfdbfe\",\"#c7d2fe\",\"#ddd6fe\",\"#e9d5ff\",\"#f5d0fe\",\"#fbcfe8\",\"#fecdd3\",\"#cbd5e1\",\"#d1d5db\",\"#d4d4d8\",\"#d4d4d4\",\"#d6d3d1\",\"#fca5a5\",\"#fdba74\",\"#fcd34d\",\"#fde047\",\"#bef264\",\"#86efac\",\"#6ee7b7\",\"#5eead4\",\"#67e8f9\",\"#7dd3fc\",\"#93c5fd\",\"#a5b4fc\",\"#c4b5fd\",\"#d8b4fe\",\"#f0abfc\",\"#f9a8d4\",\"#fda4af\",\"#94a3b8\",\"#9ca3af\",\"#a1a1aa\",\"#a3a3a3\",\"#a8a29e\",\"#f87171\",\"#fb923c\",\"#fbbf24\",\"#facc15\",\"#a3e635\",\"#4ade80\",\"#34d399\",\"#2dd4bf\",\"#22d3ee\",\"#38bdf8\",\"#60a5fa\",\"#818cf8\",\"#a78bfa\",\"#c084fc\",\"#e879f9\",\"#f472b6\",\"#fb7185\",\"#64748b\",\"#6b7280\",\"#71717a\",\"#737373\",\"#78716c\",\"#ef4444\",\"#f97316\",\"#f59e0b\",\"#eab308\",\"#84cc16\",\"#22c55e\",\"#10b981\",\"#14b8a6\",\"#06b6d4\",\"#0ea5e9\",\"#3b82f6\",\"#6366f1\",\"#8b5cf6\",\"#a855f7\",\"#d946ef\",\"#ec4899\",\"#f43f5e\",\"#475569\",\"#4b5563\",\"#52525b\",\"#525252\",\"#57534e\",\"#dc2626\",\"#ea580c\",\"#d97706\",\"#ca8a04\",\"#65a30d\",\"#16a34a\",\"#059669\",\"#0d9488\",\"#0891b2\",\"#0284c7\",\"#2563eb\",\"#4f46e5\",\"#7c3aed\",\"#9333ea\",\"#c026d3\",\"#db2777\",\"#e11d48\",\"#334155\",\"#374151\",\"#3f3f46\",\"#404040\",\"#44403c\",\"#b91c1c\",\"#c2410c\",\"#b45309\",\"#a16207\",\"#4d7c0f\",\"#15803d\",\"#047857\",\"#0f766e\",\"#0e7490\",\"#0369a1\",\"#1d4ed8\",\"#4338ca\",\"#6d28d9\",\"#7e22ce\",\"#a21caf\",\"#be185d\",\"#be123c\",\"#1e293b\",\"#1f2937\",\"#27272a\",\"#262626\",\"#292524\",\"#991b1b\",\"#9a3412\",\"#92400e\",\"#854d0e\",\"#3f6212\",\"#166534\",\"#065f46\",\"#115e59\",\"#155e75\",\"#075985\",\"#1e40af\",\"#3730a3\",\"#5b21b6\",\"#6b21a8\",\"#86198f\",\"#9d174d\",\"#9f1239\",\"#0f172a\",\"#111827\",\"#18181b\",\"#171717\",\"#1c1917\",\"#7f1d1d\",\"#7c2d12\",\"#78350f\",\"#713f12\",\"#365314\",\"#14532d\",\"#064e3b\",\"#134e4a\",\"#164e63\",\"#0c4a6e\",\"#1e3a8a\",\"#312e81\",\"#4c1d95\",\"#581c87\",\"#701a75\",\"#831843\",\"#881337\"]",
+              "_uid": "747bb63e-1c0c-4388-96cf-e6486ea53c28"
+            }
+          ],
+          "datasource_slug": "background-colors",
+          "pos": 4,
+          "display_name": "Hintergrundfarbe",
+          "required": true,
+          "description": "Die Hintergrundfarbe des Aufmachers."
+        },
+        "patternOverlay": {
+          "type": "boolean",
+          "pos": 5,
+          "translatable": true,
+          "key": "pattern_overlay",
+          "display_name": "Überblendungseffekt",
+          "default_value": true,
+          "description": "Aktiviert einen Bleed-Effekt, bei dem das Bild mit dem Hintergrund überlagert wird."
+        },
+        "tab-9dcbdc9e-0aa9-4968-8da7-8f6c1c5d7069": {
+          "display_name": "Hintergrund",
+          "keys": [
+            "background_image",
+            "pattern_overlay",
+            "backgroundImage",
+            "patternOverlay",
+            "backgroundColor"
+          ],
+          "pos": 10,
+          "type": "tab",
+          "key": "tab-9dcbdc9e-0aa9-4968-8da7-8f6c1c5d7069"
+        }
+      },
+      "image": "//a.storyblok.com/f/263112/x/4efa22f188/bildschirmfoto-2023-11-26-um-11-48-35.png",
+      "preview_field": "headline",
+      "is_root": false,
+      "preview_tmpl": "<strong>{{headline}}</strong>\n{{image(options.backgroundImage.filename)/}} ",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Aufmacher",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#ffac00",
+      "icon": "block-monitor",
+      "component_group_name": "Abschnitte"
+    },
+    {
+      "name": "Link",
+      "display_name": "Link",
+      "created_at": "2023-11-18T09:44:10.104Z",
+      "updated_at": "2023-11-24T13:06:46.057Z",
+      "id": 4902507,
+      "schema": {
+        "target": {
+          "type": "multilink",
+          "display_name": "Adresse",
+          "required": true,
+          "description": "Die Linkadresse, auf die verwiesen werden soll.",
+          "allow_target_blank": false,
+          "show_anchor": true,
+          "allow_custom_attributes": false,
+          "email_link_type": true,
+          "translatable": true,
+          "restrict_content_types": false,
+          "component_whitelist": [],
+          "key": "target",
+          "pos": 0
+        },
+        "label": {
+          "type": "text",
+          "required": true,
+          "description": "Der angezeigte Text.",
+          "display_name": "Angezeigter Text",
+          "translatable": true,
+          "key": "link",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Link",
+      "component_group_uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
+      "color": "#ff6159",
+      "icon": "block-share",
+      "component_group_name": "Inhalt"
+    },
+    {
+      "name": "MapMarker",
+      "display_name": "Karten-Marker",
+      "created_at": "2023-11-19T15:37:03.887Z",
+      "updated_at": "2023-11-26T10:50:24.142Z",
+      "id": 4905062,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "display_name": "Überschrift",
+          "translatable": true,
+          "description": "Die Überschrift des Detailfensters."
+        },
+        "content": {
+          "type": "richtext",
+          "pos": 1,
+          "description": "Der Inhalt des Detailfensters. Sollte nicht übermäßig lang sein.",
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "italic",
+            "link",
+            "emoji"
+          ],
+          "allow_target_blank": true
+        },
+        "open": {
+          "type": "boolean",
+          "display_name": "Immer geöffnet",
+          "inline_label": true,
+          "default_value": true,
+          "description": "Legt fest, ob die Detailansicht immer geöffnet werden soll.",
+          "pos": 2
+        },
+        "latitude": {
+          "type": "number",
+          "pos": 3,
+          "display_name": "Latitude",
+          "required": true,
+          "decimals": 13
+        },
+        "longitude": {
+          "type": "number",
+          "pos": 4,
+          "decimals": 13,
+          "display_name": "Longitude",
+          "required": true
+        },
+        "tab-b1722833-2fd4-4156-8e33-19c546e378de": {
+          "display_name": "Detailansicht",
+          "keys": [
+            "title",
+            "content",
+            "open"
+          ],
+          "pos": 6,
+          "type": "tab"
+        }
+      },
+      "image": "//a.storyblok.com/f/263112/x/26d5e6950a/bildschirmfoto-2023-11-26-um-11-50-11.png",
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "<div>\n<strong>{{title}}</strong>\n<p>{{longitude}}, {{latitude}}</p>\n</div>",
+      "is_nestable": true,
+      "all_presets": [
+        {
+          "id": 1972170,
+          "name": "Studio in Waldkirch",
+          "component_id": 4905062,
+          "image": "//a.storyblok.com/f/263112/x/e47449bbb9/bildschirmfoto-2023-11-26-um-11-50-11.png",
+          "color": "#395ece",
+          "icon": "block-map-pin",
+          "description": "Ein Marker an der Adresse des Studios im Benzengäßle 3."
+        }
+      ],
+      "preset_id": null,
+      "real_name": "Karten-Marker",
+      "component_group_uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1",
+      "color": "#395ece",
+      "icon": "block-map-pin",
+      "component_group_name": "Verschachtelt"
+    },
+    {
+      "name": "MenuLink",
+      "display_name": "Menü-Eintrag",
+      "created_at": "2023-11-20T08:22:56.945Z",
+      "updated_at": "2023-11-20T08:25:15.841Z",
+      "id": 4906887,
+      "schema": {
+        "target": {
+          "type": "multilink",
+          "required": true,
+          "display_name": "Zielseite",
+          "description": "Die Seite, auf die der Menüeintrag verweist.",
+          "restrict_content_types": true,
+          "component_whitelist": [
+            "Page"
+          ],
+          "pos": 0
+        },
+        "label": {
+          "type": "text",
+          "display_name": "Beschriftung",
+          "translatable": true,
+          "description": "Der angezeigte Text auf dem Menü-Eintrag. Wenn keine Beschriftung angegeben wird, wird der Name der Zielseite verwendet.",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Menü-Eintrag",
+      "component_group_uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1",
+      "color": "#2db47d",
+      "icon": "block-share",
+      "component_group_name": "Verschachtelt"
+    },
+    {
+      "name": "MultiLineField",
+      "display_name": "Mehrzeiliges Textfeld",
+      "created_at": "2023-11-20T16:54:17.901Z",
+      "updated_at": "2023-11-26T09:55:06.019Z",
+      "id": 4910752,
+      "schema": {
+        "autofocus": {
+          "type": "boolean",
+          "description": "Wenn diese Einstellung aktiviert wird, wird das Eingabefeld automatisch fokussiert, sobald die Seite geladen wird.\nNur ein Eingabefeld auf einer Seite sollte automatisch fokussiert werden.",
+          "pos": 0
+        },
+        "autocorrect": {
+          "type": "boolean",
+          "display_name": "Autokorrektur",
+          "description": "Legt fest, ob der Browser Regeln für die automatische Korrektur anwenden soll.",
+          "default_value": true,
+          "pos": 1
+        },
+        "autocomplete": {
+          "type": "boolean",
+          "display_name": "Autovervollständigung",
+          "description": "Legt fest, ob der Browser das Feld automatisch vervollständigen soll.",
+          "pos": 2
+        },
+        "spellcheck": {
+          "type": "option",
+          "pos": 3,
+          "use_uuid": true,
+          "display_name": "Rechtschreibprüfung aktiviert",
+          "description": "Legt fest, ob eine Rechtschreibprüfung auf den Inhalt angewendet werden soll.",
+          "options": [
+            {
+              "_uid": "01f38ebc-1d12-46a4-8f69-cbcd1a425e22",
+              "value": "default",
+              "name": "Automatisch"
+            },
+            {
+              "_uid": "95fcecf4-afa7-4f7c-9c87-2a712593dd97",
+              "name": "Aktiv",
+              "value": "true"
+            },
+            {
+              "_uid": "d11a50a7-b587-42d8-876a-0c892dc2be89",
+              "value": "false",
+              "name": "Inaktiv"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "default"
+        },
+        "disabled": {
+          "type": "boolean",
+          "pos": 4,
+          "description": "Legt fest, dass das Feld inaktiv ist.",
+          "display_name": "Deaktiviert"
+        },
+        "readonly": {
+          "type": "boolean",
+          "pos": 5,
+          "display_name": "Nur lesbar",
+          "description": "Legt fest, dass der Wert des Felds nicht geändert werden kann. Im Gegensatz zur Einstellung \"Deaktiviert\" kann aber Text im Feld immer noch ausgewählt werden."
+        },
+        "rows": {
+          "type": "number",
+          "display_name": "Zeilen",
+          "min_value": 1,
+          "decimals": 0,
+          "default_value": "3",
+          "description": "Die Anzahl an sichtbaren Zeilen.",
+          "pos": 6
+        },
+        "cols": {
+          "type": "number",
+          "display_name": "Spalten",
+          "description": "Die Breite des Eingabefelds in Buchstaben.",
+          "default_value": "20",
+          "min_value": 1,
+          "pos": 7
+        },
+        "wrap": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "76c27565-a076-478a-8373-aef2332361a8",
+              "name": "Hart",
+              "value": "hard"
+            },
+            {
+              "_uid": "4918fc9e-abd3-4ffd-a6f3-91ebf402dce3",
+              "value": "soft",
+              "name": "Weich"
+            },
+            {
+              "_uid": "9cb4cb3f-f9b2-4644-9355-52dd64c3693a",
+              "value": "off",
+              "name": "Aus"
+            }
+          ],
+          "display_name": "Automatischer Zeilenumbruch",
+          "description": "Legt fest, wie Zeilenumbrüche behandelt werden sollen.",
+          "pos": 8,
+          "exclude_empty_option": true,
+          "default_value": "soft"
+        },
+        "required": {
+          "type": "boolean",
+          "pos": 9,
+          "display_name": "Pflichtfeld",
+          "description": "Wenn diese Einstellung aktiviert ist, kann das Formular nicht abgeschickt werden, solange dieses Feld nicht ausgefüllt ist."
+        },
+        "minlength": {
+          "type": "number",
+          "pos": 10,
+          "display_name": "Minimale Länge",
+          "description": "Die minimale Anzahl an Zeichen, die eingegeben werden muss.",
+          "min_value": 0,
+          "decimals": 0
+        },
+        "maxlength": {
+          "type": "number",
+          "pos": 11,
+          "description": "Die maximale Anzahl an Zeichen, die eingegeben werden darf.",
+          "min_value": 0,
+          "decimals": 0,
+          "display_name": "Maximale Länge"
+        },
+        "tab-e4372ae5-1d43-4caa-a7f7-d78f17a57352": {
+          "display_name": "Validierung",
+          "keys": [
+            "maxlength",
+            "minlength",
+            "required"
+          ],
+          "pos": 12,
+          "type": "tab"
+        },
+        "label": {
+          "type": "text",
+          "pos": 13,
+          "required": true,
+          "display_name": "Beschriftung",
+          "description": "Beschriftung des Eingabefelds.",
+          "translatable": true
+        },
+        "name": {
+          "type": "text",
+          "pos": 14,
+          "display_name": "Name",
+          "description": "Technischer Name des Felds. Sollte keine Leerzeichen enthalten.",
+          "translatable": true,
+          "required": true
+        },
+        "placeholder": {
+          "type": "text",
+          "pos": 15,
+          "display_name": "Platzhalter",
+          "description": "Ein optionaler Platzhalter für das Eingabefeld.",
+          "translatable": true
+        },
+        "tab-13ee473b-e3e5-476f-8954-eb4c53a16805": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "spellcheck",
+            "autocomplete",
+            "autocorrect",
+            "autofocus",
+            "disabled",
+            "cols",
+            "readonly",
+            "rows",
+            "wrap"
+          ],
+          "pos": 16,
+          "type": "tab"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "{{label}}{{if(options.required)}}*{{/if}}",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Mehrzeiliges Textfeld",
+      "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+      "color": "#ff6159",
+      "icon": "block-comment",
+      "component_group_name": "Formulare"
+    },
+    {
+      "name": "NumberField",
+      "display_name": "Zahlenfeld",
+      "created_at": "2023-11-21T07:26:26.404Z",
+      "updated_at": "2023-11-21T07:40:33.392Z",
+      "id": 4912529,
+      "schema": {
+        "autofocus": {
+          "type": "boolean",
+          "pos": 0,
+          "description": "Wenn diese Einstellung aktiviert wird, wird das Eingabefeld automatisch fokussiert, sobald die Seite geladen wird.\nNur ein Eingabefeld auf einer Seite sollte automatisch fokussiert werden.",
+          "display_name": "Automatisch fokussieren"
+        },
+        "disabled": {
+          "type": "boolean",
+          "pos": 1,
+          "description": "Legt fest, dass das Feld inaktiv ist.",
+          "display_name": "Deaktiviert"
+        },
+        "readonly": {
+          "type": "boolean",
+          "pos": 2,
+          "description": "Legt fest, dass der Wert des Felds nicht geändert werden kann. Im Gegensatz zur Einstellung \"Deaktiviert\" kann aber Text im Feld immer noch ausgewählt werden.",
+          "display_name": "Nur lesbar"
+        },
+        "required": {
+          "type": "boolean",
+          "pos": 3,
+          "display_name": "Pflichtfeld",
+          "description": "Wenn diese Einstellung aktiviert ist, kann das Formular nicht abgeschickt werden, solange dieses Feld nicht ausgefüllt ist."
+        },
+        "min": {
+          "type": "number",
+          "pos": 4,
+          "display_name": "Minimalwert",
+          "description": "Der erforderliche Minimalwert, der eingegeben werden muss."
+        },
+        "max": {
+          "type": "number",
+          "pos": 5,
+          "description": "Der erforderliche Maximalwert, der eingegeben werden darf.",
+          "display_name": "Maximalwert"
+        },
+        "step": {
+          "type": "number",
+          "pos": 6,
+          "display_name": "Stufe",
+          "description": "Die Größe der Stufen oder Inkremente, in denen Werte eingegeben werden dürfen."
+        },
+        "label": {
+          "type": "text",
+          "pos": 7,
+          "required": true,
+          "display_name": "Beschriftung",
+          "description": "Beschriftung des Eingabefelds.",
+          "translatable": true
+        },
+        "name": {
+          "type": "text",
+          "pos": 8,
+          "description": "Technischer Name des Felds. Sollte keine Leerzeichen enthalten.",
+          "display_name": "Name",
+          "required": true,
+          "translatable": true,
+          "max_length": 63,
+          "regex": "[a-z0-9._-]"
+        },
+        "placeholder": {
+          "type": "text",
+          "pos": 9,
+          "description": "Ein optionaler Platzhalter für das Eingabefeld.",
+          "display_name": "Platzhalter",
+          "translatable": true
+        },
+        "value": {
+          "type": "number",
+          "display_name": "Initialwert",
+          "description": "Der anfänglich eingestellte Wert, wenn die Seite geladen wird.",
+          "pos": 10,
+          "translatable": true
+        },
+        "tab-5774b8c0-dd96-4c2e-a41f-b0f3fe3aa08c": {
+          "display_name": "Validierung",
+          "keys": [
+            "required",
+            "max",
+            "min",
+            "step"
+          ],
+          "pos": 11,
+          "type": "tab"
+        },
+        "tab-315b0fbc-6f3e-4587-92c7-a39538c9d71a": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "disabled",
+            "readonly",
+            "autofocus",
+            "size"
+          ],
+          "pos": 12,
+          "type": "tab"
+        },
+        "size": {
+          "type": "number",
+          "description": "Die Breite des Eingabefels in Zeichen.",
+          "display_name": "Breite",
+          "min_value": 0
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Zahlenfeld",
+      "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+      "color": "#ff6159",
+      "icon": "block-comment",
+      "component_group_name": "Formulare"
+    },
+    {
+      "name": "Offering",
+      "display_name": "Leistung",
+      "created_at": "2023-11-18T18:17:18.556Z",
+      "updated_at": "2023-11-18T21:56:54.253Z",
+      "id": 4903320,
+      "schema": {
+        "name": {
+          "type": "text",
+          "key": "name",
+          "pos": 0,
+          "required": true,
+          "translatable": true,
+          "display_name": "Name",
+          "description": "Name oder Kurzbeschreibung dieser Leistung oder des Artikels."
+        },
+        "price": {
+          "type": "text",
+          "display_name": "Preis",
+          "key": "Preis",
+          "pos": 1,
+          "required": true,
+          "description": "Der Preis der Leistung. Kann auch Details oder Varianten enthalten.",
+          "translatable": true,
+          "tooltip": false
+        },
+        "description": {
+          "type": "richtext",
+          "customize_toolbar": true,
+          "description": "Beschreibung der Leistung oder des Angebots",
+          "toolbar": [
+            "bold",
+            "list",
+            "emoji",
+            "h4",
+            "h5",
+            "h6",
+            "hrule",
+            "image",
+            "italic",
+            "link",
+            "olist",
+            "paragraph",
+            "quote"
+          ],
+          "allow_target_blank": true,
+          "key": "description",
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Leistung",
+      "component_group_uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1",
+      "color": "#ffac00",
+      "icon": "block-dollar-sign",
+      "component_group_name": "Verschachtelt"
+    },
+    {
+      "name": "OfferingList",
+      "display_name": "Preisliste",
+      "created_at": "2023-11-18T18:14:26.803Z",
+      "updated_at": "2023-11-26T10:41:48.243Z",
+      "id": 4903319,
+      "schema": {
+        "highlights": {
+          "type": "bloks",
+          "pos": 0,
+          "description": "Hervorgehobene Leistungen, die mit Beschreibung angezeigt werden.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Offering"
+          ],
+          "source": "internal_stories",
+          "filter_content_type": [
+            "Offering"
+          ],
+          "folder_slug": ""
+        },
+        "items": {
+          "type": "bloks",
+          "display_name": "Weitere Leistungen",
+          "required": false,
+          "description": "Weitere Leistungen, die in der Preisliste angezeigt werden.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Offering"
+          ],
+          "pos": 1,
+          "source": "internal_stories",
+          "filter_content_type": [
+            "Offering"
+          ],
+          "folder_slug": ""
+        },
+        "content": {
+          "type": "richtext",
+          "translatable": true,
+          "description": "Zusätzlicher Text unterhalb der Preisliste.",
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "list",
+            "emoji",
+            "h4",
+            "h5",
+            "h6",
+            "hrule",
+            "italic",
+            "link",
+            "image",
+            "olist",
+            "quote",
+            "blok"
+          ],
+          "allow_target_blank": true,
+          "display_name": "Zusätzlicher Text",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "Link"
+          ]
+        },
+        "tab-c167c701-fa6b-4da1-8a97-852c3d2cbb4c": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "colored"
+          ],
+          "pos": 0,
+          "type": "tab"
+        },
+        "colored": {
+          "type": "boolean",
+          "description": "Legt fest, ob dieser Abschnitt eingefärbt werden soll.",
+          "display_name": "Eingefärbt",
+          "inline_label": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "<ul>\n{{each(options.highlights)}}\n<li><strong>{{@this.name}}</strong></li>\n{{/each}}\n{{each(options.items)}}\n<li>{{@this.name}}</li>\n{{/each}}\n</ul>",
+      "is_nestable": true,
+      "all_presets": [
+        {
+          "id": 1972168,
+          "name": "Preisliste November 2023",
+          "component_id": 4903319,
+          "image": "",
+          "color": "#ffac00",
+          "icon": "block-cart",
+          "description": "Die Preisliste zum Stand November 2023."
+        }
+      ],
+      "preset_id": null,
+      "real_name": "Preisliste",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#ffac00",
+      "icon": "block-cart",
+      "component_group_name": "Abschnitte"
+    },
+    {
+      "name": "Page",
+      "display_name": "Seite",
+      "created_at": "2023-11-17T22:34:01.855Z",
+      "updated_at": "2023-11-24T07:56:39.732Z",
+      "id": 4901798,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_group_whitelist": [
+            "25bd5845-06f6-4a5f-bb46-4682b1f00f22"
+          ],
+          "display_name": "Inhalt",
+          "required": true,
+          "description": "Der Hauptinhalt der Seite. Abschnitte können frei verschoben, hinzugefügt oder entfernt werden."
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Seite",
+      "component_group_uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d",
+      "color": "#395ece",
+      "icon": "block-doc",
+      "component_group_name": "Seitentypen"
+    },
+    {
+      "name": "SiteConfig",
+      "display_name": "Firmendaten",
+      "created_at": "2023-11-25T18:55:45.431Z",
+      "updated_at": "2023-11-26T09:15:03.613Z",
+      "id": 4937686,
+      "schema": {
+        "monday": {
+          "type": "section",
+          "pos": 0,
+          "keys": [
+            "openOnMonday",
+            "openingTimeMonday",
+            "closingTimeMonday"
+          ],
+          "display_name": "Montag"
+        },
+        "openOnMonday": {
+          "type": "boolean",
+          "pos": 1,
+          "display_name": "Geöffnet",
+          "inline_label": true,
+          "default_value": true
+        },
+        "openingTimeMonday": {
+          "type": "text",
+          "pos": 2,
+          "display_name": "Geöffnet ab",
+          "required": false,
+          "tooltip": false,
+          "default_value": "09:00",
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "description": ""
+        },
+        "closingTimeMonday": {
+          "type": "text",
+          "pos": 3,
+          "display_name": "Geöffnet bis",
+          "default_value": "18:00",
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)"
+        },
+        "tuesday": {
+          "type": "section",
+          "pos": 4,
+          "keys": [
+            "openOnTuesday",
+            "openingTimeTuesday",
+            "closingTimeTuesday"
+          ],
+          "display_name": "Dienstag"
+        },
+        "openOnTuesday": {
+          "type": "boolean",
+          "pos": 5,
+          "display_name": "Geöffnet",
+          "inline_label": true,
+          "default_value": true
+        },
+        "openingTimeTuesday": {
+          "type": "text",
+          "pos": 6,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet ab"
+        },
+        "closingTimeTuesday": {
+          "type": "text",
+          "pos": 7,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet bis"
+        },
+        "wednesday": {
+          "type": "section",
+          "pos": 8,
+          "keys": [
+            "openOnWednesday",
+            "openingTimeWednesday",
+            "closingTimeWednesday"
+          ],
+          "display_name": "Mittwoch"
+        },
+        "openOnWednesday": {
+          "type": "boolean",
+          "pos": 9,
+          "default_value": true,
+          "inline_label": true,
+          "display_name": "Geöffnet"
+        },
+        "openingTimeWednesday": {
+          "type": "text",
+          "pos": 10,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet ab"
+        },
+        "closingTimeWednesday": {
+          "type": "text",
+          "pos": 11,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet bis"
+        },
+        "thursday": {
+          "type": "section",
+          "pos": 12,
+          "keys": [
+            "openOnThursday",
+            "closingTimeThursday",
+            "openingTimeThursday"
+          ],
+          "display_name": "Donnerstag"
+        },
+        "openOnThursday": {
+          "type": "boolean",
+          "pos": 13,
+          "display_name": "Geöffnet",
+          "inline_label": true,
+          "default_value": true
+        },
+        "openingTimeThursday": {
+          "type": "text",
+          "pos": 14,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet ab"
+        },
+        "closingTimeThursday": {
+          "type": "text",
+          "pos": 15,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet bis"
+        },
+        "friday": {
+          "type": "section",
+          "pos": 16,
+          "keys": [
+            "openOnFriday",
+            "closingTimeFriday",
+            "openingTimeFriday"
+          ],
+          "display_name": "Freitag"
+        },
+        "openOnFriday": {
+          "type": "boolean",
+          "pos": 17,
+          "display_name": "Geöffnet",
+          "inline_label": true,
+          "default_value": true
+        },
+        "openingTimeFriday": {
+          "type": "text",
+          "pos": 18,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet ab"
+        },
+        "closingTimeFriday": {
+          "type": "text",
+          "pos": 19,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet bis"
+        },
+        "saturday": {
+          "type": "section",
+          "pos": 20,
+          "display_name": "Samstag",
+          "keys": [
+            "openOnSaturday",
+            "closingTimeSaturday",
+            "openingTimeSaturday"
+          ]
+        },
+        "openOnSaturday": {
+          "type": "boolean",
+          "display_name": "Geöffnet",
+          "pos": 21,
+          "inline_label": true
+        },
+        "openingTimeSaturday": {
+          "type": "text",
+          "pos": 22,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet ab"
+        },
+        "closingTimeSaturday": {
+          "type": "text",
+          "pos": 23,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet bis"
+        },
+        "sunday": {
+          "type": "section",
+          "pos": 24,
+          "keys": [
+            "openOnSunday",
+            "closingTimeSunday",
+            "openingTimeSunday"
+          ],
+          "display_name": "Sonntag"
+        },
+        "openOnSunday": {
+          "type": "boolean",
+          "pos": 25,
+          "display_name": "Geöffnet",
+          "inline_label": true
+        },
+        "openingTimeSunday": {
+          "type": "text",
+          "pos": 26,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet ab"
+        },
+        "closingTimeSunday": {
+          "type": "text",
+          "pos": 27,
+          "regex": "(^(2[0-3]|[0-1]?[\\d]):[0-5][\\d](:[0-5][\\d])?$|^$)",
+          "display_name": "Geöffnet bis"
+        },
+        "founderGivenName": {
+          "type": "text",
+          "pos": 28,
+          "display_name": "Vorname",
+          "required": true,
+          "default_value": "Verena"
+        },
+        "founderFamilyName": {
+          "type": "text",
+          "pos": 29,
+          "display_name": "Nachname",
+          "required": true,
+          "default_value": "Alpers"
+        },
+        "founderEmail": {
+          "type": "text",
+          "pos": 30,
+          "display_name": "E-Mail-Adresse",
+          "required": true,
+          "default_value": "Verena.friedrich@feinschliff.studio"
+        },
+        "companyName": {
+          "type": "text",
+          "key": "companyName",
+          "pos": 31,
+          "display_name": "Firmenname",
+          "required": true,
+          "default_value": "feinschliff.studio"
+        },
+        "website": {
+          "type": "text",
+          "key": "companyWebsite",
+          "pos": 32,
+          "display_name": "Webseite",
+          "required": true,
+          "default_value": "https://feinschliff.studio/",
+          "regex": "https:\\/\\/.+\\..+",
+          "description": "Sollte mit führendem Protokoll angegeben werden, also \"https://beispiel.de\"."
+        },
+        "phoneNumber": {
+          "type": "text",
+          "key": "phoneNumber",
+          "pos": 33,
+          "display_name": "Telefonnummer",
+          "required": true,
+          "description": "Sollte im internationalen Standardformat und ohne Leerzeichen angegeben werden, also z.b. \"+49123456789\"."
+        },
+        "emailAdress": {
+          "type": "text",
+          "pos": 34,
+          "display_name": "E-Mail-Adresse",
+          "required": true
+        },
+        "priceRange": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 35,
+          "display_name": "Preisspanne",
+          "required": true,
+          "options": [
+            {
+              "_uid": "33b5e9c5-bb96-4bd5-b763-09d5425cf7bf",
+              "name": "Günstig",
+              "value": "$"
+            },
+            {
+              "_uid": "bde0ffba-a4d6-497f-b610-1d78fdbce9e5",
+              "value": "$$",
+              "name": "Normal"
+            },
+            {
+              "_uid": "28d22831-0627-42c8-9359-3d3e99c99437",
+              "value": "$$$",
+              "name": "Gehoben (eher teuer)"
+            },
+            {
+              "_uid": "a5b8e2df-3f50-4804-95d3-c37928883dcd",
+              "value": "$$$$",
+              "name": "Luxus (Sehr teuer)"
+            }
+          ],
+          "exclude_empty_option": true
+        },
+        "paymentAccepted": {
+          "type": "options",
+          "pos": 36,
+          "required": true,
+          "display_name": "Akzeptierte Zahlungsmittel",
+          "options": [
+            {
+              "_uid": "b23c3a66-1aad-4186-9d7f-f688343340b7",
+              "name": "Barzahlung",
+              "value": "Cash"
+            },
+            {
+              "_uid": "9a6be7d1-4a39-4e26-8f9a-fd1d1a8d8742",
+              "value": "Credit Card",
+              "name": "Kreditkarte"
+            },
+            {
+              "_uid": "39eed8e2-2684-49f2-9fc1-c9da9bbff86f",
+              "value": "Debit Card",
+              "name": "EC-Karte"
+            }
+          ],
+          "exclude_empty_option": true,
+          "default_value": "Cash"
+        },
+        "streetAddress": {
+          "type": "text",
+          "pos": 37,
+          "display_name": "Anschrift",
+          "required": true
+        },
+        "postalCode": {
+          "type": "text",
+          "pos": 38,
+          "display_name": "Postleitzahl",
+          "required": true
+        },
+        "addressLocality": {
+          "type": "text",
+          "pos": 39,
+          "display_name": "Stadt",
+          "required": true,
+          "default_value": ""
+        },
+        "addressCountry": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 40,
+          "display_name": "Land",
+          "required": true,
+          "options": [
+            {
+              "_uid": "8b8c562a-315c-4c3b-bd0a-0a2f816ca834",
+              "name": "Deutschland",
+              "value": "DE"
+            },
+            {
+              "_uid": "54aa90db-9015-4202-9b3e-c44b8df5a7e5",
+              "value": "CH",
+              "name": "Schweiz"
+            },
+            {
+              "_uid": "fbff90fa-7f58-4bb7-9bac-2b3b61bde3a1",
+              "value": "AT",
+              "name": "Österreich"
+            }
+          ],
+          "default_value": "DE",
+          "exclude_empty_option": true
+        },
+        "coordinates": {
+          "type": "section",
+          "keys": [
+            "longitude",
+            "latitude"
+          ],
+          "pos": 41,
+          "display_name": "Koordinaten"
+        },
+        "latitude": {
+          "type": "number",
+          "pos": 42,
+          "required": true,
+          "decimals": 13,
+          "min_value": -90,
+          "max_value": 90
+        },
+        "longitude": {
+          "type": "number",
+          "pos": 43,
+          "required": true,
+          "min_value": -180,
+          "max_value": 180,
+          "decimals": 13
+        },
+        "tab-ddaa381e-7f4d-4c5c-8c76-339a4063445c": {
+          "display_name": "Adresse",
+          "keys": [
+            "streetAddress",
+            "addressLocality",
+            "postalCode",
+            "addressCountry",
+            "longitude",
+            "latitude",
+            "coordinates"
+          ],
+          "pos": 44,
+          "type": "tab",
+          "name": "tab-ddaa381e-7f4d-4c5c-8c76-339a4063445c"
+        },
+        "tab-a21024e9-6c27-448a-a211-376cd1535dd3": {
+          "display_name": "Inhaberin",
+          "keys": [
+            "founderGivenName",
+            "founderFamilyName",
+            "founderEmail"
+          ],
+          "pos": 45,
+          "type": "tab"
+        },
+        "tab-42c02fd6-0079-4bb8-9db0-f79f235472a2": {
+          "display_name": "Öffnungszeiten",
+          "keys": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday",
+            "openOnMonday",
+            "openOnTuesday",
+            "openOnWednesday",
+            "openOnThursday",
+            "openOnFriday",
+            "openOnSaturday",
+            "openOnSunday",
+            "openingTimeMonday",
+            "closingTimeMonday",
+            "closingTimeTuesday",
+            "closingTimeWednesday",
+            "closingTimeThursday",
+            "closingTimeFriday",
+            "closingTimeSaturday",
+            "closingTimeSunday",
+            "openingTimeTuesday",
+            "openingTimeWednesday",
+            "openingTimeThursday",
+            "openingTimeFriday",
+            "openingTimeSaturday",
+            "openingTimeSunday"
+          ],
+          "pos": 46,
+          "type": "tab",
+          "name": "tab-42c02fd6-0079-4bb8-9db0-f79f235472a2"
+        }
+      },
+      "image": null,
+      "preview_field": "companyName",
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Firmendaten",
+      "component_group_uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d",
+      "color": "#395ece",
+      "icon": "block-@",
+      "component_group_name": "Seitentypen"
+    },
+    {
+      "name": "Text",
+      "display_name": "Text",
+      "created_at": "2023-11-18T13:13:57.267Z",
+      "updated_at": "2023-11-24T13:06:33.063Z",
+      "id": 4902603,
+      "schema": {
+        "text": {
+          "type": "text",
+          "translatable": true,
+          "required": true,
+          "display_name": "Text",
+          "description": "Ein Textabschnitt."
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Text",
+      "component_group_uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
+      "color": null,
+      "icon": "block-text-l",
+      "component_group_name": "Inhalt"
+    },
+    {
+      "name": "TextBlock",
+      "display_name": "Text-Block",
+      "created_at": "2023-11-24T08:16:14.609Z",
+      "updated_at": "2023-11-24T08:21:59.731Z",
+      "id": 4932735,
+      "schema": {
+        "heading": {
+          "type": "text"
+        },
+        "subheading": {
+          "type": "text"
+        },
+        "content": {
+          "type": "richtext",
+          "description": "Blöcke, die im Gitter-Layout angeordnet werden sollen.",
+          "display_name": "Inhalt",
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "list",
+            "emoji",
+            "hrule",
+            "italic",
+            "image",
+            "link",
+            "olist",
+            "quote",
+            "paragraph",
+            "strike"
+          ],
+          "allow_target_blank": true,
+          "required": true,
+          "translatable": true
+        },
+        "tab-57e71ac3-90b6-4b80-a685-c446e6410719": {
+          "display_name": "Überschriften",
+          "keys": [
+            "headingLevel",
+            "subheadingLevel",
+            "anchor"
+          ],
+          "pos": 0,
+          "type": "tab"
+        },
+        "headingLevel": {
+          "type": "number",
+          "display_name": "Titel-Ebene",
+          "description": "Der Ordnungsgrad des Abschnittstitels.",
+          "required": true,
+          "default_value": "2",
+          "min_value": 2,
+          "max_value": 6
+        },
+        "subheadingLevel": {
+          "type": "number",
+          "required": true,
+          "default_value": "3",
+          "min_value": 2,
+          "max_value": 6,
+          "decimals": 0,
+          "description": "Der Ordnungsgrad des Untertitels.",
+          "display_name": "Untertitel-Ebene"
+        },
+        "anchor": {
+          "type": "text",
+          "regex": "[a-zA-Z0-9_.-]*"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Text-Block",
+      "component_group_uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
+      "color": null,
+      "icon": "block-text-l",
+      "component_group_name": "Inhalt"
+    },
+    {
+      "name": "TextField",
+      "display_name": "Textfeld",
+      "created_at": "2023-11-20T16:30:05.004Z",
+      "updated_at": "2023-11-26T09:55:20.155Z",
+      "id": 4910678,
+      "schema": {
+        "type": {
+          "type": "option",
+          "pos": 0,
+          "display_name": "Eingabefeld-Art",
+          "required": true,
+          "description": "Art des Eingabefelds. Erlaubt je nach Browser zusätzliche Eingabemechanismen oder Validieren.",
+          "default_value": "text",
+          "options": [
+            {
+              "_uid": "0b6511f3-ff79-454e-931d-987e014fba92",
+              "value": "text",
+              "name": "Text"
+            },
+            {
+              "_uid": "0e877af7-c4ae-4fd5-8e2f-ec9cc6b5bbe8",
+              "name": "E-Mail",
+              "value": "email"
+            },
+            {
+              "_uid": "4de3610c-1346-416c-92c2-fbb227446dc0",
+              "value": "search",
+              "name": "Suche"
+            },
+            {
+              "_uid": "bf97d23a-23b3-419d-b8d7-91fd6fd5f4e1",
+              "value": "tel",
+              "name": "Telefonnummer"
+            },
+            {
+              "_uid": "63f1f2eb-df56-423c-8cd1-f0981bc956e5",
+              "value": "url",
+              "name": "Webseite"
+            }
+          ],
+          "use_uuid": true,
+          "exclude_empty_option": true
+        },
+        "autocomplete": {
+          "type": "option",
+          "pos": 1,
+          "display_name": "Autovervollständigung",
+          "description": "Art der Autovervollständigung.",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "8e13e23c-b2a6-401b-ae01-6b523422ad7b",
+              "name": "Aktiviert",
+              "value": "on"
+            },
+            {
+              "_uid": "40a465fd-5a73-4bcc-98b9-d6ebdf47d365",
+              "value": "off",
+              "name": "Deaktiviert"
+            },
+            {
+              "_uid": "60c90c71-29e3-40b6-a360-8a9570a767a4",
+              "value": "name",
+              "name": "Vollständiger Name"
+            },
+            {
+              "_uid": "21cf9f97-0411-4323-b811-8f0ac28b1ba8",
+              "value": "honorific-prefix",
+              "name": "Präfix oder Titel (z.b. Dr.)"
+            },
+            {
+              "_uid": "e1025dd2-ed36-4c6c-9fba-87feebf43149",
+              "value": "given-name",
+              "name": "Vorname"
+            },
+            {
+              "_uid": "5e042f86-7725-4885-8324-2c61e88dac42",
+              "value": "additional-name",
+              "name": "Zweiter Name"
+            },
+            {
+              "_uid": "38225c45-516c-408c-87a0-bb372e4b2496",
+              "value": "family-name",
+              "name": "Nachname"
+            },
+            {
+              "_uid": "1b7c6a69-bf25-4e44-a846-c02aec889f97",
+              "value": "honorific-suffix",
+              "name": "Suffix (z.b. Jr.)"
+            },
+            {
+              "_uid": "f9facff4-2562-4198-810b-a5d35604cd06",
+              "value": "nickname",
+              "name": "Spitzname"
+            },
+            {
+              "_uid": "318b0d55-33e6-4254-9ba9-0b9d137aa491",
+              "value": "email",
+              "name": "E-Mail-Adresse"
+            },
+            {
+              "_uid": "1a433eb2-50ff-4dfd-9a4f-0914948e3e3f",
+              "value": "username",
+              "name": "Benutzername"
+            },
+            {
+              "_uid": "8a19d4b0-cadb-4a5d-ba26-7889d3b54ba2",
+              "value": "organization-title",
+              "name": "Berufsbezeichnung"
+            },
+            {
+              "_uid": "e4f051b8-c824-4680-8a64-a3d6091c0ab6",
+              "value": "organization",
+              "name": "Firma"
+            },
+            {
+              "_uid": "5b2de542-2dc1-4dcc-815e-0ddaca3d39da",
+              "value": "street-address",
+              "name": "Vollständige Adresse"
+            },
+            {
+              "_uid": "fc3d7155-ee7c-459e-81c2-880fb77c0623",
+              "value": "shipping street-address",
+              "name": "Lieferadresse"
+            },
+            {
+              "_uid": "6098942c-a9b2-4967-a5a9-076befe90ab8",
+              "value": "billing street-address",
+              "name": "Rechnungsadresse"
+            },
+            {
+              "_uid": "1dab7969-ae3c-40ae-9797-78caa4971304",
+              "value": "country",
+              "name": "Ländercode"
+            },
+            {
+              "_uid": "cd6fdacd-8c5d-4a07-bc04-733102fa3b26",
+              "value": "country-name",
+              "name": "Land"
+            },
+            {
+              "_uid": "906f319a-a9cc-4ea8-80c9-b0e3f948f26a",
+              "value": "postal-code",
+              "name": "Postleitzahl"
+            },
+            {
+              "_uid": "bdec4c23-c05d-4df9-8ae8-b409f3a34007",
+              "value": "language",
+              "name": "Sprache"
+            },
+            {
+              "_uid": "de88acd3-3070-4e1c-b1e5-56f0306e33dc",
+              "value": "bday",
+              "name": "Geburtstag"
+            },
+            {
+              "_uid": "a30a1d8e-48ac-41c2-9c29-20e3756c5a8e",
+              "value": "sex",
+              "name": "Geschlecht"
+            },
+            {
+              "_uid": "6acabd24-b78b-44e3-b104-5c825562423f",
+              "value": "url",
+              "name": "Webseite"
+            },
+            {
+              "_uid": "7d3f9232-7e99-4f94-b2cf-a5608c9a88b2",
+              "value": "photo",
+              "name": "Profilbild-URL"
+            },
+            {
+              "_uid": "8b45a3dc-305e-4d7c-8469-5646454b6fdf",
+              "value": "tel",
+              "name": "Telefonnummer"
+            }
+          ],
+          "exclude_empty_option": true
+        },
+        "autofocus": {
+          "type": "boolean",
+          "pos": 2,
+          "display_name": "Automatisch fokussieren",
+          "description": "Wenn diese Einstellung aktiviert wird, wird das Eingabefeld automatisch fokussiert, sobald die Seite geladen wird.\nNur ein Eingabefeld auf einer Seite sollte automatisch fokussiert werden."
+        },
+        "spellcheck": {
+          "type": "boolean",
+          "pos": 3,
+          "display_name": "Autokorrektur aktiv",
+          "description": "Wenn diese Einstellung deaktiviert wird, wird auch die automatische Korrekturfunktion des Endgerätes für das Eingabefeld deaktiviert.",
+          "default_value": true
+        },
+        "autocapitalize": {
+          "type": "boolean",
+          "required": false,
+          "pos": 4,
+          "display_name": "Anfangsbuchstaben automatisch groß",
+          "description": "Wenn diese Einstellung aktiviert wird, werden alle Anfangsbuchstaben im Eingabefeld automatisch groß geschrieben."
+        },
+        "disabled": {
+          "type": "boolean",
+          "display_name": "Deaktiviert",
+          "description": "Legt fest, dass das Feld inaktiv ist.",
+          "pos": 5
+        },
+        "readonly": {
+          "type": "boolean",
+          "description": "Legt fest, dass der Wert des Felds nicht geändert werden kann. Im Gegensatz zur Einstellung \"Deaktiviert\" kann aber Text im Feld immer noch ausgewählt werden.",
+          "display_name": "Nur lesbar",
+          "pos": 6
+        },
+        "size": {
+          "type": "number",
+          "description": "Die Breite des Eingabefels in Zeichen.",
+          "min_value": 0,
+          "decimals": 0,
+          "display_name": "Breite",
+          "pos": 7
+        },
+        "required": {
+          "type": "boolean",
+          "pos": 8,
+          "display_name": "Pflichtfeld",
+          "inline_label": false,
+          "default_value": false,
+          "description": "Wenn diese Einstellung aktiviert ist, kann das Formular nicht abgeschickt werden, solange dieses Feld nicht ausgefüllt ist.",
+          "translatable": false
+        },
+        "pattern": {
+          "type": "text",
+          "display_name": "Validierungsmaske",
+          "description": "Die Validierungsmaske, auf die die Eingabe geprüft werden soll.",
+          "pos": 9
+        },
+        "minlength": {
+          "type": "number",
+          "description": "Die minimale Anzahl an Zeichen, die eingegeben werden muss.",
+          "min_value": 0,
+          "decimals": 0,
+          "display_name": "Minimale Länge",
+          "pos": 10
+        },
+        "maxlength": {
+          "type": "number",
+          "description": "Die maximale Anzahl an Zeichen, die eingegeben werden darf.",
+          "display_name": "Maximale Länge",
+          "min_value": 0,
+          "decimals": 0,
+          "pos": 11
+        },
+        "tab-3644ae1d-c524-4bd5-9f37-ee257ed508fb": {
+          "display_name": "Validierung",
+          "keys": [
+            "maxlength",
+            "minlength",
+            "pattern",
+            "required"
+          ],
+          "pos": 12,
+          "type": "tab"
+        },
+        "label": {
+          "type": "text",
+          "pos": 13,
+          "display_name": "Beschriftung",
+          "required": true,
+          "translatable": true,
+          "description": "Beschriftung des Eingabefelds."
+        },
+        "name": {
+          "type": "text",
+          "pos": 14,
+          "display_name": "Name",
+          "required": true,
+          "description": "Technischer Name des Felds. Sollte keine Leerzeichen enthalten.",
+          "regex": "[a-z0-9._-]",
+          "max_length": 63,
+          "translatable": true
+        },
+        "placeholder": {
+          "type": "text",
+          "pos": 15,
+          "display_name": "Platzhalter",
+          "translatable": true,
+          "description": "Ein optionaler Platzhalter für das Eingabefeld."
+        },
+        "tab-de8ee54f-1180-439b-add4-257b941b287f": {
+          "display_name": "Einstellungen",
+          "keys": [
+            "autocomplete",
+            "autocapitalize",
+            "autofocus",
+            "spellcheck",
+            "type",
+            "readonly",
+            "disabled",
+            "size"
+          ],
+          "pos": 16,
+          "type": "tab"
+        },
+        "value": {
+          "type": "text",
+          "display_name": "Initialwert",
+          "description": "Der anfänglich eingestellte Wert, wenn die Seite geladen wird.",
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "{{label}}{{if(options.required)}}*{{/if}}",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Textfeld",
+      "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+      "color": "#ff6159",
+      "icon": "block-comment",
+      "component_group_name": "Formulare"
+    },
+    {
+      "name": "TextSection",
+      "display_name": "Textabschnitt",
+      "created_at": "2023-11-18T15:31:45.540Z",
+      "updated_at": "2023-11-26T09:32:49.792Z",
+      "id": 4903059,
+      "schema": {
+        "tab-fafc9187-d419-4881-9809-7af2a538c44b": {
+          "display_name": "Gestaltung",
+          "keys": [
+            "colored"
+          ],
+          "pos": 0,
+          "type": "tab",
+          "name": "tab-fafc9187-d419-4881-9809-7af2a538c44b"
+        },
+        "recede": {
+          "type": "boolean",
+          "pos": 0,
+          "display_name": "Höhe an Inhalt ausrichten",
+          "description": "Legt fest ob sich die minimale Höhe des Abschnitts an seinem Inhalt orientieren soll.",
+          "inline_label": true
+        },
+        "tab-b5028165-9c75-4bd3-9938-410c099ab094": {
+          "display_name": "Layout",
+          "keys": [
+            "popOut",
+            "bleed",
+            "recede"
+          ],
+          "pos": 1,
+          "type": "tab",
+          "name": "tab-b5028165-9c75-4bd3-9938-410c099ab094"
+        },
+        "heading": {
+          "type": "text",
+          "key": "heading",
+          "pos": 1,
+          "display_name": "Abschnittstitel",
+          "translatable": true,
+          "description": "Ein Titel für den Abschnitt. Optional."
+        },
+        "tab-58bc7c97-5ea1-4700-8fd3-7f3b7b669cb2": {
+          "display_name": "Überschriften",
+          "keys": [
+            "headingLevel",
+            "subheadingLevel",
+            "anchor"
+          ],
+          "pos": 2,
+          "type": "tab"
+        },
+        "subheading": {
+          "type": "text",
+          "key": "subheading",
+          "pos": 2,
+          "display_name": "Untertitel",
+          "translatable": true,
+          "description": "Ein Untertitel für den Abschnitt. Optional."
+        },
+        "content": {
+          "type": "richtext",
+          "display_name": "Inhalt",
+          "required": true,
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "blok",
+            "bold",
+            "list",
+            "emoji",
+            "h4",
+            "h5",
+            "h6",
+            "hrule",
+            "image",
+            "italic",
+            "link",
+            "olist",
+            "paragraph",
+            "quote"
+          ],
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_group_whitelist": [
+            "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
+            "1be9ae66-afc2-4c29-a165-5699c15094a1"
+          ],
+          "allow_target_blank": true,
+          "key": "content",
+          "pos": 3,
+          "component_whitelist": [
+            "OfferingList",
+            "Offering"
+          ]
+        },
+        "bleed": {
+          "type": "boolean",
+          "display_name": "Randlos",
+          "inline_label": true,
+          "key": "bleed",
+          "pos": 4,
+          "description": "Legt fest, ob dieser Abschnitt ohne Rand angezeigt werden soll."
+        },
+        "popOut": {
+          "type": "boolean",
+          "display_name": "Volle Breite",
+          "default_value": false,
+          "inline_label": true,
+          "key": "fullWidth",
+          "pos": 5,
+          "description": "Legt fest, ob dieser Abschnitt die volle Breite der Seite einnehmen soll."
+        },
+        "headingLevel": {
+          "type": "number",
+          "required": false,
+          "display_name": "Titel-Ebene",
+          "description": "Der Ordnungsgrad des Abschnittstitels.",
+          "default_value": "2",
+          "min_value": 2,
+          "max_value": 6,
+          "decimals": 0,
+          "translatable": false
+        },
+        "subheadingLevel": {
+          "type": "number",
+          "required": false,
+          "min_value": 2,
+          "max_value": 6,
+          "decimals": 0,
+          "default_value": "3",
+          "description": "Der Ordnungsgrad des Untertitels.",
+          "display_name": "Untertitel-Ebene"
+        },
+        "colored": {
+          "type": "boolean",
+          "description": "Legt fest, ob dieser Abschnitt eingefärbt werden soll.",
+          "display_name": "Eingefärbt",
+          "inline_label": true
+        },
+        "anchor": {
+          "type": "text",
+          "display_name": "Link-Anker",
+          "description": "Wenn ein Link-Anker gesetzt ist, können Links auf anderen Seiten oder in anderen Abschnitten auf diesen Abschnitt verweisen. Darf keine Leerzeichen enthalten.",
+          "regex": "[a-zA-Z0-9_.-]*",
+          "max_length": 63
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Textabschnitt",
+      "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "color": "#00b3b0",
+      "icon": "block-block",
+      "component_group_name": "Abschnitte"
+    }
+  ]
+}
