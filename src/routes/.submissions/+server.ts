@@ -1,4 +1,4 @@
-import { STORYBLOK_ACCESS_TOKEN } from "$env/static/private";
+import { DKIM_DOMAIN, STORYBLOK_ACCESS_TOKEN } from "$env/static/private";
 import { dispatch, isFailure, loadForm, renderHtmlText, renderTemplate } from "$lib/server/mail";
 import type { FieldGroupStoryblok, FormStoryblok, PageStoryblok } from "$storyblok/components";
 import type { ISbStoryData } from "@storyblok/svelte";
@@ -74,36 +74,19 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
     ...fieldValues,
   };
 
+  const senderName = "name" in fieldValues ? fieldValues.name as string : form.name;
+  const senderEmail = "email" in fieldValues ? fieldValues.email as string : `website@${DKIM_DOMAIN}`;
+
   try {
     const result = await dispatch({
-      from: {
-        email: `website@${domain}`,
-        name: "name" in fieldValues ? fieldValues.name as string : form.name,
-      },
-      reply_to: {
-        name: "name" in fieldValues ? fieldValues.name as string : form.name,
-        email: "email" in fieldValues ? fieldValues.email as string : `website@${domain}`,
-      },
-      content: [
-        {
-          type: "text/plain",
-          value: renderTemplate(form.notificationPlain, context),
-        },
-        {
-          type: "text/html",
-          value: renderHtmlText(form.notificationHtml, context),
-        },
-      ],
+      from: `${form.name} <website@${DKIM_DOMAIN}>`,
+      to: form.notificationRecipientEmail,
+      replyTo: `${senderName} <${senderEmail}>`,
+      html: renderHtmlText(form.notificationHtml, context),
+      text: renderTemplate(form.notificationPlain, context),
       subject: form.notificationSubject,
-      personalizations: [
-        {
-          to: [
-            {
-              name: form.notificationRecipientName,
-              email: form.notificationRecipientEmail,
-            },
-          ],
-        },
+      tags: [
+        { name: "story_id", value: story.id.toString() },
       ],
     });
 
@@ -114,9 +97,7 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
     storyUrl.searchParams.set("state", "error");
     storyUrl.searchParams.set("error", (error as Error).message ?? "Unknown error");
 
-    console.error("Failed to dispatch form submission", {
-      error,
-    });
+    console.error(`Failed to dispatch form submission: ${error}`, { error });
 
     throw redirect(303, storyUrl);
   }

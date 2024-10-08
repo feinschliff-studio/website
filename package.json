@@ -15,13 +15,13 @@
     "storyblok:types": "storyblok-generate-ts source=./.storyblok/components.263112.json target=./.storyblok/components"
   },
   "dependencies": {
-    "@cloudflare/pages-plugin-mailchannels": "^0.1.2",
     "@fontsource-variable/jost": "^5.0.16",
     "@fontsource-variable/source-sans-3": "^5.0.18",
     "@glidejs/glide": "^3.6.0",
     "@googlemaps/js-api-loader": "^1.16.2",
     "@storyblok/svelte": "^3.1.6",
-    "js-cookie": "^3.0.5"
+    "js-cookie": "^3.0.5",
+    "resend": "^4.0.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
