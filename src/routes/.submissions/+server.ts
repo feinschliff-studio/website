@@ -76,34 +76,22 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
 
   try {
     const result = await dispatch({
-      from: {
-        email: `website@${domain}`,
-        name: "name" in fieldValues ? fieldValues.name as string : form.name,
-      },
-      reply_to: {
-        name: "name" in fieldValues ? fieldValues.name as string : form.name,
-        email: "email" in fieldValues ? fieldValues.email as string : `website@${domain}`,
-      },
-      content: [
-        {
-          type: "text/plain",
-          value: renderTemplate(form.notificationPlain, context),
-        },
-        {
-          type: "text/html",
-          value: renderHtmlText(form.notificationHtml, context),
-        },
-      ],
+      from: `${form.name} <website@${domain}>`,
+      to: form.notificationRecipientEmail,
+      replyTo: "email" in fieldValues ? fieldValues.email as string : `website@${domain}`,
+      html: renderTemplate(form.notificationPlain, context),
+      text: renderHtmlText(form.notificationHtml, context),
       subject: form.notificationSubject,
-      personalizations: [
-        {
-          to: [
-            {
-              name: form.notificationRecipientName,
-              email: form.notificationRecipientEmail,
-            },
-          ],
-        },
+      tags: [
+        { name: "domain", value: domain },
+        { name: "story.id", value: story.id },
+        { name: "story.name", value: story.name },
+        { name: "story.slug", value: story.slug },
+        { name: "story.published_at", value: story.published_at },
+        { name: "story.published_at", value: story.published_at },
+        { name: "form.name", value: form.name },
+        { name: "recipient.name", value: form.notificationRecipientName },
+        { name: "recipient.email", value: form.notificationRecipientEmail },
       ],
     });
 

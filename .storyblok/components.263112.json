@@ -94,6 +94,9 @@
       "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
       "color": "#ff6159",
       "icon": "block-arrow-pointer",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Formulare"
     },
     {
@@ -178,6 +181,9 @@
       "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
       "color": "#ff6159",
       "icon": "block-comment",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Formulare"
     },
     {
@@ -536,6 +542,9 @@
       "component_group_uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d",
       "color": "#395ece",
       "icon": "block-shield-2",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Seitentypen"
     },
     {
@@ -711,6 +720,9 @@
       "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
       "color": "#ff6159",
       "icon": "block-table-2",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Formulare"
     },
     {
@@ -781,8 +793,8 @@
           "name": "Ohne Startseite",
           "component_id": 4905073,
           "image": "",
-          "color": "#00b3b0",
           "icon": "block-add",
+          "color": "#00b3b0",
           "description": "Alle Navigationselemente außer der Startseite."
         },
         {
@@ -790,8 +802,8 @@
           "name": "Vollständige Navigation",
           "component_id": 4905073,
           "image": "",
-          "color": "#00b3b0",
           "icon": "block-add",
+          "color": "#00b3b0",
           "description": "Eine Fußzeile mit allen Navigationselementen, inklusive Link zur Startseite."
         }
       ],
@@ -800,6 +812,9 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#00b3b0",
       "icon": "block-add",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
     },
     {
@@ -1231,8 +1246,8 @@
           "name": "Kontaktformular",
           "component_id": 4910651,
           "image": "//a.storyblok.com/f/263112/x/6da76bae63/bildschirmfoto-2023-11-25-um-12-27-34.png",
-          "color": "#ff6159",
           "icon": "block-comment",
+          "color": "#ff6159",
           "description": "Ein vollständiges Kontaktformular."
         }
       ],
@@ -1241,6 +1256,9 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#00b3b0",
       "icon": "block-keyboard",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
     },
     {
@@ -1541,6 +1559,9 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#395ece",
       "icon": "block-image",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
     },
     {
@@ -1690,6 +1711,9 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#395ece",
       "icon": "block-map-pin",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
     },
     {
@@ -1957,8 +1981,8 @@
           "name": "Beispiel",
           "component_id": 4912598,
           "image": "",
-          "color": "",
           "icon": "block-table-2",
+          "color": "",
           "description": "Ein dreispaltiges Beispiel-Layout."
         }
       ],
@@ -1967,6 +1991,9 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#ffac00",
       "icon": "block-table-2",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
     },
     {
@@ -2086,6 +2113,9 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#ffac00",
       "icon": "block-monitor",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
     },
     {
@@ -2131,6 +2161,9 @@
       "component_group_uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
       "color": "#ff6159",
       "icon": "block-share",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Inhalt"
     },
     {
@@ -2205,8 +2238,8 @@
           "name": "Studio in Waldkirch",
           "component_id": 4905062,
           "image": "//a.storyblok.com/f/263112/x/e47449bbb9/bildschirmfoto-2023-11-26-um-11-50-11.png",
-          "color": "#395ece",
           "icon": "block-map-pin",
+          "color": "#395ece",
           "description": "Ein Marker an der Adresse des Studios im Benzengäßle 3."
         }
       ],
@@ -2215,6 +2248,9 @@
       "component_group_uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1",
       "color": "#395ece",
       "icon": "block-map-pin",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Verschachtelt"
     },
     {
@@ -2254,6 +2290,9 @@
       "component_group_uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1",
       "color": "#2db47d",
       "icon": "block-share",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Verschachtelt"
     },
     {
@@ -2445,6 +2484,9 @@
       "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
       "color": "#ff6159",
       "icon": "block-comment",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Formulare"
     },
     {
@@ -2568,13 +2610,16 @@
       "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
       "color": "#ff6159",
       "icon": "block-comment",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Formulare"
     },
     {
       "name": "Offering",
       "display_name": "Leistung",
       "created_at": "2023-11-18T18:17:18.556Z",
-      "updated_at": "2023-11-18T21:56:54.253Z",
+      "updated_at": "2024-03-23T14:35:00.817Z",
       "id": 4903320,
       "schema": {
         "name": {
@@ -2617,7 +2662,8 @@
           ],
           "allow_target_blank": true,
           "key": "description",
-          "pos": 3
+          "pos": 3,
+          "display_name": "Beschreibung"
         }
       },
       "image": null,
@@ -2631,6 +2677,9 @@
       "component_group_uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1",
       "color": "#ffac00",
       "icon": "block-dollar-sign",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Verschachtelt"
     },
     {
@@ -2726,8 +2775,8 @@
           "name": "Preisliste November 2023",
           "component_id": 4903319,
           "image": "",
-          "color": "#ffac00",
           "icon": "block-cart",
+          "color": "#ffac00",
           "description": "Die Preisliste zum Stand November 2023."
         }
       ],
@@ -2736,6 +2785,9 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#ffac00",
       "icon": "block-cart",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
     },
     {
@@ -2768,6 +2820,9 @@
       "component_group_uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d",
       "color": "#395ece",
       "icon": "block-doc",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Seitentypen"
     },
     {
@@ -3234,6 +3289,9 @@
       "component_group_uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d",
       "color": "#395ece",
       "icon": "block-@",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Seitentypen"
     },
     {
@@ -3262,6 +3320,9 @@
       "component_group_uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
       "color": null,
       "icon": "block-text-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Inhalt"
     },
     {
@@ -3344,6 +3405,9 @@
       "component_group_uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
       "color": null,
       "icon": "block-text-l",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Inhalt"
     },
     {
@@ -3665,6 +3729,9 @@
       "component_group_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
       "color": "#ff6159",
       "icon": "block-comment",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Formulare"
     },
     {
@@ -3826,7 +3893,47 @@
       "component_group_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
       "color": "#00b3b0",
       "icon": "block-block",
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Abschnitte"
+    }
+  ],
+  "component_groups": [
+    {
+      "name": "Abschnitte",
+      "id": 234818,
+      "uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22",
+      "parent_id": null,
+      "parent_uuid": "25bd5845-06f6-4a5f-bb46-4682b1f00f22"
+    },
+    {
+      "name": "Formulare",
+      "id": 235630,
+      "uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267",
+      "parent_id": null,
+      "parent_uuid": "7d987d4d-febf-4398-bf1b-55a7b4c62267"
+    },
+    {
+      "name": "Inhalt",
+      "id": 234820,
+      "uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3",
+      "parent_id": null,
+      "parent_uuid": "d6506cb4-83a6-4cfb-9054-2cf161a2aaf3"
+    },
+    {
+      "name": "Seitentypen",
+      "id": 237862,
+      "uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d",
+      "parent_id": null,
+      "parent_uuid": "1e86a841-fd28-427f-a1ca-dec4af8a776d"
+    },
+    {
+      "name": "Verschachtelt",
+      "id": 234819,
+      "uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1",
+      "parent_id": null,
+      "parent_uuid": "1be9ae66-afc2-4c29-a165-5699c15094a1"
     }
   ]
 }

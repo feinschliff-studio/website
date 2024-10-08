@@ -1,30 +1,29 @@
 import { dev, version } from "$app/environment";
 import type { FieldGroupStoryblok, FormStoryblok } from "$storyblok/components";
-import { sendEmail } from "@cloudflare/pages-plugin-mailchannels/api";
+import { type CreateEmailOptions, type CreateEmailRequestOptions, Resend } from "resend";
 import { renderRichText } from "@storyblok/js";
 import type { ISbRichtext, ISbStory, StoryblokClient } from "@storyblok/svelte";
 import type { ISbComponentType } from "storyblok-js-client";
-import { DKIM_DOMAIN, DKIM_PRIVATE_KEY } from "$env/static/private";
+import { RESEND_API_KEY } from "$env/static/private";
 
-export async function dispatch(payload: MailSendBody): Promise<Failure | Success> {
+export async function dispatch(payload: CreateEmailOptions, options?: CreateEmailRequestOptions): Promise<Failure | Success> {
   if (dev) {
     console.log("\n\nWould send email:\n", payload, "\n");
 
     return { success: true };
   }
 
-  return sendEmail({
-    ...payload,
-    personalizations: [
-      {
-        ...payload.personalizations[0],
-        dkim_domain: DKIM_DOMAIN,
-        dkim_selector: "mailchannels",
-        dkim_private_key: DKIM_PRIVATE_KEY,
-      },
-      ...payload.personalizations.slice(1),
-    ],
-  });
+  const resend = new Resend(RESEND_API_KEY);
+  const response = await resend.emails.send(payload, options);
+
+  if (response.error) {
+    const { name, message } = response.error;
+    const error = `${name}: ${message}`;
+
+    return { success: false, errors: [error] };
+  }
+
+  return { success: true };
 }
 
 export async function loadForm(pageId: string, formId: string, client: StoryblokClient) {
@@ -97,38 +96,6 @@ export function renderTemplate(template: string, context: Record<string, FormDat
 
 export function isFailure(r: Success | Failure): r is Failure {
   return !r.success;
-}
-
-interface EmailAddress {
-  email: string;
-  name?: string;
-}
-
-interface Personalization {
-  to: [EmailAddress, ...EmailAddress[]];
-  from?: EmailAddress;
-  dkim_domain?: string;
-  dkim_private_key?: string;
-  dkim_selector?: string;
-  reply_to?: EmailAddress;
-  cc?: EmailAddress[];
-  bcc?: EmailAddress[];
-  subject?: string;
-  headers?: Record<string, string>;
-}
-
-interface ContentItem {
-  type: string;
-  value: string;
-}
-
-interface MailSendBody {
-  personalizations: [Personalization, ...Personalization[]];
-  from: EmailAddress;
-  reply_to?: EmailAddress;
-  subject: string;
-  content: [ContentItem, ...ContentItem[]];
-  headers?: Record<string, string>;
 }
 
 interface Success {
