@@ -79,8 +79,8 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
       from: `${form.name} <website@${DKIM_DOMAIN}>`,
       to: form.notificationRecipientEmail,
       replyTo: "email" in fieldValues ? fieldValues.email as string : `website@${DKIM_DOMAIN}`,
-      html: renderTemplate(form.notificationPlain, context),
-      text: renderHtmlText(form.notificationHtml, context),
+      html: renderHtmlText(form.notificationHtml, context),
+      text: renderTemplate(form.notificationPlain, context),
       subject: form.notificationSubject,
       tags: [
         { name: "story_id", value: story.id.toString() },
