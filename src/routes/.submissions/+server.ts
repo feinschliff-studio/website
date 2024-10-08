@@ -1,4 +1,4 @@
-import { STORYBLOK_ACCESS_TOKEN, DKIM_DOMAIN } from "$env/static/private";
+import { DKIM_DOMAIN, STORYBLOK_ACCESS_TOKEN } from "$env/static/private";
 import { dispatch, isFailure, loadForm, renderHtmlText, renderTemplate } from "$lib/server/mail";
 import type { FieldGroupStoryblok, FormStoryblok, PageStoryblok } from "$storyblok/components";
 import type { ISbStoryData } from "@storyblok/svelte";
@@ -74,11 +74,14 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
     ...fieldValues,
   };
 
+  const senderName = "name" in fieldValues ? fieldValues.name as string : form.name;
+  const senderEmail = "email" in fieldValues ? fieldValues.email as string : `website@${DKIM_DOMAIN}`;
+
   try {
     const result = await dispatch({
       from: `${form.name} <website@${DKIM_DOMAIN}>`,
       to: form.notificationRecipientEmail,
-      replyTo: "email" in fieldValues ? fieldValues.email as string : `website@${DKIM_DOMAIN}`,
+      replyTo: `${senderName} <${senderEmail}>`,
       html: renderHtmlText(form.notificationHtml, context),
       text: renderTemplate(form.notificationPlain, context),
       subject: form.notificationSubject,
@@ -94,7 +97,7 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
     storyUrl.searchParams.set("state", "error");
     storyUrl.searchParams.set("error", (error as Error).message ?? "Unknown error");
 
-    console.error(`Failed to dispatch form submission: ${error}`, {error});
+    console.error(`Failed to dispatch form submission: ${error}`, { error });
 
     throw redirect(303, storyUrl);
   }
