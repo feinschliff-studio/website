@@ -83,14 +83,7 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
       text: renderHtmlText(form.notificationHtml, context),
       subject: form.notificationSubject,
       tags: [
-        { name: "domain", value: domain },
-        { name: "story.id", value: story.id.toString() },
-        { name: "story.name", value: story.name },
-        { name: "story.slug", value: story.slug },
-        { name: "story.published_at", value: story.published_at ?? 'unknown' },
-        { name: "form.name", value: form.name },
-        { name: "recipient.name", value: form.notificationRecipientName },
-        { name: "recipient.email", value: form.notificationRecipientEmail },
+        { name: "story_id", value: story.id.toString() },
       ],
     });
 
