@@ -76,7 +76,7 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
 
   try {
     const result = await dispatch({
-      from: `${form.name} <website@${domain}>`,
+      from: `"${form.name} <website@${domain}>"`,
       to: form.notificationRecipientEmail,
       replyTo: "email" in fieldValues ? fieldValues.email as string : `website@${domain}`,
       html: renderTemplate(form.notificationPlain, context),
