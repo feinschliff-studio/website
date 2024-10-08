@@ -1,4 +1,4 @@
-import { STORYBLOK_ACCESS_TOKEN } from "$env/static/private";
+import { STORYBLOK_ACCESS_TOKEN, DKIM_DOMAIN } from "$env/static/private";
 import { dispatch, isFailure, loadForm, renderHtmlText, renderTemplate } from "$lib/server/mail";
 import type { FieldGroupStoryblok, FormStoryblok, PageStoryblok } from "$storyblok/components";
 import type { ISbStoryData } from "@storyblok/svelte";
@@ -76,9 +76,9 @@ export const POST: RequestHandler = async function POST({ request, url, fetch })
 
   try {
     const result = await dispatch({
-      from: `${form.name} <website@${domain}>`,
+      from: `${form.name} <website@${DKIM_DOMAIN}>`,
       to: form.notificationRecipientEmail,
-      replyTo: "email" in fieldValues ? fieldValues.email as string : `website@${domain}`,
+      replyTo: "email" in fieldValues ? fieldValues.email as string : `website@${DKIM_DOMAIN}`,
       html: renderTemplate(form.notificationPlain, context),
       text: renderHtmlText(form.notificationHtml, context),
       subject: form.notificationSubject,
